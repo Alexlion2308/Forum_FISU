@@ -1,0 +1,822 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0609A3931CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609A3911CB3B590002B82A1 /* Fisu+CoreDataProperties.swift */; };
+		0609A3941CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609A3911CB3B590002B82A1 /* Fisu+CoreDataProperties.swift */; };
+		0609A3951CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609A3911CB3B590002B82A1 /* Fisu+CoreDataProperties.swift */; };
+		0609A3961CB3B590002B82A1 /* Fisu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609A3921CB3B590002B82A1 /* Fisu.swift */; };
+		0609A3971CB3B590002B82A1 /* Fisu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609A3921CB3B590002B82A1 /* Fisu.swift */; };
+		0609A3981CB3B590002B82A1 /* Fisu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609A3921CB3B590002B82A1 /* Fisu.swift */; };
+		060C23921CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23861CA42C0200388BD6 /* Speaker+CoreDataProperties.swift */; };
+		060C23931CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23861CA42C0200388BD6 /* Speaker+CoreDataProperties.swift */; };
+		060C23941CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23861CA42C0200388BD6 /* Speaker+CoreDataProperties.swift */; };
+		060C23951CA42C0200388BD6 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23871CA42C0200388BD6 /* Speaker.swift */; };
+		060C23961CA42C0200388BD6 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23871CA42C0200388BD6 /* Speaker.swift */; };
+		060C23971CA42C0200388BD6 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23871CA42C0200388BD6 /* Speaker.swift */; };
+		060C239B1CA42C0200388BD6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23891CA42C0200388BD6 /* Event.swift */; };
+		060C239C1CA42C0200388BD6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23891CA42C0200388BD6 /* Event.swift */; };
+		060C239D1CA42C0200388BD6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23891CA42C0200388BD6 /* Event.swift */; };
+		060C239E1CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C238A1CA42C0200388BD6 /* Day+CoreDataProperties.swift */; };
+		060C239F1CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C238A1CA42C0200388BD6 /* Day+CoreDataProperties.swift */; };
+		060C23A01CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C238A1CA42C0200388BD6 /* Day+CoreDataProperties.swift */; };
+		060C23A11CA42C0200388BD6 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C238B1CA42C0200388BD6 /* Day.swift */; };
+		060C23A21CA42C0200388BD6 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C238B1CA42C0200388BD6 /* Day.swift */; };
+		060C23A31CA42C0200388BD6 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C238B1CA42C0200388BD6 /* Day.swift */; };
+		060C23A51CA4493A00388BD6 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A41CA4493A00388BD6 /* EventViewController.swift */; };
+		060C23A61CA4493A00388BD6 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A41CA4493A00388BD6 /* EventViewController.swift */; };
+		060C23A71CA4493A00388BD6 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A41CA4493A00388BD6 /* EventViewController.swift */; };
+		060C23A91CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
+		060C23AA1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
+		060C23AB1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
+		0616237E1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
+		0616237F1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
+		061623801CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
+		064FD7331C9C6677000E00F3 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD7321C9C6677000E00F3 /* DayViewController.swift */; };
+		064FD7351C9C684A000E00F3 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */; };
+		06698D0E1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */; };
+		06698D0F1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */; };
+		06698D101CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */; };
+		06698D121CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */; };
+		06698D131CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */; };
+		06698D141CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */; };
+		06698D171CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */; };
+		06698D181CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */; };
+		06698D191CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */; };
+		06698D1A1CBBF002006A74DA /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D161CBBF002006A74DA /* Restaurant.swift */; };
+		06698D1B1CBBF002006A74DA /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D161CBBF002006A74DA /* Restaurant.swift */; };
+		06698D1C1CBBF002006A74DA /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D161CBBF002006A74DA /* Restaurant.swift */; };
+		06698D1E1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */; };
+		06698D1F1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */; };
+		06698D201CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */; };
+		06698D221CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */; };
+		06698D231CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */; };
+		06BBB2DC1CB7BC0B004C8F71 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2D81CB7BC0B004C8F71 /* Place+CoreDataProperties.swift */; };
+		06BBB2DF1CB7BC0B004C8F71 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2D91CB7BC0B004C8F71 /* Place.swift */; };
+		06BBB2E11CB7E699004C8F71 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */; };
+		06BBB2E21CB7E699004C8F71 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */; };
+		06BBB2E31CB7E699004C8F71 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */; };
+		06BBB2E51CB7EFA0004C8F71 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */; };
+		06BBB2E61CB7EFA0004C8F71 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */; };
+		06BBB2E71CB7EFA0004C8F71 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */; };
+		06BBB2E91CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */; };
+		06BBB2EA1CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */; };
+		06BBB2EB1CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */; };
+		5D0C1E9D1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */; };
+		5D0C1E9E1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */; };
+		5D1DEC6E1CA801160087498F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */; };
+		5D1DEC6F1CA801160087498F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */; };
+		5D1DEC701CA801160087498F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DEC6D1CA801160087498F /* User.swift */; };
+		5D1DEC711CA801160087498F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DEC6D1CA801160087498F /* User.swift */; };
+		5D20A4D31CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */; };
+		5D20A4D41CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */; };
+		5D20A4D61CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
+		5D20A4D71CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
+		5D343F081C7730A9005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
+		5D343F091C7730AA005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
+		5D4EEE711CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */; };
+		5D4EEE721CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */; };
+		5D747F511CB79F290015305E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747F501CB79F290015305E /* PageViewController.swift */; };
+		5D747F521CB79F290015305E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747F501CB79F290015305E /* PageViewController.swift */; };
+		5D747F541CB79FEA0015305E /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */; };
+		5D747F551CB79FEA0015305E /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */; };
+		5D76515E1C85959700482384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE3565E1C614A1F00146D0A /* Main.storyboard */; };
+		5D7AE2291CB7CB4700E26E2E /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AE2271CB7CB4700E26E2E /* Place+CoreDataProperties.swift */; };
+		5D7AE22A1CB7CB4700E26E2E /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AE2271CB7CB4700E26E2E /* Place+CoreDataProperties.swift */; };
+		5D7AE22B1CB7CB4700E26E2E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AE2281CB7CB4700E26E2E /* Place.swift */; };
+		5D7AE22C1CB7CB4700E26E2E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AE2281CB7CB4700E26E2E /* Place.swift */; };
+		5D7FB4231CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB4221CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift */; };
+		5D7FB4241CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB4221CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift */; };
+		5D7FB4261CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB4251CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift */; };
+		5D7FB4271CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7FB4251CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift */; };
+		5D8304351CA12BF000EAFB89 /* FISU.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DE356611C614A1F00146D0A /* FISU.xcdatamodeld */; };
+		5D83D3851C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */; };
+		5D83D3861C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */; };
+		5D8F8A571CB80D77009246EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE3565E1C614A1F00146D0A /* Main.storyboard */; };
+		5D9519511C7D9D9F00765B9D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5D9519581C7DB4D600765B9D /* DateEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */; };
+		5D9519591C7DB4D600765B9D /* DateEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */; };
+		5DBAB8C01CBCF8AD00365217 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93FB991CB68AD200FFA5BA /* UserTests.swift */; };
+		5DE3565B1C614A1F00146D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
+		5DE3565D1C614A1F00146D0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565C1C614A1F00146D0A /* ViewController.swift */; };
+		5DE356631C614A1F00146D0A /* FISU.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DE356611C614A1F00146D0A /* FISU.xcdatamodeld */; };
+		5DE356651C614A1F00146D0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE356641C614A1F00146D0A /* Assets.xcassets */; };
+		5DE356681C614A1F00146D0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE356661C614A1F00146D0A /* LaunchScreen.storyboard */; };
+		5DE356731C614A1F00146D0A /* FISUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE356721C614A1F00146D0A /* FISUTests.swift */; };
+		5DE3567E1C614A1F00146D0A /* FISUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3567D1C614A1F00146D0A /* FISUUITests.swift */; };
+		5DE43D791C846833003819C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE356641C614A1F00146D0A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DE3566F1C614A1F00146D0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DE3564F1C614A1F00146D0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DE356561C614A1F00146D0A;
+			remoteInfo = FISU;
+		};
+		5DE3567A1C614A1F00146D0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DE3564F1C614A1F00146D0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DE356561C614A1F00146D0A;
+			remoteInfo = FISU;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0609A3911CB3B590002B82A1 /* Fisu+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fisu+CoreDataProperties.swift"; path = "FISU/Fisu+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0609A3921CB3B590002B82A1 /* Fisu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fisu.swift; path = FISU/Fisu.swift; sourceTree = SOURCE_ROOT; };
+		060C23861CA42C0200388BD6 /* Speaker+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Speaker+CoreDataProperties.swift"; path = "FISU/Speaker+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		060C23871CA42C0200388BD6 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Speaker.swift; path = FISU/Speaker.swift; sourceTree = SOURCE_ROOT; };
+		060C23891CA42C0200388BD6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = FISU/Event.swift; sourceTree = SOURCE_ROOT; };
+		060C238A1CA42C0200388BD6 /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Day+CoreDataProperties.swift"; path = "FISU/Day+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		060C238B1CA42C0200388BD6 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = FISU/Day.swift; sourceTree = SOURCE_ROOT; };
+		060C23A41CA4493A00388BD6 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = FISU/EventViewController.swift; sourceTree = SOURCE_ROOT; };
+		060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = FISU/EventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "FISU/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		064FD7321C9C6677000E00F3 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayViewController.swift; path = FISU/DayViewController.swift; sourceTree = SOURCE_ROOT; };
+		064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayTableViewCell.swift; path = FISU/DayTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Restaurant+CoreDataProperties.swift"; path = "FISU/Restaurant+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		06698D161CBBF002006A74DA /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Restaurant.swift; path = FISU/Restaurant.swift; sourceTree = SOURCE_ROOT; };
+		06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantVCMapView.swift; sourceTree = "<group>"; };
+		06BBB2D81CB7BC0B004C8F71 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		06BBB2D91CB7BC0B004C8F71 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceViewController.swift; path = FISU/PlaceViewController.swift; sourceTree = SOURCE_ROOT; };
+		06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = FISU/Artwork.swift; sourceTree = SOURCE_ROOT; };
+		06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceVCMapView.swift; path = FISU/PlaceVCMapView.swift; sourceTree = SOURCE_ROOT; };
+		5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
+		5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "FISU/User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5D1DEC6D1CA801160087498F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FISU/User.swift; sourceTree = SOURCE_ROOT; };
+		5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewCell.swift; path = FISU/OwnCalendarTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewController.swift; path = FISU/OwnCalendarTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileViewController.swift; path = FISU/SpeakerProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D747F501CB79F290015305E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = FISU/PageViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkthroughViewController.swift; path = FISU/WalkthroughViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D7AE2271CB7CB4700E26E2E /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Place+CoreDataProperties.swift"; path = "FISU/Place+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5D7AE2281CB7CB4700E26E2E /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = FISU/Place.swift; sourceTree = SOURCE_ROOT; };
+		5D7FB4221CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakersCollectionViewController.swift; path = FISU/SpeakersCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D7FB4251CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakersCollectionViewCell.swift; path = FISU/SpeakersCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = FISU/EventDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D93FB991CB68AD200FFA5BA /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTests.swift; path = ../UserTests.swift; sourceTree = "<group>"; };
+		5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateEventTableViewCell.swift; path = FISU/DateEventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		5DE356571C614A1F00146D0A /* FISU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FISU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE3565A1C614A1F00146D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FISU/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		5DE3565C1C614A1F00146D0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = FISU/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		5DE3565F1C614A1F00146D0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DE356621C614A1F00146D0A /* FISU.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FISU.xcdatamodel; sourceTree = "<group>"; };
+		5DE356641C614A1F00146D0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DE356671C614A1F00146D0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DE356691C614A1F00146D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = FISU/Info.plist; sourceTree = SOURCE_ROOT; };
+		5DE3566E1C614A1F00146D0A /* FISUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FISUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE356721C614A1F00146D0A /* FISUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FISUTests.swift; sourceTree = "<group>"; };
+		5DE356741C614A1F00146D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DE356791C614A1F00146D0A /* FISUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FISUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE3567D1C614A1F00146D0A /* FISUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FISUUITests.swift; sourceTree = "<group>"; };
+		5DE3567F1C614A1F00146D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DE356541C614A1F00146D0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DE3566B1C614A1F00146D0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DE356761C614A1F00146D0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D747F571CB7B2140015305E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5DE356611C614A1F00146D0A /* FISU.xcdatamodeld */,
+				06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */,
+				06698D161CBBF002006A74DA /* Restaurant.swift */,
+				0609A3911CB3B590002B82A1 /* Fisu+CoreDataProperties.swift */,
+				5D7AE2271CB7CB4700E26E2E /* Place+CoreDataProperties.swift */,
+				5D7AE2281CB7CB4700E26E2E /* Place.swift */,
+				5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */,
+				060C238A1CA42C0200388BD6 /* Day+CoreDataProperties.swift */,
+				0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */,
+				060C23861CA42C0200388BD6 /* Speaker+CoreDataProperties.swift */,
+				0609A3921CB3B590002B82A1 /* Fisu.swift */,
+				5D1DEC6D1CA801160087498F /* User.swift */,
+				060C238B1CA42C0200388BD6 /* Day.swift */,
+				060C23871CA42C0200388BD6 /* Speaker.swift */,
+				060C23891CA42C0200388BD6 /* Event.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5D747F581CB7B25A0015305E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D7FB4251CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift */,
+				5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */,
+				5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */,
+				06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */,
+				06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */,
+				06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */,
+				060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */,
+				064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */,
+				06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5D747F591CB7B2720015305E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D7FB4221CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift */,
+				5DE3565C1C614A1F00146D0A /* ViewController.swift */,
+				5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */,
+				5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */,
+				5D747F501CB79F290015305E /* PageViewController.swift */,
+				5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */,
+				5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */,
+				064FD7321C9C6677000E00F3 /* DayViewController.swift */,
+				060C23A41CA4493A00388BD6 /* EventViewController.swift */,
+				06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */,
+				06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */,
+				06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5DE3564E1C614A1F00146D0A = {
+			isa = PBXGroup;
+			children = (
+				5DE356591C614A1F00146D0A /* FISU */,
+				5DE356711C614A1F00146D0A /* FISUTests */,
+				5DE3567C1C614A1F00146D0A /* FISUUITests */,
+				5DE356581C614A1F00146D0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DE356581C614A1F00146D0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DE356571C614A1F00146D0A /* FISU.app */,
+				5DE3566E1C614A1F00146D0A /* FISUTests.xctest */,
+				5DE356791C614A1F00146D0A /* FISUUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DE356591C614A1F00146D0A /* FISU */ = {
+			isa = PBXGroup;
+			children = (
+				5DE3565A1C614A1F00146D0A /* AppDelegate.swift */,
+				5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */,
+				5DE3565E1C614A1F00146D0A /* Main.storyboard */,
+				5DE356641C614A1F00146D0A /* Assets.xcassets */,
+				5DE356661C614A1F00146D0A /* LaunchScreen.storyboard */,
+				5DE356691C614A1F00146D0A /* Info.plist */,
+				5D747F571CB7B2140015305E /* Model */,
+				5D747F591CB7B2720015305E /* Controllers */,
+				5D747F581CB7B25A0015305E /* Views */,
+			);
+			path = FISU;
+			sourceTree = "<group>";
+		};
+		5DE356711C614A1F00146D0A /* FISUTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D93FB991CB68AD200FFA5BA /* UserTests.swift */,
+				5DE356721C614A1F00146D0A /* FISUTests.swift */,
+				5DE356741C614A1F00146D0A /* Info.plist */,
+			);
+			path = FISUTests;
+			sourceTree = "<group>";
+		};
+		5DE3567C1C614A1F00146D0A /* FISUUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5DE3567D1C614A1F00146D0A /* FISUUITests.swift */,
+				5DE3567F1C614A1F00146D0A /* Info.plist */,
+			);
+			path = FISUUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DE356561C614A1F00146D0A /* FISU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DE356821C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISU" */;
+			buildPhases = (
+				5DE356531C614A1F00146D0A /* Sources */,
+				5DE356541C614A1F00146D0A /* Frameworks */,
+				5DE356551C614A1F00146D0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FISU;
+			productName = FISU;
+			productReference = 5DE356571C614A1F00146D0A /* FISU.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DE3566D1C614A1F00146D0A /* FISUTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DE356851C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISUTests" */;
+			buildPhases = (
+				5DE3566A1C614A1F00146D0A /* Sources */,
+				5DE3566B1C614A1F00146D0A /* Frameworks */,
+				5DE3566C1C614A1F00146D0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DE356701C614A1F00146D0A /* PBXTargetDependency */,
+			);
+			name = FISUTests;
+			productName = FISUTests;
+			productReference = 5DE3566E1C614A1F00146D0A /* FISUTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5DE356781C614A1F00146D0A /* FISUUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DE356881C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISUUITests" */;
+			buildPhases = (
+				5DE356751C614A1F00146D0A /* Sources */,
+				5DE356761C614A1F00146D0A /* Frameworks */,
+				5DE356771C614A1F00146D0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DE3567B1C614A1F00146D0A /* PBXTargetDependency */,
+			);
+			name = FISUUITests;
+			productName = FISUUITests;
+			productReference = 5DE356791C614A1F00146D0A /* FISUUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DE3564F1C614A1F00146D0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Reda M";
+				TargetAttributes = {
+					5DE356561C614A1F00146D0A = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2DVXH2798K;
+					};
+					5DE3566D1C614A1F00146D0A = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 5DE356561C614A1F00146D0A;
+					};
+					5DE356781C614A1F00146D0A = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 5DE356561C614A1F00146D0A;
+					};
+				};
+			};
+			buildConfigurationList = 5DE356521C614A1F00146D0A /* Build configuration list for PBXProject "FISU" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DE3564E1C614A1F00146D0A;
+			productRefGroup = 5DE356581C614A1F00146D0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DE356561C614A1F00146D0A /* FISU */,
+				5DE3566D1C614A1F00146D0A /* FISUTests */,
+				5DE356781C614A1F00146D0A /* FISUUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DE356551C614A1F00146D0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D8F8A571CB80D77009246EF /* Main.storyboard in Resources */,
+				5DE356681C614A1F00146D0A /* LaunchScreen.storyboard in Resources */,
+				5DE356651C614A1F00146D0A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DE3566C1C614A1F00146D0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DE43D791C846833003819C3 /* Assets.xcassets in Resources */,
+				5D76515E1C85959700482384 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DE356771C614A1F00146D0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DE356531C614A1F00146D0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06BBB2E51CB7EFA0004C8F71 /* Artwork.swift in Sources */,
+				060C23921CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */,
+				06698D1E1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */,
+				5D7AE22B1CB7CB4700E26E2E /* Place.swift in Sources */,
+				064FD7331C9C6677000E00F3 /* DayViewController.swift in Sources */,
+				5D1DEC6E1CA801160087498F /* User+CoreDataProperties.swift in Sources */,
+				06698D121CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */,
+				06698D221CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */,
+				06698D171CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */,
+				5D4EEE711CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */,
+				06BBB2E91CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */,
+				0616237E1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */,
+				5DE3565D1C614A1F00146D0A /* ViewController.swift in Sources */,
+				060C23A51CA4493A00388BD6 /* EventViewController.swift in Sources */,
+				5D9519581C7DB4D600765B9D /* DateEventTableViewCell.swift in Sources */,
+				0609A3931CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */,
+				060C23A91CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */,
+				5D747F541CB79FEA0015305E /* WalkthroughViewController.swift in Sources */,
+				5D83D3851C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */,
+				0609A3961CB3B590002B82A1 /* Fisu.swift in Sources */,
+				060C239B1CA42C0200388BD6 /* Event.swift in Sources */,
+				5D7FB4261CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift in Sources */,
+				5D20A4D61CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */,
+				06BBB2E11CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
+				5D1DEC701CA801160087498F /* User.swift in Sources */,
+				060C239E1CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */,
+				064FD7351C9C684A000E00F3 /* DayTableViewCell.swift in Sources */,
+				5DE3565B1C614A1F00146D0A /* AppDelegate.swift in Sources */,
+				06698D1A1CBBF002006A74DA /* Restaurant.swift in Sources */,
+				5D7FB4231CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */,
+				5D7AE2291CB7CB4700E26E2E /* Place+CoreDataProperties.swift in Sources */,
+				06698D0E1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
+				5D747F511CB79F290015305E /* PageViewController.swift in Sources */,
+				060C23A11CA42C0200388BD6 /* Day.swift in Sources */,
+				060C23951CA42C0200388BD6 /* Speaker.swift in Sources */,
+				5D0C1E9D1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */,
+				5D20A4D31CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */,
+				5DE356631C614A1F00146D0A /* FISU.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DE3566A1C614A1F00146D0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DBAB8C01CBCF8AD00365217 /* UserTests.swift in Sources */,
+				5D7FB4271CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift in Sources */,
+				5D7AE22A1CB7CB4700E26E2E /* Place+CoreDataProperties.swift in Sources */,
+				5D1DEC6F1CA801160087498F /* User+CoreDataProperties.swift in Sources */,
+				060C23AA1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */,
+				5D1DEC711CA801160087498F /* User.swift in Sources */,
+				06BBB2E21CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
+				5D0C1E9E1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */,
+				06698D231CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */,
+				5D343F081C7730A9005BFB8A /* AppDelegate.swift in Sources */,
+				5DE356731C614A1F00146D0A /* FISUTests.swift in Sources */,
+				060C23A21CA42C0200388BD6 /* Day.swift in Sources */,
+				06BBB2EA1CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */,
+				5D9519591C7DB4D600765B9D /* DateEventTableViewCell.swift in Sources */,
+				5D7AE22C1CB7CB4700E26E2E /* Place.swift in Sources */,
+				5D20A4D41CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */,
+				5D747F551CB79FEA0015305E /* WalkthroughViewController.swift in Sources */,
+				06698D1B1CBBF002006A74DA /* Restaurant.swift in Sources */,
+				060C23961CA42C0200388BD6 /* Speaker.swift in Sources */,
+				5D7FB4241CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */,
+				06698D131CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */,
+				06698D0F1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
+				06698D1F1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */,
+				0609A3941CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */,
+				06698D181CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */,
+				060C23931CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */,
+				060C239F1CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */,
+				5D20A4D71CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */,
+				06BBB2E61CB7EFA0004C8F71 /* Artwork.swift in Sources */,
+				0609A3971CB3B590002B82A1 /* Fisu.swift in Sources */,
+				5D83D3861C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */,
+				5D747F521CB79F290015305E /* PageViewController.swift in Sources */,
+				0616237F1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */,
+				5D8304351CA12BF000EAFB89 /* FISU.xcdatamodeld in Sources */,
+				5D9519511C7D9D9F00765B9D /* (null) in Sources */,
+				060C239C1CA42C0200388BD6 /* Event.swift in Sources */,
+				5D4EEE721CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */,
+				060C23A61CA4493A00388BD6 /* EventViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DE356751C614A1F00146D0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06BBB2EB1CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */,
+				060C23AB1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */,
+				060C239D1CA42C0200388BD6 /* Event.swift in Sources */,
+				06BBB2E71CB7EFA0004C8F71 /* Artwork.swift in Sources */,
+				060C23A71CA4493A00388BD6 /* EventViewController.swift in Sources */,
+				06698D141CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */,
+				06698D201CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */,
+				06BBB2E31CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
+				5D343F091C7730AA005BFB8A /* AppDelegate.swift in Sources */,
+				061623801CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */,
+				06BBB2DF1CB7BC0B004C8F71 /* Place.swift in Sources */,
+				060C23941CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */,
+				060C23A01CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */,
+				060C23971CA42C0200388BD6 /* Speaker.swift in Sources */,
+				06BBB2DC1CB7BC0B004C8F71 /* Place+CoreDataProperties.swift in Sources */,
+				06698D191CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */,
+				06698D101CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
+				0609A3981CB3B590002B82A1 /* Fisu.swift in Sources */,
+				06698D1C1CBBF002006A74DA /* Restaurant.swift in Sources */,
+				0609A3951CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */,
+				5DE3567E1C614A1F00146D0A /* FISUUITests.swift in Sources */,
+				060C23A31CA42C0200388BD6 /* Day.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DE356701C614A1F00146D0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DE356561C614A1F00146D0A /* FISU */;
+			targetProxy = 5DE3566F1C614A1F00146D0A /* PBXContainerItemProxy */;
+		};
+		5DE3567B1C614A1F00146D0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DE356561C614A1F00146D0A /* FISU */;
+			targetProxy = 5DE3567A1C614A1F00146D0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DE3565E1C614A1F00146D0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DE3565F1C614A1F00146D0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5DE356661C614A1F00146D0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DE356671C614A1F00146D0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DE356801C614A1F00146D0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5DE356811C614A1F00146D0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DE356831C614A1F00146D0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FISU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "IG4-POLYTECH.FISU";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		5DE356841C614A1F00146D0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FISU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "IG4-POLYTECH.FISU";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		5DE356861C614A1F00146D0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FISUTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "IG4-POLYTECH.FISUTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FISU.app/FISU";
+			};
+			name = Debug;
+		};
+		5DE356871C614A1F00146D0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FISUTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "IG4-POLYTECH.FISUTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FISU.app/FISU";
+			};
+			name = Release;
+		};
+		5DE356891C614A1F00146D0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FISUUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "IG4-POLYTECH.FISUUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FISU;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5DE3568A1C614A1F00146D0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FISUUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "IG4-POLYTECH.FISUUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FISU;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DE356521C614A1F00146D0A /* Build configuration list for PBXProject "FISU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DE356801C614A1F00146D0A /* Debug */,
+				5DE356811C614A1F00146D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DE356821C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DE356831C614A1F00146D0A /* Debug */,
+				5DE356841C614A1F00146D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DE356851C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISUTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DE356861C614A1F00146D0A /* Debug */,
+				5DE356871C614A1F00146D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DE356881C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISUUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DE356891C614A1F00146D0A /* Debug */,
+				5DE3568A1C614A1F00146D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5DE356611C614A1F00146D0A /* FISU.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5DE356621C614A1F00146D0A /* FISU.xcdatamodel */,
+			);
+			currentVersion = 5DE356621C614A1F00146D0A /* FISU.xcdatamodel */;
+			path = FISU.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5DE3564F1C614A1F00146D0A /* Project object */;
+}
