@@ -49,9 +49,13 @@ class EventDetailViewController: UIViewController {
             if(!(User.userExists(username))){
                 User.createUsers([username, pasword])
                 User.AddEventToUser(username , newEvent: anEvent)
+                self.delete = true
+                self.viewWillAppear(false)
             }
             else{
                 User.AddEventToUser(username , newEvent: anEvent)
+                self.delete = true
+                self.viewWillAppear(false)
             }
         }))
         addEventAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
@@ -78,6 +82,8 @@ class EventDetailViewController: UIViewController {
                 return
             }
             User.DeleteEventFromUser(username, toDeleteEvent: anEvent)
+            self.delete = false
+            self.viewWillAppear(false)
         }))
         presentViewController(removeEventAlert, animated: true, completion: nil)
     }
@@ -100,7 +106,7 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(self.delete == true){
+/*        if(self.delete == true){
             self.addButton.hidden = true
             self.deleteButton.hidden = false
         }
@@ -108,6 +114,7 @@ class EventDetailViewController: UIViewController {
             self.addButton.hidden = false
             self.deleteButton.hidden = true
         }
+*/
         
         guard let anEvent = self.eventSelected else {
             return
@@ -138,6 +145,17 @@ class EventDetailViewController: UIViewController {
         self.EventDetailImage.image = imageEvent
         
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if(self.delete == true){
+            self.addButton.hidden = true
+            self.deleteButton.hidden = false
+        }
+        else{
+            self.addButton.hidden = false
+            self.deleteButton.hidden = true
+        }
     }
     
     override func didReceiveMemoryWarning() {
