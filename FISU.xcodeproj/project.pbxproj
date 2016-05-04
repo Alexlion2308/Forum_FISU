@@ -34,9 +34,9 @@
 		060C23A91CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
 		060C23AA1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
 		060C23AB1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
-		0611C4FF1CDA1F0500B8E5A7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C4FE1CDA1F0500B8E5A7 /* Alamofire.framework */; };
-		0611C5001CDA1F0500B8E5A7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C4FE1CDA1F0500B8E5A7 /* Alamofire.framework */; };
-		0611C5011CDA1F0B00B8E5A7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C4FE1CDA1F0500B8E5A7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0611C5051CDA20CE00B8E5A7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */; };
+		0611C5071CDA20DB00B8E5A7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0611C5081CDA20F700B8E5A7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */; };
 		0616237E1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
 		0616237F1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
 		061623801CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
@@ -140,7 +140,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0611C5011CDA1F0B00B8E5A7 /* Alamofire.framework in Embed Frameworks */,
+				0611C5071CDA20DB00B8E5A7 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +157,7 @@
 		060C238B1CA42C0200388BD6 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = FISU/Day.swift; sourceTree = SOURCE_ROOT; };
 		060C23A41CA4493A00388BD6 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = FISU/EventViewController.swift; sourceTree = SOURCE_ROOT; };
 		060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = FISU/EventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		0611C4FE1CDA1F0500B8E5A7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = FISU/Alamofire.framework; sourceTree = "<group>"; };
 		0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "FISU/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		064FD7321C9C6677000E00F3 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayViewController.swift; path = FISU/DayViewController.swift; sourceTree = SOURCE_ROOT; };
 		064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayTableViewCell.swift; path = FISU/DayTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -209,7 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0611C4FF1CDA1F0500B8E5A7 /* Alamofire.framework in Frameworks */,
+				0611C5081CDA20F700B8E5A7 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0611C5001CDA1F0500B8E5A7 /* Alamofire.framework in Frameworks */,
+				0611C5051CDA20CE00B8E5A7 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +299,7 @@
 		5DE3564E1C614A1F00146D0A = {
 			isa = PBXGroup;
 			children = (
-				0611C4FE1CDA1F0500B8E5A7 /* Alamofire.framework */,
+				0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */,
 				5DE356591C614A1F00146D0A /* FISU */,
 				5DE356711C614A1F00146D0A /* FISUTests */,
 				5DE3567C1C614A1F00146D0A /* FISUUITests */,
@@ -818,6 +818,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FISU",
 				);
 				INFOPLIST_FILE = FISUTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -834,6 +835,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FISU",
 				);
 				INFOPLIST_FILE = FISUTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
