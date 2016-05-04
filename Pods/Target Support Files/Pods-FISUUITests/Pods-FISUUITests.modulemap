@@ -1,6 +1,0 @@
-framework module Pods_FISUUITests {
-  umbrella header "Pods-FISUUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
