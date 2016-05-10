@@ -8,10 +8,14 @@
 
 import UIKit
 import CoreData
+import Alamofire
+import GoogleMaps
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
     var window: UIWindow?
     
     //Initialisation de l'ensemble de données destinées à être stockées dans le coreData
@@ -49,7 +53,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
+        GMSServices.provideAPIKey("AIzaSyAEtmY3vdAP89Si76FsqSjfb7VjLDYu3bQ")
+        //////////////////////// Test Alamofire //////////////////////////
 
+        Alamofire.request(.GET, "https://fisuwebfinal-madonna.rhcloud.com/ListeEvent.php")
+            .responseJSON { response in
+                /*print("Requete: ")
+                print(response.request)  // original URL request
+                print("Reponse: ")
+                print(response.response) // URL response
+                print("Data: ")
+                print(response.data)  // server data
+                print("Result: ")
+                print(response.result)   // result of response serialization*/
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+        }
+        
         //////////////////////// APPLICATION INIT //////////////////////////
         
         //Call de toutes les fonctions de création du coreData

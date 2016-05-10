@@ -34,14 +34,9 @@
 		060C23A91CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
 		060C23AA1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
 		060C23AB1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */; };
-		0611C5051CDA20CE00B8E5A7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */; };
-		0611C5071CDA20DB00B8E5A7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0611C5081CDA20F700B8E5A7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */; };
 		0616237E1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
 		0616237F1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
 		061623801CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
-		06187BE11CDA27E80094E689 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */; };
-		06187BE21CDA27E80094E689 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */; };
 		064FD7331C9C6677000E00F3 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD7321C9C6677000E00F3 /* DayViewController.swift */; };
 		064FD7351C9C684A000E00F3 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */; };
 		06698D0E1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */; };
@@ -74,6 +69,8 @@
 		06BBB2EB1CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */; };
 		5D0C1E9D1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */; };
 		5D0C1E9E1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */; };
+		5D15BC691CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */; };
+		5D15BC6A1CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */; };
 		5D1DEC6E1CA801160087498F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */; };
 		5D1DEC6F1CA801160087498F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */; };
 		5D1DEC701CA801160087498F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1DEC6D1CA801160087498F /* User.swift */; };
@@ -82,6 +79,8 @@
 		5D20A4D41CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */; };
 		5D20A4D61CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
 		5D20A4D71CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
+		5D22CC8F1CDA373000F2B89F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */; };
+		5D22CC921CDA38CC00F2B89F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D343F081C7730A9005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
 		5D343F091C7730AA005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
 		5D4EEE711CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */; };
@@ -104,7 +103,6 @@
 		5D83D3861C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */; };
 		5D8DBE011CD9FAED003A4131 /* GooglePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8DBE001CD9FAED003A4131 /* GooglePlacesViewController.swift */; };
 		5D8DBE021CD9FAED003A4131 /* GooglePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8DBE001CD9FAED003A4131 /* GooglePlacesViewController.swift */; };
-		5D8DBE061CDA2439003A4131 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D904EF11CD77539002D7875 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D8F8A571CB80D77009246EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE3565E1C614A1F00146D0A /* Main.storyboard */; };
 		5D904EF41CD77576002D7875 /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 5D904EF31CD77576002D7875 /* Pods */; };
 		5D9519511C7D9D9F00765B9D /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -139,13 +137,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5D8DBE071CDA2439003A4131 /* Embed Frameworks */ = {
+		5D22CC911CDA373000F2B89F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5D8DBE061CDA2439003A4131 /* Alamofire.framework in Embed Frameworks */,
+				5D22CC921CDA38CC00F2B89F /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,7 +160,6 @@
 		060C238B1CA42C0200388BD6 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = FISU/Day.swift; sourceTree = SOURCE_ROOT; };
 		060C23A41CA4493A00388BD6 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = FISU/EventViewController.swift; sourceTree = SOURCE_ROOT; };
 		060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = FISU/EventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = FISU/Alamofire.framework; sourceTree = "<group>"; };
 		0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "FISU/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		06187BE01CDA27E80094E689 /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,10 +177,12 @@
 		06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = FISU/Artwork.swift; sourceTree = SOURCE_ROOT; };
 		06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceVCMapView.swift; path = FISU/PlaceVCMapView.swift; sourceTree = SOURCE_ROOT; };
 		5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
+		5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiViewController.swift; sourceTree = "<group>"; };
 		5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "FISU/User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		5D1DEC6D1CA801160087498F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FISU/User.swift; sourceTree = SOURCE_ROOT; };
 		5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewCell.swift; path = FISU/OwnCalendarTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewController.swift; path = FISU/OwnCalendarTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileViewController.swift; path = FISU/SpeakerProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D747F501CB79F290015305E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = FISU/PageViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkthroughViewController.swift; path = FISU/WalkthroughViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -193,7 +192,6 @@
 		5D7FB4251CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakersCollectionViewCell.swift; path = FISU/SpeakersCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = FISU/EventDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D8DBE001CD9FAED003A4131 /* GooglePlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesViewController.swift; sourceTree = "<group>"; };
-		5D904EF11CD77539002D7875 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = FISU/Alamofire.framework; sourceTree = "<group>"; };
 		5D904EF31CD77576002D7875 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		5D93FB991CB68AD200FFA5BA /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTests.swift; path = ../UserTests.swift; sourceTree = "<group>"; };
 		5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateEventTableViewCell.swift; path = FISU/DateEventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -218,7 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0611C5081CDA20F700B8E5A7 /* Alamofire.framework in Frameworks */,
+				5D22CC8F1CDA373000F2B89F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +224,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0611C5051CDA20CE00B8E5A7 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +295,7 @@
 		5D747F591CB7B2720015305E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */,
 				5D8DBE001CD9FAED003A4131 /* GooglePlacesViewController.swift */,
 				5D7FB4221CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift */,
 				5DE3565C1C614A1F00146D0A /* ViewController.swift */,
@@ -318,7 +316,7 @@
 		5DE3564E1C614A1F00146D0A = {
 			isa = PBXGroup;
 			children = (
-				0611C5031CDA20CE00B8E5A7 /* Alamofire.framework */,
+				5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */,
 				5DE356591C614A1F00146D0A /* FISU */,
 				5DE356711C614A1F00146D0A /* FISUTests */,
 				5DE3567C1C614A1F00146D0A /* FISUUITests */,
@@ -386,7 +384,7 @@
 				5DE356551C614A1F00146D0A /* Resources */,
 				E3DEF42C33397CF3DF1F97CE /* Embed Pods Frameworks */,
 				50A7157794632690C89D4DB9 /* Copy Pods Resources */,
-				5D8DBE071CDA2439003A4131 /* Embed Frameworks */,
+				5D22CC911CDA373000F2B89F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -440,7 +438,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Reda M";
 				TargetAttributes = {
 					5DE356561C614A1F00146D0A = {
@@ -484,8 +482,6 @@
 			files = (
 				5D8F8A571CB80D77009246EF /* Main.storyboard in Resources */,
 				5DE356681C614A1F00146D0A /* LaunchScreen.storyboard in Resources */,
-				06187BE11CDA27E80094E689 /* Pods.debug.xcconfig in Resources */,
-				06187BE21CDA27E80094E689 /* Pods.release.xcconfig in Resources */,
 				5D904EF41CD77576002D7875 /* Pods in Resources */,
 				5DE356651C614A1F00146D0A /* Assets.xcassets in Resources */,
 			);
@@ -568,6 +564,7 @@
 				5D7AE22B1CB7CB4700E26E2E /* Place.swift in Sources */,
 				064FD7331C9C6677000E00F3 /* DayViewController.swift in Sources */,
 				5D1DEC6E1CA801160087498F /* User+CoreDataProperties.swift in Sources */,
+				5D15BC691CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */,
 				5D8DBE011CD9FAED003A4131 /* GooglePlacesViewController.swift in Sources */,
 				06698D121CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */,
 				06698D221CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */,
@@ -614,6 +611,7 @@
 				5D1DEC6F1CA801160087498F /* User+CoreDataProperties.swift in Sources */,
 				060C23AA1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */,
 				5D1DEC711CA801160087498F /* User.swift in Sources */,
+				5D15BC6A1CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */,
 				5D8DBE021CD9FAED003A4131 /* GooglePlacesViewController.swift in Sources */,
 				06BBB2E21CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
 				5D0C1E9E1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */,
@@ -716,7 +714,7 @@
 /* Begin XCBuildConfiguration section */
 		5DE356801C614A1F00146D0A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA2374A44E8F7FDEBF011346 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -762,7 +760,7 @@
 		};
 		5DE356811C614A1F00146D0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8B4E44EB524EB312288F932 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
