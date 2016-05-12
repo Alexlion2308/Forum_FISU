@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var placeSet : [[String]] = [["Corum","1","Boulevard Charles Warnery","34000","Montpellier","43.61377","3.88225"], ["Institut de Botanique","163","Rue Auguste Broussonnet","34090","Montpellier","43.61606","3.87161"], ["Maison Relations Internationales (MRI)","14","Descente en Barrat","34000","Montpellier","43.61305","3.87831"], ["Saint Charles","1500","Route de Mende","34100","Montpellier","43.63210","3.86836"], ["UFR STAPS","700","Avenue du Pic Saint-Loup","34090", "Montpellier","43.64108","3.85117"], ["Veyrassi","700","Avenue du Pic Saint-Loup","34090", "Montpellier","43.64108","3.85117"]]
 
-    var speakerSet : [[String]] = [["None","None","None","None","None","None"],["Justin", "Timberlake", "Singer", "Belge", "This willfull man has beady chestnut eyes.", "profilePicture2"], ["Spparow", "Jack", "Acteur", "Belge", "Une belle description de la personne concernée", "profilePicture2"], ["Nous", "Prenom", "Pompiste", "Belge", "description", "profilePicture3"], ["Lacha", "Bernard", "Pompiste", "Belge", "description", "profilePicture4"], ["Lui", "Prenom", "Pompiste", "Belge", "description", "profilePicture5"] ,["Elle", "Prenom", "Pompiste", "Belge", "description", "profilePicture4"], ["Belge", "Belge", "Belge", "Belge", "Belge", "profilePicture3"]]
+    var speakerSet : [[String]]?
     
     var usersSet : [[String]] = [["reda", "reda"],["aurelien", "aurelien"]]
     
@@ -88,6 +88,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                         print(attributSpeaker["EmailSpeaker"])
                                         print(attributSpeaker["NationaliteSpeaker"])
                                         print(attributSpeaker["DescSpeaker"])
+                                        let oneSpeakerTable: [String] = [(attributSpeaker["NomSpeaker"]).toString(),(attributSpeaker["PrenomSpeaker"]).toString(),(attributSpeaker["Profession"]).toString(),(attributSpeaker["EmailSpeaker"]).toString(),(attributSpeaker["NationaliteSpeaker"]).toString(),(attributSpeaker["DescSpeaker"]).toString()]
+                                        
+                                        self.speakerSet.append(oneSpeakerTable)
+                                        print(self.speakerSet)
+                                        Fisu.createSpeakers(self.speakerSet)
                                     }
                                 }
                                 //print("StrB: " + b.toString())
@@ -106,8 +111,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         User.createUsers(usersSet[0])
         
         Fisu.createRestaurants(restaurantSet)
-        
-        Fisu.createSpeakers(speakerSet)
         
         Fisu.createPlaces(placeSet)
     

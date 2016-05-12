@@ -209,6 +209,7 @@
 		5DE356791C614A1F00146D0A /* FISUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FISUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE3567D1C614A1F00146D0A /* FISUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FISUUITests.swift; sourceTree = "<group>"; };
 		5DE3567F1C614A1F00146D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97F044E09F33EA73559EDAE7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				5D904EF31CD77576002D7875 /* Pods */,
+				97F044E09F33EA73559EDAE7 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -799,6 +801,7 @@
 		};
 		5DE356831C614A1F00146D0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -818,6 +821,7 @@
 		};
 		5DE356841C614A1F00146D0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
