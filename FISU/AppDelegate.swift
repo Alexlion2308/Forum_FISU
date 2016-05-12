@@ -68,22 +68,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Result: ")
                 print(response.result)   // result of response serialization*/
                 
-                if let obj = response.result.value { // Je récupere le json de la page 
-                    let json = JSON(obj)
-                    json.toString()
-                    for (i, v) in json {
-                        // i is NSNumber, v is another JSON object
-                        //print(i)
-                        //print(v)
-                        for (a, b) in v {
+                if let obj = response.result.value { // Je récupere le json de la page
+                    let jsonEvent = JSON(obj)
+                    jsonEvent.toString()
+                    for (cle, event) in jsonEvent { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+                        //print(cle)
+                        //print(event)
+                        for (cleEvent, attributEvent) in event {
                             //print("========")
-                            let json = JSON(a)
+                            let json = JSON(cleEvent)
                             let jsonStr = json.toString()
                             if(jsonStr == "SpeakersList"){
-                                if(b.toString() != "[]"){
-                                    for (c, d) in b {
-                                        print(c)
-                                        print(d["Profession"])
+                                if(attributEvent.toString() != "[]"){ // On regarde s'il y a des speakers
+                                    for (cleSpeaker, attributSpeaker) in attributEvent { // La on récupere les speakers
+                                        print(attributSpeaker)
+                                        print(attributSpeaker["NomSpeaker"])
+                                        print(attributSpeaker["PrenomSpeaker"])
+                                        print(attributSpeaker["Profession"])
+                                        print(attributSpeaker["EmailSpeaker"])
+                                        print(attributSpeaker["NationaliteSpeaker"])
+                                        print(attributSpeaker["DescSpeaker"])
                                     }
                                 }
                                 //print("StrB: " + b.toString())
