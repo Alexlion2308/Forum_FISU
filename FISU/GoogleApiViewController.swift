@@ -13,6 +13,11 @@ class GoogleApiViewController: UIViewController {
     @IBAction func mapButton(sender: AnyObject) {
         onLaunchClicked(sender)
     }
+    
+    @IBOutlet weak var nameText: UITextView!
+    
+    @IBOutlet weak var newText: UITextView!
+    
     // Present the Autocompleteta view controller when the button is pressed.
     @IBAction func onLaunchClicked(sender: AnyObject) {
         let acController = GMSAutocompleteViewController()
@@ -27,7 +32,9 @@ extension GoogleApiViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(viewController: GMSAutocompleteViewController!, didAutocompleteWithPlace place: GMSPlace!) {
         print("Place name: \(place.name)")
+        nameText.text = place.name
         print("Place address: \(place.formattedAddress)")
+        newText.text = place.formattedAddress
         print("Place attributions: \(place.attributions)")
         self.dismissViewControllerAnimated(true, completion: nil)
     }

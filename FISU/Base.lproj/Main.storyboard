@@ -926,7 +926,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-yF-e3Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-yF-e3Q">
                                 <rect key="frame" x="184" y="263" width="233" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="cgc-zR-1CH"/>
@@ -936,15 +936,37 @@
                                     <action selector="mapButton:" destination="I1X-1c-MlL" eventType="touchUpInside" id="RaZ-mR-ETj"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KDN-ac-GAK">
+                                <rect key="frame" x="88" y="393" width="425" height="101"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oFU-Ze-D7X">
+                                <rect key="frame" x="184" y="344" width="233" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nid-yF-e3Q" firstAttribute="centerY" secondItem="qJ0-mQ-cAr" secondAttribute="centerY" id="7Nj-rR-zkS"/>
+                            <constraint firstItem="KDN-ac-GAK" firstAttribute="centerX" secondItem="Nid-yF-e3Q" secondAttribute="centerX" id="Jxv-kA-mFl"/>
+                            <constraint firstItem="KDN-ac-GAK" firstAttribute="leading" secondItem="qJ0-mQ-cAr" secondAttribute="leadingMargin" constant="68" id="Piz-Yw-jSa"/>
+                            <constraint firstItem="azA-gA-FaI" firstAttribute="top" secondItem="KDN-ac-GAK" secondAttribute="bottom" constant="57" id="Uhj-12-173"/>
                             <constraint firstItem="Nid-yF-e3Q" firstAttribute="centerX" secondItem="qJ0-mQ-cAr" secondAttribute="centerX" id="V5q-j9-h6b"/>
-                            <constraint firstItem="Nid-yF-e3Q" firstAttribute="top" secondItem="aXJ-WN-8Is" secondAttribute="bottom" constant="243" id="axs-c3-qkN"/>
+                            <constraint firstItem="Nid-yF-e3Q" firstAttribute="top" secondItem="aXJ-WN-8Is" secondAttribute="bottom" constant="199" id="axs-c3-qkN"/>
+                            <constraint firstItem="KDN-ac-GAK" firstAttribute="top" secondItem="Nid-yF-e3Q" secondAttribute="bottom" constant="57" id="vj4-g3-h30"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kas-4s-C0u"/>
+                    <connections>
+                        <outlet property="nameText" destination="oFU-Ze-D7X" id="oPh-3j-ORS"/>
+                        <outlet property="newText" destination="KDN-ac-GAK" id="CJv-cg-4RQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gp5-OI-vmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -68,11 +68,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Result: ")
                 print(response.result)   // result of response serialization*/
                 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                if let obj = response.result.value { // Je récupere le json de la page 
+                    let json = JSON(obj)
+                    json.toString()
+                    for (i, v) in json {
+                        // i is NSNumber, v is another JSON object
+                        //print(i)
+                        //print(v)
+                        for (a, b) in v {
+                            //print("========")
+                            let json = JSON(a)
+                            let jsonStr = json.toString()
+                            if(jsonStr == "SpeakersList"){
+                                if(b.toString() != "[]"){
+                                    for (c, d) in b {
+                                        print(c)
+                                        print(d["Profession"])
+                                    }
+                                }
+                                //print("StrB: " + b.toString())
+                            }
+                            //print(a)
+                            //print(b)
+                        }
+                    }
                 }
         }
-        
+
         //////////////////////// APPLICATION INIT //////////////////////////
         
         //Call de toutes les fonctions de création du coreData
