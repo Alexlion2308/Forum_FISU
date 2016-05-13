@@ -73,6 +73,9 @@ class GoogleApiViewController: UIViewController {
                                 self.imagePlace.image = placeImage
                             })
                         }
+                        else{
+                            self.imagePlace.image = from
+                        }
                     })
                     self.horairePlace.text = place.formattedAddress
                     self.rating.text = "Rating: " + String(place.rating) + "/5"

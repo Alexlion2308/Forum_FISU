@@ -38,6 +38,8 @@ public class JSON {
     /// pass the JSON object for another instance
     public init(_ json:JSON){ self._value = json._value }
 }
+
+
 /// class properties
 extension JSON {
     public typealias NSNull = Foundation.NSNull

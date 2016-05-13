@@ -85,6 +85,8 @@
 		5D343F091C7730AA005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
 		5D4EEE711CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */; };
 		5D4EEE721CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */; };
+		5D50765D1CE6241E00E70FE2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */; };
+		5D50765E1CE6241E00E70FE2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */; };
 		5D747F511CB79F290015305E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747F501CB79F290015305E /* PageViewController.swift */; };
 		5D747F521CB79F290015305E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747F501CB79F290015305E /* PageViewController.swift */; };
 		5D747F541CB79FEA0015305E /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */; };
@@ -184,6 +186,7 @@
 		5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewController.swift; path = FISU/OwnCalendarTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileViewController.swift; path = FISU/SpeakerProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5D747F501CB79F290015305E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = FISU/PageViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkthroughViewController.swift; path = FISU/WalkthroughViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D7AE2271CB7CB4700E26E2E /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Place+CoreDataProperties.swift"; path = "FISU/Place+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -318,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				5D7BC8521CE4AEC3008EB224 /* Json.swift */,
+				5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */,
 				5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */,
 				5DE356591C614A1F00146D0A /* FISU */,
 				5DE356711C614A1F00146D0A /* FISUTests */,
@@ -594,6 +598,7 @@
 				5D7BC8531CE4AEC3008EB224 /* Json.swift in Sources */,
 				5D7AE2291CB7CB4700E26E2E /* Place+CoreDataProperties.swift in Sources */,
 				06698D0E1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
+				5D50765D1CE6241E00E70FE2 /* ImageLoader.swift in Sources */,
 				5D747F511CB79F290015305E /* PageViewController.swift in Sources */,
 				060C23A11CA42C0200388BD6 /* Day.swift in Sources */,
 				060C23951CA42C0200388BD6 /* Speaker.swift in Sources */,
@@ -641,6 +646,7 @@
 				5D7BC8541CE4AEC3008EB224 /* Json.swift in Sources */,
 				5D83D3861C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */,
 				5D747F521CB79F290015305E /* PageViewController.swift in Sources */,
+				5D50765E1CE6241E00E70FE2 /* ImageLoader.swift in Sources */,
 				0616237F1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */,
 				5D8304351CA12BF000EAFB89 /* FISU.xcdatamodeld in Sources */,
 				5D9519511C7D9D9F00765B9D /* (null) in Sources */,
