@@ -74,7 +74,7 @@ class GoogleApiViewController: UIViewController {
                             })
                         }
                         else{
-                            self.imagePlace.image = from
+                           // self.imagePlace.image = from
                         }
                     })
                     self.horairePlace.text = place.formattedAddress

@@ -40,7 +40,7 @@ class ImageLoader {
                 }
 
                 if data != nil {
-                    let image = UIImage(data: (data))!
+                    let image = UIImage(data: (data)!)!
                   //  self.cache.setObject(data, forKey: urlString)
                     dispatch_async(dispatch_get_main_queue(), {() in
                         completionHandler(image: image, url: urlString)
