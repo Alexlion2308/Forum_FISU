@@ -71,10 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let obj = response.result.value { // Je récupere le json de la page
                     let jsonEvent = JSON(obj)
                     jsonEvent.toString()
+                    //print(jsonEvent)
                     for (cle, event) in jsonEvent { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                         //print(cle)
                         //print(event)
                         for (cleEvent, attributEvent) in event {
+                            //print(attributEvent["DateEvent"])
                             //print("========")
                             let json = JSON(cleEvent)
                             let jsonStr = json.toString()
@@ -82,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 if(attributEvent.toString() != "[]"){ // On regarde s'il y a des speakers
                                     for (cleSpeaker, attributSpeaker) in attributEvent { // La on récupere les speakers
                                         print(attributSpeaker)
-                                        print(attributSpeaker["NomSpeaker"])
+                                        print(attributSpeaker["NomSpeaker"].toString())
                                         print(attributSpeaker["PrenomSpeaker"])
                                         print(attributSpeaker["Profession"])
                                         print(attributSpeaker["EmailSpeaker"])
