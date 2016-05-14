@@ -7,84 +7,99 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class SpeakersCollectionViewController: UICollectionViewController, UISearchBarDelegate {
     
     
-    var selctedSpeaker = Speaker()
-    var dataSource: [Speaker]?
+    
     let reuseIdentifier: String = "speakersCollectionCell"
-    var dataSourceForSearchResult:[String]?
-    var searchBarActive:Bool = false
+    var jsonSpeaker: JSON?
+    var numberOfSpeakers: Int = 0
+    
+    func downloadAndUpdate() {
+        Alamofire.request(.GET, "https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+            .responseJSON { response in
+                if let obj = response.result.value { // Je récupere le json de la page
+                    self.jsonSpeaker = JSON(obj)
+                    guard let laCollection = self.collectionView else{
+                        print("guard laCollection")
+                        return
+                    }
+                    guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+                        print("guard jsonSpeakerToLoop")
+                        return
+                    }
+                    laCollection.reloadData()
+                    var currentNumber: NSNumber = 0
+                    for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+                        currentNumber = key as! NSNumber
+                    }
+                    self.numberOfSpeakers = Int(currentNumber) + 1
+                }
+        }
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        self.downloadAndUpdate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataSource = Speaker.getAllSpeakers()
-       
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-
     
-
+    
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
+    
+    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var numberOfSpeakers: Int = 0
-        if self.searchBarActive {
-            guard let resultSpeakers = self.dataSourceForSearchResult else{
-                return 0
-            }
-            numberOfSpeakers = resultSpeakers.count;
-        }
-        else{
-            guard let speakers = self.dataSource else{
-                return 0
-            }
-            numberOfSpeakers = speakers.count
-        }
         return numberOfSpeakers
     }
-
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SpeakersCollectionViewCell
-       
         guard let theNameLabel = cell.nameLabel else{
+            print("guard theNameLabel")
             return cell
         }
         guard let theProfilePicture = cell.profilePicture else{
+            print("guard theProfilePicture")
             return cell
         }
-        guard let speakers = self.dataSource else{
+        guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+            print("guard jsonSpeakerToLoop")
             return cell
         }
-        if (self.searchBarActive) {
-            guard let resultSpeakers = self.dataSourceForSearchResult else{
-                return cell
+        for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            let currentKey = key as! NSNumber
+            if(currentKey == indexPath.row){
+                theNameLabel.text = speaker["surnameSpeaker"].toString()
+                guard let profileImageUrl = NSURL(string:speaker["imageSpeaker"].toString()) else{
+                    return cell
+                }
+                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+                    return cell
+                }
+                //print(speaker["descriptionSpeaker"].toString())
+                let myImage =  UIImage(data: profileImageData)
+                theProfilePicture.image = myImage
             }
-            theNameLabel.text = resultSpeakers[indexPath.row]
-        }else{
-            theNameLabel.text = speakers[indexPath.row].prenom
-            guard let profilePictureData = speakers[indexPath.row].profilePicture else{
-                return cell
-            }
-            guard let profilePicture = UIImage(data: profilePictureData) else{
-                return cell
-            }
-            theProfilePicture.image = profilePicture
         }
+        
         
         return cell;
     }
-
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "ProfileSpeakerDetailSegue") {
@@ -95,11 +110,9 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
                 return
             }
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
-            guard let speakers = self.dataSource else{
-                return
-            }
-            detailVC.speakerSelected = speakers[SpeakerIndex.row]
+            detailVC.speakerSelected = SpeakerIndex.row + 1
+            detailVC.jsonSpeaker = self.jsonSpeaker
         }
     }
-
+    
 }

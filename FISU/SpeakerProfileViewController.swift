@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class SpeakerProfileViewController: UIViewController {
     
-    
-    
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    var speakerSelected : Speaker?
+    var speakerSelected : NSNumber?
+    var jsonSpeaker: JSON?
     
     @IBOutlet weak var ProfilImageSpeaker: UIImageView!
     
@@ -27,50 +25,47 @@ class SpeakerProfileViewController: UIViewController {
     @IBOutlet weak var SurnameLabelSpeaker: UILabel!
     
     @IBOutlet weak var NameLabelSpeaker: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let speaker = self.speakerSelected else{
-            return
-        }
-        guard let speakerNom = speaker.nom else{
-            return
-        }
-        guard let speakerNationalite = speaker.nationalite else{
-            return
-        }
-        guard let speakerProfession = speaker.profession else{
-            return
-        }
-        guard let speakerDescription = speaker.desc else{
-            return
-        }
-        guard let speakerPrenom = speaker.prenom else{
-            return
-        }
-        guard let photo = speaker.profilePicture else{
-            return
-        }
-        guard let imageProfile = UIImage(data: photo) else{
-            return
-        }
-        
-        self.NameLabelSpeaker.text = speakerNom
-        self.SurnameLabelSpeaker.text = speakerPrenom
-        self.ProvenanceLabelSpeaker.text = speakerNationalite
-        self.ProfessionLabelSpeaker.text = speakerProfession
-        self.DescriptionLabelSpeaker.text = speakerDescription
-        self.ProfilImageSpeaker.image = imageProfile
-        
-        // Do any additional setup after loading the view.
-    }
 
+        guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+            print("guard jsonSpeakerToLoop")
+            return
+        }
+        for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            guard let selection = self.speakerSelected else{
+                return
+            }
+            if(speaker["numeroSpeaker"].toString() == String(selection)){
+                guard let profileImageUrl = NSURL(string:speaker["imageSpeaker"].toString()) else{
+                    return
+                }
+                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+                    return
+                }
+                //print(speaker["descriptionSpeaker"].toString())
+                let myImage =  UIImage(data: profileImageData)
+                
+                self.NameLabelSpeaker.text = speaker["nameSpeaker"].toString()
+                self.SurnameLabelSpeaker.text = speaker["surnameSpeaker"].toString()
+                self.ProvenanceLabelSpeaker.text = speaker["nationaliteSpeaker"].toString()
+                self.ProfessionLabelSpeaker.text = speaker["professionSpeaker"].toString()
+                self.DescriptionLabelSpeaker.text = speaker["descriptionSpeaker"].toString()
+                self.ProfilImageSpeaker.image = myImage
+                
+                
+                
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
-
+    
+    
+    
 }

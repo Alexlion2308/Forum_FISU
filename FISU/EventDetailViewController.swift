@@ -180,7 +180,7 @@ class EventDetailViewController: UIViewController {
         }
         if (segue.identifier == "ProfileSpeakerDetailSegue") {
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
-            detailVC.speakerSelected = aSpeaker
+            detailVC.speakerSelected = 2
             //print("SPEAKER //////////// " + self.SpeakerName)
         }
         if (segue.identifier == "PlaceDetailSegue") {
