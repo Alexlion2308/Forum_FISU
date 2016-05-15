@@ -46,13 +46,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var speakerCount = [Speaker]()
     var placeCount = [Place]()
     var eventCount = [Event]()
-    
+    var notificationSettings: UIUserNotificationSettings?
     
     
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        let notificationTypes : UIUserNotificationType = [.Alert, .Badge, .Sound]
+        notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        guard let settingNotif = self.notificationSettings else{
+            return false
+        }
+        UIApplication.sharedApplication().registerUserNotificationSettings(settingNotif)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
         
         GMSServices.provideAPIKey("AIzaSyAEtmY3vdAP89Si76FsqSjfb7VjLDYu3bQ")
         //////////////////////// Test Alamofire //////////////////////////
@@ -127,6 +134,96 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+
+        let characterSet: NSCharacterSet = NSCharacterSet(charactersInString: "<>")
+        let tokenString: String = (deviceToken.description as NSString).stringByTrimmingCharactersInSet(characterSet).stringByReplacingOccurrencesOfString(" ", withString: "") as String
+        
+        print("Device Token: \(tokenString)")
+        
+        guard let settingNotif = self.notificationSettings else{
+            return
+        }
+        
+        let pushBadge = settingNotif.types.contains(.Badge) ? "enabled" : "disabled"
+        let pushAlert = settingNotif.types.contains(.Alert) ? "enabled" : "disabled"
+        let pushSound = settingNotif.types.contains(.Sound) ? "enabled" : "disabled"
+        
+        
+        let myDevice = UIDevice();
+        let deviceName = myDevice.name
+        let deviceModel = myDevice.model
+        let systemVersion = myDevice.systemVersion
+        guard let identifier = myDevice.identifierForVendor else{
+            print("guard identifier")
+            return
+        }
+        let deviceId = identifier.UUIDString
+        
+        
+        var appName: String?
+        if let appDisplayName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleDisplayName"){
+            appName = appDisplayName as? String
+        } else{
+            appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as? String
+        }
+        
+        let appVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String
+        
+        
+        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/apns/apns.php") else{
+            print("guard my url")
+            return
+        }
+        let request  = NSMutableURLRequest(URL: myUrl)
+        request.HTTPMethod = "POST"
+        
+        let postString = "task=register&appname=\(appName)&appversion=\(appVersion)&deviceuid=\(deviceId)&devicetoken=\(tokenString)&devicename=\(deviceName)&devicemodel=\(deviceModel)&deviceversion=\(systemVersion)&pushbadge=\(pushBadge)&pushalert=\(pushAlert)&pushsound=\(pushSound)"
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error in
+            
+            if error != nil{
+                print("error=\(error)")
+                return
+            }
+            guard let dataReceived = data else{
+                print("guard datareceived")
+                return
+            }
+            let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
+            print("response http request: \(responseString)")
+        }
+        task.resume()
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print(error.localizedDescription)
+        print(error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        print("Message detail: \(userInfo)")
+        if let aps = userInfo["aps"] as? NSDictionary{
+            let alertMessage = aps["alert"] as? String
+
+            let myAlert = UIAlertController(title: "Changement dans le programme", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default , handler: nil)
+            myAlert.addAction(okAction)
+            guard let fenetre = self.window else{
+                return
+            }
+            guard let racine = fenetre.rootViewController else{
+                return
+            }
+            racine.presentViewController(myAlert, animated: true, completion: nil)
+        }
+    }
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -190,6 +287,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return coordinator
     }()
+
     
     lazy var managedObjectContext: NSManagedObjectContext = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.

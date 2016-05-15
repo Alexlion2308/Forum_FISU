@@ -1352,8 +1352,8 @@
         <image name="speakers" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LQc-9W-Nk7"/>
         <segue reference="OaA-AO-sXa"/>
-        <segue reference="p21-vs-0AV"/>
+        <segue reference="hPS-nJ-dDg"/>
+        <segue reference="LQc-9W-Nk7"/>
     </inferredMetricsTieBreakers>
 </document>
