@@ -122,64 +122,67 @@ class User: NSManagedObject {
     }
     
     
-    class func AddEventToUser(username: String, newEvent: Event) -> Bool?{
+    class func AddEventToUser(username: String) -> Bool?{
         
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        var currentSet: Set<Event> = Set<Event>()
-        currentSet.insert(newEvent)
-        guard let userConnected = getUserByUsername(username) else{
-            print("No username to get (AddEventToUser)")
-            return nil
+        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/InsererLien.php") else{
+            print("guard my url")
+            return false
         }
+        let request  = NSMutableURLRequest(URL: myUrl)
+        request.HTTPMethod = "POST"
         
-        guard let newSet = getEventsFromUser(username) else{
-            print("No events to get (AddEventToUser)")
-            return nil
+        let postString = "?mdp=fisufinal&speakers=tamere&place=tamere&nomEvent=tamere&categorie=tamere&descriptionEvent=tamere&image=tamere&heureEvent=tamere&dateEvent=tamere&notifier=tamere"
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error in
+            
+            if error != nil{
+                print("error=\(error)")
+                return
+            }
+            guard let dataReceived = data else{
+                print("guard datareceived")
+                return
+            }
+            let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
+            print("response http request: \(responseString)")
         }
-        var mutableNewSet = newSet
-        if(newSet.count == 0){
-            userConnected.events = NSSet(set: currentSet)
-        }
-        else{
-            mutableNewSet.insert(newEvent)
-            userConnected.events = NSSet(set: mutableNewSet)
-        }
-        do{
-            try managedObjectContext.save()
-            print("Saved new own event")
-        }
-        catch{
-            fatalError("Error while saving new event for user yeaaaaaah: \(error)")
-        }
+        task.resume()
         
         return true
     }
     
     
-    class func DeleteEventFromUser(username: String, toDeleteEvent: Event) -> Bool?{
+    class func DeleteEventFromUser(username: String) -> Bool?{
         
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        var currentSet: Set<Event> = Set<Event>()
-        currentSet.remove(toDeleteEvent)
-        guard let userConnected = getUserByUsername(username) else{
-            print("No username to get (DeleteEventFromUser)")
-            return nil
+        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/InsererLien.php") else{
+            print("guard my url")
+            return false
         }
+        let request  = NSMutableURLRequest(URL: myUrl)
+        request.HTTPMethod = "POST"
         
-        guard let newSet = getEventsFromUser(username) else{
-            print("No events to get (DeleteEventFromUser)")
-            return nil
+        let postString = "?mdp=fisufinal&speakers=tamere&place=tamere&nomEvent=tamere&categorie=tamere&descriptionEvent=tamere&image=tamere&heureEvent=tamere&dateEvent=tamere&notifier=tamere"
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error in
+            
+            if error != nil{
+                print("error=\(error)")
+                return
+            }
+            guard let dataReceived = data else{
+                print("guard datareceived")
+                return
+            }
+            let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
+            print("response http request: \(responseString)")
         }
-        var mutableNewSet = newSet
-        mutableNewSet.remove(toDeleteEvent)
-        userConnected.events = NSSet(set: mutableNewSet)
-        do{
-            try managedObjectContext.save()
-            print("Saved deletion of own event")
-        }
-        catch{
-            fatalError("Error while deleting event from user yeaaaaaah: \(error)")
-        }
+        task.resume()
         
         return true
     }

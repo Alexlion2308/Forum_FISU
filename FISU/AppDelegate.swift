@@ -137,6 +137,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
 
+        
+        
+        User.DeleteEventFromUser("test")
         let characterSet: NSCharacterSet = NSCharacterSet(charactersInString: "<>")
         let tokenString: String = (deviceToken.description as NSString).stringByTrimmingCharactersInSet(characterSet).stringByReplacingOccurrencesOfString(" ", withString: "") as String
         
