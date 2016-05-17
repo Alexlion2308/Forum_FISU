@@ -58,9 +58,6 @@
                                     <constraint firstAttribute="width" constant="212" id="hhM-b4-nW5"/>
                                 </constraints>
                                 <state key="normal" title="Continue without connection"/>
-                                <connections>
-                                    <segue destination="lks-JH-Si6" kind="show" id="hPS-nJ-dDg"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FISU FORUM 2" translatesAutoresizingMaskIntoConstraints="NO" id="yii-YH-UD8">
                                 <rect key="frame" x="259" y="95" width="82" height="128"/>
@@ -107,21 +104,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YG7-po-tGK">
-                                <rect key="frame" x="20" y="146" width="449" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="449" id="u1U-Ro-dJo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ken-yo-yde">
-                                <rect key="frame" x="0.0" y="175" width="600" height="425"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="425"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdEventCell" rowHeight="69" id="yd8-SS-tji" customClass="EventTableViewCell" customModule="FISU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="69"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yd8-SS-tji" id="hfd-nd-ToM">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="68"/>
@@ -176,22 +164,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ken-yo-yde" firstAttribute="leading" secondItem="5em-h4-Wsh" secondAttribute="leading" id="7cL-an-q9Y"/>
-                            <constraint firstAttribute="trailing" secondItem="Ken-yo-yde" secondAttribute="trailing" id="F3f-Zx-Eby"/>
-                            <constraint firstItem="YG7-po-tGK" firstAttribute="top" secondItem="Vap-Kp-ZkY" secondAttribute="bottom" constant="82" id="dGh-B9-oLz"/>
-                            <constraint firstItem="Ken-yo-yde" firstAttribute="top" secondItem="YG7-po-tGK" secondAttribute="bottom" constant="8" symbolic="YES" id="i8D-A1-DDb"/>
-                            <constraint firstItem="YG7-po-tGK" firstAttribute="leading" secondItem="5em-h4-Wsh" secondAttribute="leadingMargin" id="meA-5G-hpm"/>
-                            <constraint firstAttribute="bottom" secondItem="Ken-yo-yde" secondAttribute="bottom" id="urd-Wl-LSb"/>
+                            <constraint firstItem="AAe-7Z-Zad" firstAttribute="top" secondItem="Ken-yo-yde" secondAttribute="bottom" constant="62" id="7Nf-Fw-6BG"/>
+                            <constraint firstItem="Ken-yo-yde" firstAttribute="top" secondItem="Vap-Kp-ZkY" secondAttribute="bottom" id="Pq4-oU-B3O"/>
+                            <constraint firstAttribute="trailing" secondItem="Ken-yo-yde" secondAttribute="trailing" id="u3n-1l-EsE"/>
+                            <constraint firstItem="Ken-yo-yde" firstAttribute="leading" secondItem="5em-h4-Wsh" secondAttribute="leading" id="yEQ-Q4-DHO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rzm-1A-j1s"/>
                     <connections>
                         <outlet property="EventTableView" destination="Ken-yo-yde" id="Zge-HS-nHF"/>
-                        <outlet property="LabelDaySelected" destination="YG7-po-tGK" id="9mo-Kh-DWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4O-ng-MAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692" y="-805"/>
+            <point key="canvasLocation" x="2476" y="-805"/>
         </scene>
         <!--Restaurant View Controller-->
         <scene sceneID="iFQ-rs-OTN">
@@ -1251,7 +1237,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="lks-JH-Si6" kind="relationship" relationship="rootViewController" id="p21-vs-0AV"/>
+                        <segue destination="FI6-we-q4X" kind="relationship" relationship="rootViewController" id="Swr-1L-xi9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAp-sb-fE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1324,14 +1310,12 @@
         <image name="fork" width="24" height="24"/>
         <image name="image10" width="480" height="104"/>
         <image name="image3" width="480" height="104"/>
-        <image name="logo_fisu" width="90" height="105"/>
         <image name="placeIcon" width="19" height="24"/>
         <image name="profilePicture1" width="123" height="161"/>
         <image name="speakers" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NhJ-in-rEF"/>
-        <segue reference="hPS-nJ-dDg"/>
         <segue reference="LQc-9W-Nk7"/>
     </inferredMetricsTieBreakers>
 </document>

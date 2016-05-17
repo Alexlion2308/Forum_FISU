@@ -15,7 +15,7 @@ class EventDetailViewController: UIViewController {
     var delete : Bool?
     var usernameIfDelete : String?
     var jsonEvents: JSON?
-
+    var jsonPlacesToPass: JSON?
     
     override func viewWillAppear(animated: Bool) {
         if(self.delete == true){
@@ -139,6 +139,7 @@ class EventDetailViewController: UIViewController {
                 self.LabelEventCategory.text = events["Categorie"].toString()
                 self.TextEventDesc.text = events["DescEvent"].toString()
                 self.EventPlace.setTitle(events["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
+                self.jsonPlacesToPass = events["PlaceList"]
                 self.EventDetailImage.image = myImage
                 
             }
@@ -168,7 +169,8 @@ class EventDetailViewController: UIViewController {
         }
         if (segue.identifier == "PlaceDetailSegue") {
             let detailVC = segue.destinationViewController as! PlaceViewController
-            //detailVC.placeSelected = aPlace
+            //detailVC.placeSelected = jsonPlacesToPass["NumPlace"]
+            detailVC.jsonPlaces = jsonPlacesToPass
             //print("SPEAKER //////////// " + self.SpeakerName)
         }
     }
