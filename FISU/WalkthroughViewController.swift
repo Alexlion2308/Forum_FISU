@@ -59,8 +59,6 @@ class WalkthroughViewController: UIViewController {
         // also, don't forget to update userdefaults
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setBool(true, forKey: "DisplayedWalkthrough")
-        
-        // but wait, how did you know that we displayed the PageVC via a modal segue? We didn't! Let's display the PageVC before doing anything else
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -16,41 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     var window: UIWindow?
-    
-    //Initialisation de l'ensemble de données destinées à être stockées dans le coreData
-    
-    var eventsDay1 : [[String]] = [["09:00-12:30","Opening ceremony", "Welcoming ceremony, presentation of the activities schedule and of the speakers", "None", "image1","Timberlake","Justin","Corum"], ["12:30-13:45","Lunch", "Eating session", "La catégorie des branlos", "image2","None","None","Maison Relations Internationales (MRI)"], ["14:15-15:15","Introduction to the week's aims/methodology", "Introduction to the week's aims/methodology", "Coaching", "image3","Timberlake","Justin","Institut de Botanique"]]
-    
-    var eventsDay2 : [[String]] = [["09:00-10:00","Plenary session: Values/Ethics/Integrity", "Plenary session: Values/Ethics/Integrity", "Social", "image1","Timberlake","Justin","Institut de Botanique"], ["10:15-11:15","Workshops: Values/Ethics/Integrity", "Workshops:  Values/Ethics/Integrity", "Social", "image2","Timberlake","Justin","Saint Charles"], ["11:15-11:30","Coffee break","Break","None","image3","Timberlake","Justin","Saint Charles"]]
-    
-    var eventsDay3 : [[String]] = [["09:00-10:00","Plenary session: Leadership", "Plenary session: Leadership", "Coaching", "image1","Timberlake","Justin","Institut de Botanique"], ["10:15-11:15","Workshops: Leadership", "Workshops:  Leadership", "Social", "image2","Timberlake","Justin","Saint Charles"], ["11:15-11:30","Coffee break", "Break", "None", "image3", "None","None","Saint Charles"]]
-    
-    var eventsDay4 : [[String]] = [["09:00-10:00","EuroMoov Center Visit", "EuroMoov Center Visit", "Expedition", "image1","Timberlake","Justin","UFR STAPS"], ["10:00-10:45","Sport Presentation : Handball", "Move your body!", "Sport", "image2","None","None","UFR STAPS"], ["11:00-12:30","Handball practice", "Sport!!!", "Sport", "image3", "None","None","Veyrassi"]]
-    
-    var eventsDay5 : [[String]] = [["09:00-10:00","Plenary session", "Plenary session: Gender equality/Equal opportunities or access", "Coaching", "image1","Timberlake","Justin","Institut de Botanique"], ["10:00-10:30","Coffe break", "Break", "None", "image2","None","None","Saint Charles"], ["10:30-11:30","Workshop", "Workshop: Gender equality/Equal opportunities or access", "Coaching", "image3", "Timberlake","Justin","Saint Charles"]]
-    
-    var eventsDay6 : [[String]] = [["09:00-11:00","Project presentation", "Presentation", "None", "image1","Timberlake","Justin","Institut de Botanique"], ["11:00-11:30","Deliberation", "Jury deliberation and outcome announcement", "None", "image2","Timberlake","Justin","Institut de Botanique"], ["11:30-12:30","Forum conclusions", "Forum conclusions", "None", "image3", "Timberlake","Justin","Institut de Botanique"]]
-    
-    
-    var daySet : [String] = ["DAY 1: Monday, July 4", "DAY 2: Tuesday, July 5", "DAY 3: Wednesday, July 6", "DAY 4: Thursday, July 7", "DAY 5: Friday, July 8", "DAY 6: Saturday, July 9"]
-    
-    var placeSet : [[String]] = [["Corum","1","Boulevard Charles Warnery","34000","Montpellier","43.61377","3.88225"], ["Institut de Botanique","163","Rue Auguste Broussonnet","34090","Montpellier","43.61606","3.87161"], ["Maison Relations Internationales (MRI)","14","Descente en Barrat","34000","Montpellier","43.61305","3.87831"], ["Saint Charles","1500","Route de Mende","34100","Montpellier","43.63210","3.86836"], ["UFR STAPS","700","Avenue du Pic Saint-Loup","34090", "Montpellier","43.64108","3.85117"], ["Veyrassi","700","Avenue du Pic Saint-Loup","34090", "Montpellier","43.64108","3.85117"]]
-    
-    var speakerSet : [[String]] = [["None","None","None","None","None","None"],["Justin", "Timberlake", "Singer", "Belge", "This willfull man has beady chestnut eyes.", "profilePicture2"], ["Spparow", "Jack", "Acteur", "Belge", "Une belle description de la personne concernée", "profilePicture2"], ["Nous", "Prenom", "Pompiste", "Belge", "description", "profilePicture3"], ["Lacha", "Bernard", "Pompiste", "Belge", "description", "profilePicture4"], ["Lui", "Prenom", "Pompiste", "Belge", "description", "profilePicture5"] ,["Elle", "Prenom", "Pompiste", "Belge", "description", "profilePicture4"], ["Belge", "Belge", "Belge", "Belge", "Belge", "profilePicture3"]]
-    
-    var usersSet : [[String]] = [["reda", "reda"],["aurelien", "aurelien"]]
-    
-    var restaurantSet : [[String]] = [["La B des arts","20","Avenue du Dr Pezet","34090","Montpellier","0467040438","Cuisine Française","43.62878","3.86948"],["Burger'N'Co","1","Rue du Pila St Gély","34000","Montpellier","0411755482","Burger","43.61457","3.88130"]]
-    
-    var speakerCount = [Speaker]()
-    var placeCount = [Place]()
-    var eventCount = [Event]()
     var notificationSettings: UIUserNotificationSettings?
     
     
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         
         let notificationTypes : UIUserNotificationType = [.Alert, .Badge, .Sound]
         notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
@@ -111,15 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Call de toutes les fonctions de création du coreData
         
-        User.createUsers(usersSet[0])
-        
-        Fisu.createRestaurants(restaurantSet)
-        
-        Fisu.createSpeakers(speakerSet)
-        
-        Fisu.createPlaces(placeSet)
-        
-        Fisu.createDays(daySet,eventSet1: eventsDay1,eventSet2: eventsDay2,eventSet3: eventsDay3,eventSet4: eventsDay4,eventSet5: eventsDay5,eventSet6: eventsDay6)
+        //Fisu.createDays(daySet,eventSet1: eventsDay1,eventSet2: eventsDay2,eventSet3: eventsDay3,eventSet4: eventsDay4,eventSet5: eventsDay5,eventSet6: eventsDay6)
         
         
         /////////////////////// SAVE CONTEXT /////////////////////////
@@ -137,9 +101,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
 
-        
-        
-        User.DeleteEventFromUser("test")
         let characterSet: NSCharacterSet = NSCharacterSet(charactersInString: "<>")
         let tokenString: String = (deviceToken.description as NSString).stringByTrimmingCharactersInSet(characterSet).stringByReplacingOccurrencesOfString(" ", withString: "") as String
         
@@ -214,7 +175,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let aps = userInfo["aps"] as? NSDictionary{
             let alertMessage = aps["alert"] as? String
 
-            let myAlert = UIAlertController(title: "Changement dans le programme", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+            let myAlert = UIAlertController(title: "A change has occured in the events", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
             let okAction = UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default , handler: nil)
             myAlert.addAction(okAction)
             guard let fenetre = self.window else{

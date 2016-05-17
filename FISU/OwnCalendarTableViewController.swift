@@ -10,32 +10,44 @@ import UIKit
 import CoreData
 
 class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    var username = String()
+
     @IBOutlet weak var OwnCalendarEventTableView: UITableView!
     var ownCalendar = NSArray()
-    var events = NSSet()
+    var events: JSON?
+    var numberOfEvents: Int = 0
     
-    override func viewDidLoad() {
-
-        
-        super.viewDidLoad()
-        guard let eventsTemporaire = User.getEventsFromUser(username) else{
+    
+    
+    func getAndCountOwnEvents() {
+        let email = User.getActualUserMail()
+        self.events = User.getEventsFromUser(email)
+        guard let jsonEventsToLoop = self.events else{
+            print("guard jsonSpeakerToLoop")
             return
         }
-        events = eventsTemporaire
-        ownCalendar = Array(events)
+        var currentNumber: NSNumber = 0
+        for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            currentNumber = key as! NSNumber
+        }
+        self.numberOfEvents = Int(currentNumber) + 1
+    }
+    
+    
+    override func viewDidLoad() {
         
+        super.viewDidLoad()
+        self.getAndCountOwnEvents()
         self.OwnCalendarEventTableView.delegate = self
         self.OwnCalendarEventTableView.dataSource = self
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        if(!(User.userExists())){
+            var home = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+            //set properties of login
+            self.presentViewController(home, animated: true, completion: nil)
+        }
         self.OwnCalendarEventTableView.reloadData()
     }
     
@@ -52,7 +64,7 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print(events.count) //TRACE
-        return events.count
+        return numberOfEvents
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -68,21 +80,39 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         guard let theimage = cell.ImageOwnEvent else{
             return cell
         }
-        if(events.count != 0){
-            let event = ownCalendar[indexPath.row]
-            thenamelabel.text = event.valueForKey("nom") as? String
-            thedatelabel.text = event.valueForKey("hour") as? String
-            guard let photo = event.valueForKey("image") as? NSData else{
-                return cell
+        guard let jsonEventsToLoop = self.events else{
+            print("guard jsonSpeakerToLoop")
+            return cell
+        }
+        for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            print("Key: ")
+            print(key)
+            print("Event: ")
+            print(event)
+            let currentKey = key as! NSNumber
+            if(currentKey == indexPath.row){
+                thenamelabel.text = event["nameEvent"].toString()
+                thedatelabel.text = event["HourEvent"].toString()
+                guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
+                    return cell
+                }
+                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+                    return cell
+                }
+                //print(speaker["descriptionSpeaker"].toString())
+                let myImage =  UIImage(data: profileImageData)
+                theimage.image = myImage
             }
-            guard let imageEvent = UIImage(data: photo) else{
-                return cell
-            }
-            theimage.image = imageEvent
         }
         return cell
     }
     
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        if let controller = viewController as? EventDetailViewController {
+            self.getAndCountOwnEvents()
+            self.OwnCalendarEventTableView.reloadData()
+        }
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -91,7 +121,8 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
                 let detailVC = segue.destinationViewController as! EventDetailViewController
                 //detailVC.eventSelected = self.ownCalendar[indexPath.row] as? Event
                 detailVC.delete = true
-                detailVC.usernameIfDelete = username
+                detailVC.eventSelected = indexPath.row + 1
+                detailVC.jsonEvents = self.events
             }
         }
     }

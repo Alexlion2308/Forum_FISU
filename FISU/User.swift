@@ -13,14 +13,15 @@ import UIKit
 
 class User: NSManagedObject {
     
-    class func checkLogin(username: String, password: String) -> Bool{
+    class func checkLogin(name: String, surname: String, email: String) -> Bool{
         var user = [User]()
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
         let fetchRequestUser = NSFetchRequest(entityName: "User")
         
-        let predicatUsername = NSPredicate(format: "username=%@",username)
-        let predicatPassword = NSPredicate(format: "password=%@",password)
+        let predicatUsername = NSPredicate(format: "name=%@",name)
+        let predicatPassword = NSPredicate(format: "surname=%@",surname)
+        let predicatEmail = NSPredicate(format: "emailAdress=%@",email)
         let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [predicatUsername,predicatPassword])
 
         fetchRequestUser.predicate = compound
@@ -38,14 +39,12 @@ class User: NSManagedObject {
     }
     
     
-    class func userExists(username: String) -> Bool{
+    class func userExists() -> Bool{
         var user = [User]()
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
         let fetchRequestUser = NSFetchRequest(entityName: "User")
-        
-        let predicat = NSPredicate(format: "username=%@",username)
-        fetchRequestUser.predicate = predicat
+
         do{
             let fetchResultUser = try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
             user = fetchResultUser
@@ -59,12 +58,9 @@ class User: NSManagedObject {
         return true
     }
     
-    class func createUsers(userInfo: [String]) -> User?{
+    class func createUsers(name: String, surname: String, email: String) -> User?{
         
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        
-        let eventSetEmpty: Set<Event> = Set<Event>()
-        
         
         guard let entityUser = NSEntityDescription.entityForName("User", inManagedObjectContext: managedObjectContext) else{
             print("Entity not reached")
@@ -72,9 +68,9 @@ class User: NSManagedObject {
         }
         
         let userConnected: User = User(entity: entityUser, insertIntoManagedObjectContext: managedObjectContext)
-        userConnected.username = userInfo[0]
-        userConnected.password = userInfo[1]
-        userConnected.events = NSSet(set: eventSetEmpty)
+        userConnected.name = name
+        userConnected.surname = surname
+        userConnected.emailAdress =  email
         
         do{
             try managedObjectContext.save()
@@ -94,7 +90,7 @@ class User: NSManagedObject {
         
         let fetchRequestUser = NSFetchRequest(entityName: "User")
         
-        let predicat = NSPredicate(format: "username=%@",username)
+        let predicat = NSPredicate(format: "emailAdress=%@",username)
         fetchRequestUser.predicate = predicat
         do{
             let fetchResultUser = try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
@@ -106,23 +102,17 @@ class User: NSManagedObject {
         return user[0]
     }
     
-    class func getEventsFromUser(username: String) -> Set<Event>?{
-        
-        let currentSet: Set<Event> = Set<Event>()
-        guard let userConnected = getUserByUsername(username) else{
-            print("No userConnected to get (getEventsFromUser)")
-            return nil
-        }
-        guard let currentUserSet = userConnected.events else{
-            print("No ownEventSet to get (getEventsFromUser)")
-            return currentSet
-        }
-        let events = (currentUserSet as! Set<Event>)
+    class func getEventsFromUser(email: String) -> JSON?{
+        let url = "https://fisuwebfinal-madonna.rhcloud.com/ListeOwnEvent.php?mail="
+        let finalUrl = url + email
+        let events: JSON?
+        let jsonSpeaker = JSON.fromURL(finalUrl)
+        events = JSON(jsonSpeaker)
         return events
     }
     
     
-    class func AddEventToUser(username: String) -> Bool?{
+    class func AddEventToUser(emailUser: String, numEvent: String) -> Bool?{
         
         guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/InsererLien.php") else{
             print("guard my url")
@@ -131,13 +121,16 @@ class User: NSManagedObject {
         let request  = NSMutableURLRequest(URL: myUrl)
         request.HTTPMethod = "POST"
         
-        let postString = "?mdp=fisufinal&speakers=tamere&place=tamere&nomEvent=tamere&categorie=tamere&descriptionEvent=tamere&image=tamere&heureEvent=tamere&dateEvent=tamere&notifier=tamere"
+        let postString = "emailUser=\(emailUser)&numEvent=\(numEvent)"
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
             data, response, error in
-            
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
             if error != nil{
                 print("error=\(error)")
                 return
@@ -155,22 +148,25 @@ class User: NSManagedObject {
     }
     
     
-    class func DeleteEventFromUser(username: String) -> Bool?{
+    class func DeleteEventFromUser(emailUser: String, numEvent: String) -> Bool?{
         
-        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/InsererLien.php") else{
+        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/EnleverLien.php") else{
             print("guard my url")
             return false
         }
         let request  = NSMutableURLRequest(URL: myUrl)
         request.HTTPMethod = "POST"
         
-        let postString = "?mdp=fisufinal&speakers=tamere&place=tamere&nomEvent=tamere&categorie=tamere&descriptionEvent=tamere&image=tamere&heureEvent=tamere&dateEvent=tamere&notifier=tamere"
+        let postString = "emailUser=\(emailUser)&numEvent=\(numEvent)"
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
             data, response, error in
-            
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
             if error != nil{
                 print("error=\(error)")
                 return
@@ -185,5 +181,27 @@ class User: NSManagedObject {
         task.resume()
         
         return true
+    }
+    
+    class func getActualUserMail() -> String{
+        var user = [User]()
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        let fetchRequestUser = NSFetchRequest(entityName: "User")
+        
+        do{
+            let fetchResultUser = try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
+            user = fetchResultUser
+        }
+        catch let error as NSError{
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        if(user.count == 0){
+            return "No actual user"
+        }
+        guard let email = user[0].emailAdress else{
+            return "No actual user"
+        }
+        return email
     }
 }

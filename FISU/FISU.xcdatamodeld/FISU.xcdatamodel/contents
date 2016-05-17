@@ -14,7 +14,7 @@
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="events" inverseEntity="Day" syncable="YES"/>
         <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="events" inverseEntity="Place" syncable="YES"/>
         <relationship name="speaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="events" inverseEntity="Speaker" syncable="YES"/>
-        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="events" inverseEntity="User" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
     <entity name="Fisu" representedClassName=".Fisu" syncable="YES">
         <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" syncable="YES"/>
@@ -51,18 +51,18 @@
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="speaker" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
-        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="users" inverseEntity="Event" syncable="YES"/>
+        <attribute name="emailAdress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Conf" positionX="-1827" positionY="-684" width="128" height="45"/>
         <element name="Day" positionX="-1953" positionY="-966" width="128" height="75"/>
-        <element name="Event" positionX="-1694" positionY="-1035" width="128" height="178"/>
+        <element name="Event" positionX="-1694" positionY="-1035" width="128" height="180"/>
         <element name="Fisu" positionX="-1946" positionY="-1117" width="128" height="73"/>
         <element name="Place" positionX="-1476" positionY="-982" width="119" height="165"/>
         <element name="Restaurant" positionX="-1694" positionY="-1242" width="128" height="178"/>
         <element name="Speaker" positionX="-1649" positionY="-774" width="128" height="148"/>
         <element name="User" positionX="-1863" positionY="-804" width="128" height="90"/>
-        <element name="Conf" positionX="-1827" positionY="-684" width="128" height="43"/>
     </elements>
 </model>

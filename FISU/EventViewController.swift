@@ -33,11 +33,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print("guard jsonSpeakerToLoop")
                 return
             }
+            var currentNumber: NSNumber = 0
             for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                //print("Clé: " + String(key))
-                //print("Event: " + event.toString())
-                // print(keyEvent)
-                //print(attributEvent)
+                currentNumber = key as! NSNumber
                 if(event["DateEvent"].toString() == "2016-07-04"){
                     sectionNumber[0] = sectionNumber[0] + 1
                 }
@@ -57,18 +55,22 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     sectionNumber[5] = sectionNumber[5] + 1
                 }
             }
-            //laCollection.reloadData()
-            var currentNumber: NSNumber = 0
-            for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                currentNumber = key as! NSNumber
-                //"DateEvent":"2016-07-04"
-            }
             self.numberOfEvents = Int(currentNumber) + 1
         }
     }
 
     
     override func viewWillAppear(animated: Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let displayedWalkthrough = userDefaults.boolForKey("DisplayedWalkthrough")
+        
+        // if we haven't shown the walkthroughs, let's show them
+        if !displayedWalkthrough {
+            // instantiate neew PageVC via storyboard
+            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+                self.presentViewController(pageViewController, animated: true, completion: nil)
+            }
+        }
         self.downloadAndUpdate()
     }
     

@@ -15,6 +15,7 @@ class EventDetailViewController: UIViewController {
     var delete : Bool?
     var usernameIfDelete : String?
     var jsonEvents: JSON?
+    var event: JSON?
     var jsonPlacesToPass: JSON?
     
     override func viewWillAppear(animated: Bool) {
@@ -26,69 +27,39 @@ class EventDetailViewController: UIViewController {
             self.addButton.hidden = false
             self.deleteButton.hidden = true
         }
+        if(!(User.userExists())){
+            self.addButton.hidden = true
+            self.deleteButton.hidden = true
+        }
     }
     @IBAction func ButtonAddToOwnCalendar(sender: AnyObject) {
-        
-        guard let anEvent = self.eventSelected else {
-            return
-        }
-        var inputTextField: UITextField?
-        var passwordTextField: UITextField?
         let addEventAlert = UIAlertController(title: "Own calendar", message: "Add this event to your calendar ?", preferredStyle: UIAlertControllerStyle.Alert)
         addEventAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         addEventAlert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            guard let textField = inputTextField else{
-                print("No imputTextfield")
+            let userMail = User.getActualUserMail()
+            guard let cetEvent = self.event else{
+                print("pas d'event")
                 return
             }
-            guard let username = textField.text else{
-                print("Empty imputTextfield")
-                return
-            }
-            guard let textFieldP = passwordTextField else{
-                print("No passwordTextField")
-                return
-            }
-            guard let pasword = textFieldP.text else{
-                print("Empty passwordTextField")
-                return
-            }
-            if(!(User.userExists(username))){
-                User.createUsers([username, pasword])
-                //User.AddEventToUser(username , newEvent: anEvent)
-                self.delete = true
-                self.viewWillAppear(false)
-            }
-            else{
-                //User.AddEventToUser(username , newEvent: anEvent)
-                self.delete = true
-                self.viewWillAppear(false)
-            }
+            let eventNum = cetEvent["numeroEvent"].toString()
+            User.AddEventToUser(userMail , numEvent: eventNum)
+            self.delete = true
+            self.viewWillAppear(false)
         }))
-        addEventAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-            textField.placeholder = "Username"
-            inputTextField = textField
-        })
-        addEventAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-            textField.placeholder = "Password"
-            textField.secureTextEntry = true
-            passwordTextField = textField
-        })
         presentViewController(addEventAlert, animated: true, completion: nil)
     }
     
     @IBAction func ButtonDeleteFromOwnCalendar(sender: AnyObject) {
-        
-        guard let anEvent = self.eventSelected else {
-            return
-        }
         let removeEventAlert = UIAlertController(title: "Own calendar", message: "Remove this event from your calendar ?", preferredStyle: UIAlertControllerStyle.Alert)
         removeEventAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         removeEventAlert.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            guard let username = self.usernameIfDelete else{
+            let userName = User.getActualUserMail()
+            guard let cetEvent = self.event else{
+                print("pas d'event")
                 return
             }
-            //User.DeleteEventFromUser(username, toDeleteEvent: anEvent)
+            let eventNum = cetEvent["numeroEvent"].toString()
+            User.DeleteEventFromUser(userName , numEvent: eventNum)
             self.delete = false
             self.viewWillAppear(false)
         }))
@@ -113,7 +84,6 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         guard let jsonEventsToLoop = self.jsonEvents else{
             print("guard jsonEventsToLoop")
             return
@@ -122,30 +92,32 @@ class EventDetailViewController: UIViewController {
             guard let selection = self.eventSelected else{
                 return
             }
-            //print("Numéro con: " + events["numeroEvent"].toString()) // TRACE
-            //print("Selectionné: " + String(selection)) // TRACE
             if(events["numeroEvent"].toString() == String(selection)){
-                guard let profileImageUrl = NSURL(string:events["ImageEvent"].toString()) else{
-                    return
-                }
-                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
-                    return
-                }
-                
-                //print(speaker["descriptionSpeaker"].toString())
-                let myImage =  UIImage(data: profileImageData)
-                print(events["nameEvent"].toString())
-                self.LabelEventName.text = events["nameEvent"].toString()
-                self.LabelEventCategory.text = events["Categorie"].toString()
-                self.TextEventDesc.text = events["DescEvent"].toString()
-                self.EventPlace.setTitle(events["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
-                self.jsonPlacesToPass = events["PlaceList"]
-                self.EventDetailImage.image = myImage
-                
+                self.event = events
             }
+        }   
+        guard let event = self.event else{
+            print("pas d'event")
+            return
         }
+        guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
+            return
+        }
+        guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+            return
+        }
+        
+        //print(speaker["descriptionSpeaker"].toString())
+        let myImage =  UIImage(data: profileImageData)
+        print(event["nameEvent"].toString())
+        self.LabelEventName.text = event["nameEvent"].toString()
+        self.LabelEventCategory.text = event["Categorie"].toString()
+        self.TextEventDesc.text = event["DescEvent"].toString()
+        self.EventPlace.setTitle(event["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
+        self.jsonPlacesToPass = event["PlaceList"]
+        self.EventDetailImage.image = myImage
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -161,7 +133,7 @@ class EventDetailViewController: UIViewController {
         guard let anEvent = self.eventSelected else {
             return
         }
-
+        
         if (segue.identifier == "ProfileSpeakerDetailSegue") {
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
             detailVC.speakerSelected = 1

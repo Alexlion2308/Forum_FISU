@@ -14,8 +14,8 @@ import CoreData
 
 extension User {
 
-    @NSManaged var password: String?
-    @NSManaged var username: String?
-    @NSManaged var events: NSSet?
+    @NSManaged var name: String?
+    @NSManaged var surname: String?
+    @NSManaged var emailAdress: String?
 
 }
