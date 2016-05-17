@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Alamofire
 import GoogleMaps
 
 
@@ -64,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyAEtmY3vdAP89Si76FsqSjfb7VjLDYu3bQ")
         //////////////////////// Test Alamofire //////////////////////////
         
-        Alamofire.request(.GET, "https://fisuwebfinal-madonna.rhcloud.com/ListeEvent.php")
+       /* Alamofire.request(.GET, "https://fisuwebfinal-madonna.rhcloud.com/ListeEvent.php")
             .responseJSON { response in
                 /*print("Requete: ")
                  print(response.request)  // original URL request
@@ -106,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         }
                     }
                 }
-        }
+        }*/
         
         //////////////////////// APPLICATION INIT //////////////////////////
         

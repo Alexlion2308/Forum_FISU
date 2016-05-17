@@ -105,7 +105,6 @@
 		5D83D3851C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */; };
 		5D83D3861C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */; };
 		5D8F8A571CB80D77009246EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE3565E1C614A1F00146D0A /* Main.storyboard */; };
-		5D904EF41CD77576002D7875 /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 5D904EF31CD77576002D7875 /* Pods */; };
 		5D9519511C7D9D9F00765B9D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		5D9519581C7DB4D600765B9D /* DateEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */; };
 		5D9519591C7DB4D600765B9D /* DateEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */; };
@@ -150,8 +149,6 @@
 		060C23A41CA4493A00388BD6 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = FISU/EventViewController.swift; sourceTree = SOURCE_ROOT; };
 		060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = FISU/EventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "FISU/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		06187BE01CDA27E80094E689 /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		064FD7321C9C6677000E00F3 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayViewController.swift; path = FISU/DayViewController.swift; sourceTree = SOURCE_ROOT; };
 		064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayTableViewCell.swift; path = FISU/DayTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
@@ -173,18 +170,16 @@
 		5D1DEC6D1CA801160087498F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FISU/User.swift; sourceTree = SOURCE_ROOT; };
 		5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewCell.swift; path = FISU/OwnCalendarTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewController.swift; path = FISU/OwnCalendarTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileViewController.swift; path = FISU/SpeakerProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5D747F501CB79F290015305E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = FISU/PageViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D747F531CB79FEA0015305E /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkthroughViewController.swift; path = FISU/WalkthroughViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D7AE2271CB7CB4700E26E2E /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Place+CoreDataProperties.swift"; path = "FISU/Place+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		5D7AE2281CB7CB4700E26E2E /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = FISU/Place.swift; sourceTree = SOURCE_ROOT; };
-		5D7BC8521CE4AEC3008EB224 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		5D7BC8521CE4AEC3008EB224 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Json.swift; path = ../Json.swift; sourceTree = "<group>"; };
 		5D7FB4221CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakersCollectionViewController.swift; path = FISU/SpeakersCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D7FB4251CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakersCollectionViewCell.swift; path = FISU/SpeakersCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = FISU/EventDetailViewController.swift; sourceTree = SOURCE_ROOT; };
-		5D904EF31CD77576002D7875 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		5D93FB991CB68AD200FFA5BA /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTests.swift; path = ../UserTests.swift; sourceTree = "<group>"; };
 		5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateEventTableViewCell.swift; path = FISU/DateEventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5DE356571C614A1F00146D0A /* FISU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FISU.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,15 +326,13 @@
 		5DE3564E1C614A1F00146D0A = {
 			isa = PBXGroup;
 			children = (
-				5D7BC8521CE4AEC3008EB224 /* Json.swift */,
 				5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */,
-				5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */,
 				5DE356591C614A1F00146D0A /* FISU */,
 				5DE356711C614A1F00146D0A /* FISUTests */,
 				5DE3567C1C614A1F00146D0A /* FISUUITests */,
 				5DE356581C614A1F00146D0A /* Products */,
-				06187BD61CDA25DC0094E689 /* Pods */,
-				23F4FD0C387BE8F07CBBA14E /* Frameworks */,
+				78D577AD58A64C98620575ED /* Pods */,
+				FDC38BE206ECD99EA9EF9E05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				5DE3565A1C614A1F00146D0A /* AppDelegate.swift */,
+				5D7BC8521CE4AEC3008EB224 /* Json.swift */,
 				5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */,
 				5DE3565E1C614A1F00146D0A /* Main.storyboard */,
 				5DE356641C614A1F00146D0A /* Assets.xcassets */,
@@ -386,6 +380,32 @@
 				5DE3567F1C614A1F00146D0A /* Info.plist */,
 			);
 			path = FISUUITests;
+			sourceTree = "<group>";
+		};
+		78D577AD58A64C98620575ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A423D68F8BF10E16C5CBB98 /* Pods-FISU.debug.xcconfig */,
+				1DCF66C2233408BDA2110414 /* Pods-FISU.release.xcconfig */,
+				E30DEF4348511F3C6CBD9E56 /* Pods-FISU.adhoc.xcconfig */,
+				ACF9C901677D6D0373E17FD1 /* Pods-FISUTests.debug.xcconfig */,
+				2DD9B13EC4E448A1273A5334 /* Pods-FISUTests.release.xcconfig */,
+				2837F11C33ADAF777F72F7D5 /* Pods-FISUTests.adhoc.xcconfig */,
+				EC474777AAE19E6E665CF7A2 /* Pods-FISUUITests.debug.xcconfig */,
+				46C09367A3A541F1C13F0BE8 /* Pods-FISUUITests.release.xcconfig */,
+				70555C1138BBC0161166E90D /* Pods-FISUUITests.adhoc.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FDC38BE206ECD99EA9EF9E05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16F51DF60A4E02E538247105 /* Pods_FISU.framework */,
+				0506FE371E252FE66C91F26F /* Pods_FISUTests.framework */,
+				E84487F55A640A98C4978A83 /* Pods_FISUUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,7 +528,6 @@
 			files = (
 				5D8F8A571CB80D77009246EF /* Main.storyboard in Resources */,
 				5DE356681C614A1F00146D0A /* LaunchScreen.storyboard in Resources */,
-				5D904EF41CD77576002D7875 /* Pods in Resources */,
 				5DE356651C614A1F00146D0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -817,7 +836,6 @@
 /* Begin XCBuildConfiguration section */
 		5D4AA5DA1CE7A0FC00594767 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -909,7 +927,6 @@
 		};
 		5DE356801C614A1F00146D0A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -957,7 +974,6 @@
 		};
 		5DE356811C614A1F00146D0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
