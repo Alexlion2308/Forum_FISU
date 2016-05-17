@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JTe-2O-bit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JTe-2O-bit">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udh-Ou-9W4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter firstname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udh-Ou-9W4">
                                 <rect key="frame" x="194" y="239" width="212" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="p5m-TG-mfr"/>
@@ -42,7 +42,7 @@
                                     <segue destination="aPh-jH-a8v" kind="show" identifier="ownCalendarSegue" id="Wf6-hO-xnP"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-1p-1kU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-1p-1kU">
                                 <rect key="frame" x="194" y="277" width="212" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="6Ld-64-DeE"/>
@@ -62,12 +62,21 @@
                                     <segue destination="lks-JH-Si6" kind="show" id="hPS-nJ-dDg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FISU FORUM 2" translatesAutoresizingMaskIntoConstraints="NO" id="yii-YH-UD8">
+                                <rect key="frame" x="259" y="95" width="82" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="sLY-0y-Qfg"/>
+                                    <constraint firstAttribute="height" constant="128" id="yPd-Ce-hwc"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vgI-zb-UMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ET-M1-2YM"/>
                             <constraint firstItem="aik-XW-hGi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Da3-wn-Ye3"/>
                             <constraint firstItem="aik-XW-hGi" firstAttribute="top" secondItem="vgI-zb-UMe" secondAttribute="bottom" constant="-8" id="QnG-O6-0vE"/>
+                            <constraint firstItem="yii-YH-UD8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SoH-e5-sFL"/>
+                            <constraint firstItem="udh-Ou-9W4" firstAttribute="top" secondItem="yii-YH-UD8" secondAttribute="bottom" constant="16" id="ZVg-15-Cxa"/>
                             <constraint firstItem="udh-Ou-9W4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="cUI-au-AYZ"/>
                             <constraint firstItem="EO5-1p-1kU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eX8-87-Omh"/>
                             <constraint firstItem="EO5-1p-1kU" firstAttribute="top" secondItem="udh-Ou-9W4" secondAttribute="bottom" constant="8" id="wy8-HI-QYS"/>
@@ -115,7 +124,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yd8-SS-tji" id="hfd-nd-ToM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="68.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVo-wd-lfW">
@@ -208,7 +217,7 @@
                                         <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rvj-po-WRv" id="sFQ-s3-Bkc">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erF-qG-akC">
@@ -439,7 +448,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AON-OQ-vcU" id="vYz-a1-3Ov">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dM-HG-ZMV">
@@ -522,7 +531,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="221"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SXg-tY-gaZ" id="lUb-3B-Sfw">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="220.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-qY-JXD">
@@ -936,7 +945,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="K5N-bu-Kqn"/>
                                 </constraints>
-                                <state key="normal" title="Pick a place"/>
+                                <state key="normal" title="Find a place"/>
                                 <connections>
                                     <action selector="pickPlaces:" destination="I1X-1c-MlL" eventType="touchUpInside" id="yQc-c3-MqO"/>
                                 </connections>
@@ -1347,6 +1356,7 @@
     </scenes>
     <resources>
         <image name="Events" width="24" height="21"/>
+        <image name="FISU FORUM 2" width="858" height="1500"/>
         <image name="app1" width="432" height="881"/>
         <image name="fork" width="24" height="24"/>
         <image name="image10" width="480" height="104"/>

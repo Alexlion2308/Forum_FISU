@@ -117,7 +117,9 @@
 		5DE356731C614A1F00146D0A /* FISUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE356721C614A1F00146D0A /* FISUTests.swift */; };
 		5DE3567E1C614A1F00146D0A /* FISUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3567D1C614A1F00146D0A /* FISUUITests.swift */; };
 		5DE43D791C846833003819C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE356641C614A1F00146D0A /* Assets.xcassets */; };
+		75A23F7B9229ED6C1ECBD857 /* Pods_FISUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A057438B600C6D688D62D917 /* Pods_FISUTests.framework */; };
 		95316D059277A5B87AF14B38 /* Pods_FISUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4893A733275C36109638C3 /* Pods_FISUUITests.framework */; };
+		FF787AFE084E053B71722A43 /* Pods_FISUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DA5A245FE782CBCF44DF16 /* Pods_FISUUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,8 +164,10 @@
 		06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceViewController.swift; path = FISU/PlaceViewController.swift; sourceTree = SOURCE_ROOT; };
 		06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = FISU/Artwork.swift; sourceTree = SOURCE_ROOT; };
 		06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceVCMapView.swift; path = FISU/PlaceVCMapView.swift; sourceTree = SOURCE_ROOT; };
+		0F565F3AD52DD7C2A53DF7D7 /* Pods-FISUUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		21396E57F894DA8F6BC63A65 /* Pods-FISU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.release.xcconfig"; sourceTree = "<group>"; };
 		3C4F0A8DDE62A0C538596181 /* Pods_FISUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF3498AD2276286BE7A47E8 /* Pods-FISUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.release.xcconfig"; sourceTree = "<group>"; };
 		5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
 		5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiViewController.swift; sourceTree = "<group>"; };
 		5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "FISU/User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -197,15 +201,23 @@
 		5DE3567D1C614A1F00146D0A /* FISUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FISUUITests.swift; sourceTree = "<group>"; };
 		5DE3567F1C614A1F00146D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A12498DF6C1981B1BE563B5 /* Pods-FISUUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
-		6BD1D700F10CA5C3CA9EEAA4 /* Pods_FISU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		97F044E09F33EA73559EDAE7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D81D736874AD55E8F4C351C /* Pods_FISU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		855D3854A8A50EB4F1AFF957 /* Pods-FISUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		86A73EE645F792899C493139 /* Pods-FISU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.debug.xcconfig"; sourceTree = "<group>"; };
+		91DA5A245FE782CBCF44DF16 /* Pods_FISUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F0D79F52FBF6790508579C /* Pods-FISUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		992F4E3AD61375193B7AFB68 /* Pods-FISUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A057438B600C6D688D62D917 /* Pods_FISUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C017D692947DBC374E105ECC /* Pods-FISUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C33D45F4E9BC42870A5FF55D /* Pods-FISUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA650669785799B4B9DF8DC5 /* Pods-FISU.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.adhoc.xcconfig"; sourceTree = "<group>"; };
 		CFD77C05991DC99DC06AFD0A /* Pods-FISU.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.adhoc.xcconfig"; sourceTree = "<group>"; };
 		D4B555AA774BF88FD6153432 /* Pods-FISU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.debug.xcconfig"; sourceTree = "<group>"; };
+		DEE2F6EA0D59EB865598B3F5 /* Pods-FISUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E9125F14F00F5880985D76CF /* Pods-FISUTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		F996683CAD7E05E3CC86C841 /* Pods-FISU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.release.xcconfig"; sourceTree = "<group>"; };
 		FF4893A733275C36109638C3 /* Pods_FISUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDB94A852F9184F2AF5B5DF /* Pods-FISUTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1044D95A6F2BF738EAC378A9 /* Pods_FISUTests.framework in Frameworks */,
+				75A23F7B9229ED6C1ECBD857 /* Pods_FISUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,17 +242,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				95316D059277A5B87AF14B38 /* Pods_FISUUITests.framework in Frameworks */,
+				FF787AFE084E053B71722A43 /* Pods_FISUUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06187BD61CDA25DC0094E689 /* Pods */ = {
+		06B830B11CEB69CB009034AF /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */,
-				06187BE01CDA27E80094E689 /* Pods.release.xcconfig */,
 				D4B555AA774BF88FD6153432 /* Pods-FISU.debug.xcconfig */,
 				21396E57F894DA8F6BC63A65 /* Pods-FISU.release.xcconfig */,
 				CFD77C05991DC99DC06AFD0A /* Pods-FISU.adhoc.xcconfig */,
@@ -250,19 +262,7 @@
 				C017D692947DBC374E105ECC /* Pods-FISUUITests.release.xcconfig */,
 				6A12498DF6C1981B1BE563B5 /* Pods-FISUUITests.adhoc.xcconfig */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		23F4FD0C387BE8F07CBBA14E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5D904EF31CD77576002D7875 /* Pods */,
-				97F044E09F33EA73559EDAE7 /* libPods.a */,
-				6BD1D700F10CA5C3CA9EEAA4 /* Pods_FISU.framework */,
-				3C4F0A8DDE62A0C538596181 /* Pods_FISUTests.framework */,
-				FF4893A733275C36109638C3 /* Pods_FISUUITests.framework */,
-			);
-			name = Frameworks;
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		5D747F571CB7B2140015305E /* Model */ = {
@@ -333,6 +333,7 @@
 				5DE356581C614A1F00146D0A /* Products */,
 				78D577AD58A64C98620575ED /* Pods */,
 				FDC38BE206ECD99EA9EF9E05 /* Frameworks */,
+				06B830B11CEB69CB009034AF /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,15 +386,15 @@
 		78D577AD58A64C98620575ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A423D68F8BF10E16C5CBB98 /* Pods-FISU.debug.xcconfig */,
-				1DCF66C2233408BDA2110414 /* Pods-FISU.release.xcconfig */,
-				E30DEF4348511F3C6CBD9E56 /* Pods-FISU.adhoc.xcconfig */,
-				ACF9C901677D6D0373E17FD1 /* Pods-FISUTests.debug.xcconfig */,
-				2DD9B13EC4E448A1273A5334 /* Pods-FISUTests.release.xcconfig */,
-				2837F11C33ADAF777F72F7D5 /* Pods-FISUTests.adhoc.xcconfig */,
-				EC474777AAE19E6E665CF7A2 /* Pods-FISUUITests.debug.xcconfig */,
-				46C09367A3A541F1C13F0BE8 /* Pods-FISUUITests.release.xcconfig */,
-				70555C1138BBC0161166E90D /* Pods-FISUUITests.adhoc.xcconfig */,
+				86A73EE645F792899C493139 /* Pods-FISU.debug.xcconfig */,
+				F996683CAD7E05E3CC86C841 /* Pods-FISU.release.xcconfig */,
+				CA650669785799B4B9DF8DC5 /* Pods-FISU.adhoc.xcconfig */,
+				C33D45F4E9BC42870A5FF55D /* Pods-FISUTests.debug.xcconfig */,
+				3FF3498AD2276286BE7A47E8 /* Pods-FISUTests.release.xcconfig */,
+				FFDB94A852F9184F2AF5B5DF /* Pods-FISUTests.adhoc.xcconfig */,
+				855D3854A8A50EB4F1AFF957 /* Pods-FISUUITests.debug.xcconfig */,
+				DEE2F6EA0D59EB865598B3F5 /* Pods-FISUUITests.release.xcconfig */,
+				0F565F3AD52DD7C2A53DF7D7 /* Pods-FISUUITests.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -401,9 +402,9 @@
 		FDC38BE206ECD99EA9EF9E05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16F51DF60A4E02E538247105 /* Pods_FISU.framework */,
-				0506FE371E252FE66C91F26F /* Pods_FISUTests.framework */,
-				E84487F55A640A98C4978A83 /* Pods_FISUUITests.framework */,
+				6D81D736874AD55E8F4C351C /* Pods_FISU.framework */,
+				A057438B600C6D688D62D917 /* Pods_FISUTests.framework */,
+				91DA5A245FE782CBCF44DF16 /* Pods_FISUUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
