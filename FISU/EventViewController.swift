@@ -2,7 +2,7 @@
 //  EventViewController.swift
 //  FISU
 //
-//  Created by Aurelien Licette on 24/03/2016.
+//  Created by Reda Maachi on 24/03/2016.
 //  Copyright © 2016 Reda M. All rights reserved.
 //
 
@@ -11,35 +11,38 @@ import CoreData
 
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
     @IBOutlet weak var EventTableView: UITableView!
     @IBOutlet weak var LabelDaySelected: UILabel!
     var daySelected : Day?
-    var events = [Event]()
     var numberOfEvents:Int = 0
     var jsonEvents:JSON?
     
     func downloadAndUpdate() {
-        jsonEvents = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+        jsonEvents = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEvent.php")
         if let obj = jsonEvents { // Je récupere le json de la page
             self.jsonEvents = JSON(obj)
-            guard let laCollection = self.view else{
+            guard let laVue = self.view else{
                 print("guard laCollection")
                 return
             }
-            guard let jsonSpeakerToLoop = self.jsonEvents else{
+            guard let jsonEventsToLoop = self.jsonEvents else{
                 print("guard jsonSpeakerToLoop")
                 return
             }
             //laCollection.reloadData()
             var currentNumber: NSNumber = 0
-            for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                 currentNumber = key as! NSNumber
             }
             self.numberOfEvents = Int(currentNumber) + 1
         }
     }
+    
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Day" + String(section + 1)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         self.downloadAndUpdate()
     }
@@ -47,40 +50,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let aday = daySelected else {
-            return
-        }
-        
-        let fetchRequest = NSFetchRequest(entityName: "Event")
-        // Create a sort descriptor object that sorts on the "title"
-        // property of the Core Data object
-        let sortDescriptor = NSSortDescriptor(key: "hour", ascending: true)
-        
-        // Set the list of sort descriptors in the fetch request,
-        // so it includes the sort descriptor
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        let predicat = NSPredicate(format: "day=%@",aday)
-        fetchRequest.predicate = predicat
-        
-        // Récupération des évènements liés au jour sélectionné et affectation dans la variable events
-        do
-        {
-            let fetchResults =
-                try managedObjectContext.executeFetchRequest(fetchRequest) as! [Event]
-            events = fetchResults
-            
-        }catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-        
-        
         self.EventTableView.delegate = self
         self.EventTableView.dataSource = self
-        
-        
-        
-        self.LabelDaySelected.text = aday.nom
-        
+
     }
     
     
@@ -93,11 +65,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 7
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return numberOfEvents
     }
     
     
@@ -116,17 +88,26 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         }
         
-        let event = events[indexPath.row]
-        
-        thenamelabel.text = event.valueForKey("nom") as? String
-        thedatelabel.text = event.valueForKey("hour") as? String
-        guard let photo = event.valueForKey("image") as? NSData else{
+        guard let jsonEventsToLoop = self.jsonEvents else{
+            print("guard jsonSpeakerToLoop")
             return cell
         }
-        guard let imageEvent = UIImage(data: photo) else{
-            return cell
+        for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            let currentKey = key as! NSNumber
+            if(currentKey == indexPath.row){
+                thenamelabel.text = event["nameEvent"].toString()
+                thedatelabel.text = event["HourEvent"].toString()
+                guard let profileImageUrl = NSURL(string:event["imageSpeaker"].toString()) else{
+                    return cell
+                }
+                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+                    return cell
+                }
+                //print(speaker["descriptionSpeaker"].toString())
+                let myImage =  UIImage(data: profileImageData)
+                theimage.image = myImage
+            }
         }
-        theimage.image = imageEvent
         
         return cell
     }
@@ -136,7 +117,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (segue.identifier == "EventDetailSegue") {
             if let indexPath = self.EventTableView.indexPathForSelectedRow {
                 let detailVC = segue.destinationViewController as! EventDetailViewController
-                detailVC.eventSelected = self.events[indexPath.row]
                 detailVC.delete = false
             }
         }
