@@ -89,7 +89,7 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         if (segue.identifier == "OwnEventDetailSegue") {
             if let indexPath = self.OwnCalendarEventTableView.indexPathForSelectedRow {
                 let detailVC = segue.destinationViewController as! EventDetailViewController
-                detailVC.eventSelected = self.ownCalendar[indexPath.row] as? Event
+                //detailVC.eventSelected = self.ownCalendar[indexPath.row] as? Event
                 detailVC.delete = true
                 detailVC.usernameIfDelete = username
             }
