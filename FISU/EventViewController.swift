@@ -17,6 +17,32 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var LabelDaySelected: UILabel!
     var daySelected : Day?
     var events = [Event]()
+    var numberOfEvents:Int = 0
+    var jsonEvents:JSON?
+    
+    func downloadAndUpdate() {
+        jsonEvents = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+        if let obj = jsonEvents { // Je récupere le json de la page
+            self.jsonEvents = JSON(obj)
+            guard let laCollection = self.view else{
+                print("guard laCollection")
+                return
+            }
+            guard let jsonSpeakerToLoop = self.jsonEvents else{
+                print("guard jsonSpeakerToLoop")
+                return
+            }
+            //laCollection.reloadData()
+            var currentNumber: NSNumber = 0
+            for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+                currentNumber = key as! NSNumber
+            }
+            self.numberOfEvents = Int(currentNumber) + 1
+        }
+    }
+    override func viewWillAppear(animated: Bool) {
+        self.downloadAndUpdate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

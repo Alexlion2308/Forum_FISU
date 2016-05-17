@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+
 
 class SpeakersCollectionViewController: UICollectionViewController, UISearchBarDelegate {
     
@@ -18,25 +18,23 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
     var numberOfSpeakers: Int = 0
     
     func downloadAndUpdate() {
-        Alamofire.request(.GET, "https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
-            .responseJSON { response in
-                if let obj = response.result.value { // Je récupere le json de la page
-                    self.jsonSpeaker = JSON(obj)
-                    guard let laCollection = self.collectionView else{
-                        print("guard laCollection")
-                        return
-                    }
-                    guard let jsonSpeakerToLoop = self.jsonSpeaker else{
-                        print("guard jsonSpeakerToLoop")
-                        return
-                    }
-                    laCollection.reloadData()
-                    var currentNumber: NSNumber = 0
-                    for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                        currentNumber = key as! NSNumber
-                    }
-                    self.numberOfSpeakers = Int(currentNumber) + 1
-                }
+        jsonSpeaker = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+        if let obj = jsonSpeaker { // Je récupere le json de la page
+            self.jsonSpeaker = JSON(obj)
+            guard let laCollection = self.collectionView else{
+                print("guard laCollection")
+                return
+            }
+            guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+            print("guard jsonSpeakerToLoop")
+                return
+            }
+            laCollection.reloadData()
+            var currentNumber: NSNumber = 0
+            for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+                currentNumber = key as! NSNumber
+            }
+            self.numberOfSpeakers = Int(currentNumber) + 1
         }
     }
     
