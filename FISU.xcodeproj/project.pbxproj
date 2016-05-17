@@ -67,6 +67,7 @@
 		06BBB2E91CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */; };
 		06BBB2EA1CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */; };
 		06BBB2EB1CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */; };
+		1044D95A6F2BF738EAC378A9 /* Pods_FISUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4F0A8DDE62A0C538596181 /* Pods_FISUTests.framework */; };
 		5D0C1E9D1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */; };
 		5D0C1E9E1CBBECCB00FD4D58 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */; };
 		5D15BC691CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */; };
@@ -79,8 +80,6 @@
 		5D20A4D41CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */; };
 		5D20A4D61CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
 		5D20A4D71CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
-		5D22CC8F1CDA373000F2B89F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */; };
-		5D22CC921CDA38CC00F2B89F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D22CC8D1CDA370B00F2B89F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D343F081C7730A9005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
 		5D343F091C7730AA005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
 		5D4EEE711CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */; };
@@ -119,6 +118,7 @@
 		5DE356731C614A1F00146D0A /* FISUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE356721C614A1F00146D0A /* FISUTests.swift */; };
 		5DE3567E1C614A1F00146D0A /* FISUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3567D1C614A1F00146D0A /* FISUUITests.swift */; };
 		5DE43D791C846833003819C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE356641C614A1F00146D0A /* Assets.xcassets */; };
+		95316D059277A5B87AF14B38 /* Pods_FISUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4893A733275C36109638C3 /* Pods_FISUUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,21 +138,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		5D22CC911CDA373000F2B89F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5D22CC921CDA38CC00F2B89F /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		0498E7949D2AE8A734C85BF2 /* Pods-FISUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.release.xcconfig"; sourceTree = "<group>"; };
 		0609A3911CB3B590002B82A1 /* Fisu+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fisu+CoreDataProperties.swift"; path = "FISU/Fisu+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0609A3921CB3B590002B82A1 /* Fisu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fisu.swift; path = FISU/Fisu.swift; sourceTree = SOURCE_ROOT; };
 		060C23861CA42C0200388BD6 /* Speaker+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Speaker+CoreDataProperties.swift"; path = "FISU/Speaker+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -178,6 +165,8 @@
 		06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceViewController.swift; path = FISU/PlaceViewController.swift; sourceTree = SOURCE_ROOT; };
 		06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = FISU/Artwork.swift; sourceTree = SOURCE_ROOT; };
 		06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceVCMapView.swift; path = FISU/PlaceVCMapView.swift; sourceTree = SOURCE_ROOT; };
+		21396E57F894DA8F6BC63A65 /* Pods-FISU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.release.xcconfig"; sourceTree = "<group>"; };
+		3C4F0A8DDE62A0C538596181 /* Pods_FISUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0C1E9C1CBBECCB00FD4D58 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
 		5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiViewController.swift; sourceTree = "<group>"; };
 		5D1DEC6C1CA801160087498F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "FISU/User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -212,7 +201,16 @@
 		5DE356791C614A1F00146D0A /* FISUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FISUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE3567D1C614A1F00146D0A /* FISUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FISUUITests.swift; sourceTree = "<group>"; };
 		5DE3567F1C614A1F00146D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A12498DF6C1981B1BE563B5 /* Pods-FISUUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		6BD1D700F10CA5C3CA9EEAA4 /* Pods_FISU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F044E09F33EA73559EDAE7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97F0D79F52FBF6790508579C /* Pods-FISUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		992F4E3AD61375193B7AFB68 /* Pods-FISUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C017D692947DBC374E105ECC /* Pods-FISUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFD77C05991DC99DC06AFD0A /* Pods-FISU.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.adhoc.xcconfig"; sourceTree = "<group>"; };
+		D4B555AA774BF88FD6153432 /* Pods-FISU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISU/Pods-FISU.debug.xcconfig"; sourceTree = "<group>"; };
+		E9125F14F00F5880985D76CF /* Pods-FISUTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		FF4893A733275C36109638C3 /* Pods_FISUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +218,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D22CC8F1CDA373000F2B89F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1044D95A6F2BF738EAC378A9 /* Pods_FISUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95316D059277A5B87AF14B38 /* Pods_FISUUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +245,15 @@
 			children = (
 				06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */,
 				06187BE01CDA27E80094E689 /* Pods.release.xcconfig */,
+				D4B555AA774BF88FD6153432 /* Pods-FISU.debug.xcconfig */,
+				21396E57F894DA8F6BC63A65 /* Pods-FISU.release.xcconfig */,
+				CFD77C05991DC99DC06AFD0A /* Pods-FISU.adhoc.xcconfig */,
+				992F4E3AD61375193B7AFB68 /* Pods-FISUTests.debug.xcconfig */,
+				0498E7949D2AE8A734C85BF2 /* Pods-FISUTests.release.xcconfig */,
+				E9125F14F00F5880985D76CF /* Pods-FISUTests.adhoc.xcconfig */,
+				97F0D79F52FBF6790508579C /* Pods-FISUUITests.debug.xcconfig */,
+				C017D692947DBC374E105ECC /* Pods-FISUUITests.release.xcconfig */,
+				6A12498DF6C1981B1BE563B5 /* Pods-FISUUITests.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -255,6 +263,9 @@
 			children = (
 				5D904EF31CD77576002D7875 /* Pods */,
 				97F044E09F33EA73559EDAE7 /* libPods.a */,
+				6BD1D700F10CA5C3CA9EEAA4 /* Pods_FISU.framework */,
+				3C4F0A8DDE62A0C538596181 /* Pods_FISUTests.framework */,
+				FF4893A733275C36109638C3 /* Pods_FISUUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -384,13 +395,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DE356821C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISU" */;
 			buildPhases = (
-				B46D83ADDF93CBDEFD8BAC2C /* Check Pods Manifest.lock */,
+				B46D83ADDF93CBDEFD8BAC2C /* 📦 Check Pods Manifest.lock */,
 				5DE356531C614A1F00146D0A /* Sources */,
 				5DE356541C614A1F00146D0A /* Frameworks */,
 				5DE356551C614A1F00146D0A /* Resources */,
-				E3DEF42C33397CF3DF1F97CE /* Embed Pods Frameworks */,
-				50A7157794632690C89D4DB9 /* Copy Pods Resources */,
-				5D22CC911CDA373000F2B89F /* Embed Frameworks */,
+				E3DEF42C33397CF3DF1F97CE /* 📦 Embed Pods Frameworks */,
+				50A7157794632690C89D4DB9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -405,9 +415,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DE356851C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISUTests" */;
 			buildPhases = (
+				92BDD374998D7D4FEB0868DE /* 📦 Check Pods Manifest.lock */,
 				5DE3566A1C614A1F00146D0A /* Sources */,
 				5DE3566B1C614A1F00146D0A /* Frameworks */,
 				5DE3566C1C614A1F00146D0A /* Resources */,
+				5170CDCE8F5C8FEDFE70AB75 /* 📦 Embed Pods Frameworks */,
+				E9C693F0AF4103B359F391F3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,9 +436,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DE356881C614A1F00146D0A /* Build configuration list for PBXNativeTarget "FISUUITests" */;
 			buildPhases = (
+				2A84374CE68878850435D54D /* 📦 Check Pods Manifest.lock */,
 				5DE356751C614A1F00146D0A /* Sources */,
 				5DE356761C614A1F00146D0A /* Frameworks */,
 				5DE356771C614A1F00146D0A /* Resources */,
+				3A69278C27D4FCDBECB85700 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -517,29 +532,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		50A7157794632690C89D4DB9 /* Copy Pods Resources */ = {
+		2A84374CE68878850435D54D /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B46D83ADDF93CBDEFD8BAC2C /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,19 +547,109 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E3DEF42C33397CF3DF1F97CE /* Embed Pods Frameworks */ = {
+		3A69278C27D4FCDBECB85700 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50A7157794632690C89D4DB9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FISU/Pods-FISU-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5170CDCE8F5C8FEDFE70AB75 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92BDD374998D7D4FEB0868DE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B46D83ADDF93CBDEFD8BAC2C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3DEF42C33397CF3DF1F97CE /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FISU/Pods-FISU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9C693F0AF4103B359F391F3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FISUTests/Pods-FISUTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -768,7 +858,7 @@
 		};
 		5D4AA5DB1CE7A0FC00594767 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */;
+			baseConfigurationReference = CFD77C05991DC99DC06AFD0A /* Pods-FISU.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -788,6 +878,7 @@
 		};
 		5D4AA5DC1CE7A0FC00594767 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9125F14F00F5880985D76CF /* Pods-FISUTests.adhoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -805,6 +896,7 @@
 		};
 		5D4AA5DD1CE7A0FC00594767 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A12498DF6C1981B1BE563B5 /* Pods-FISUUITests.adhoc.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = FISUUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -906,7 +998,7 @@
 		};
 		5DE356831C614A1F00146D0A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06187BDF1CDA27E80094E689 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D4B555AA774BF88FD6153432 /* Pods-FISU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -926,7 +1018,7 @@
 		};
 		5DE356841C614A1F00146D0A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06187BE01CDA27E80094E689 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 21396E57F894DA8F6BC63A65 /* Pods-FISU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -946,6 +1038,7 @@
 		};
 		5DE356861C614A1F00146D0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 992F4E3AD61375193B7AFB68 /* Pods-FISUTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -963,6 +1056,7 @@
 		};
 		5DE356871C614A1F00146D0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0498E7949D2AE8A734C85BF2 /* Pods-FISUTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -980,6 +1074,7 @@
 		};
 		5DE356891C614A1F00146D0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F0D79F52FBF6790508579C /* Pods-FISUUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = FISUUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -992,6 +1087,7 @@
 		};
 		5DE3568A1C614A1F00146D0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C017D692947DBC374E105ECC /* Pods-FISUUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = FISUUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
