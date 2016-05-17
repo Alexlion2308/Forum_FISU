@@ -11,15 +11,22 @@ import CoreData
 
 class EventDetailViewController: UIViewController {
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    var eventSelected : Event?
+    var eventSelected : NSNumber?
     var delete : Bool?
     var usernameIfDelete : String?
-    var speaker : Speaker?
-    var place : Place?
+    var jsonEvents: JSON?
+
     
-    
+    override func viewWillAppear(animated: Bool) {
+        if(self.delete == true){
+            self.addButton.hidden = true
+            self.deleteButton.hidden = false
+        }
+        else{
+            self.addButton.hidden = false
+            self.deleteButton.hidden = true
+        }
+    }
     @IBAction func ButtonAddToOwnCalendar(sender: AnyObject) {
         
         guard let anEvent = self.eventSelected else {
@@ -48,12 +55,12 @@ class EventDetailViewController: UIViewController {
             }
             if(!(User.userExists(username))){
                 User.createUsers([username, pasword])
-                User.AddEventToUser(username , newEvent: anEvent)
+                //User.AddEventToUser(username , newEvent: anEvent)
                 self.delete = true
                 self.viewWillAppear(false)
             }
             else{
-                User.AddEventToUser(username , newEvent: anEvent)
+                //User.AddEventToUser(username , newEvent: anEvent)
                 self.delete = true
                 self.viewWillAppear(false)
             }
@@ -81,7 +88,7 @@ class EventDetailViewController: UIViewController {
             guard let username = self.usernameIfDelete else{
                 return
             }
-            User.DeleteEventFromUser(username, toDeleteEvent: anEvent)
+            //User.DeleteEventFromUser(username, toDeleteEvent: anEvent)
             self.delete = false
             self.viewWillAppear(false)
         }))
@@ -106,57 +113,38 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-/*        if(self.delete == true){
-            self.addButton.hidden = true
-            self.deleteButton.hidden = false
-        }
-        else{
-            self.addButton.hidden = false
-            self.deleteButton.hidden = true
-        }
-*/
-        
-        guard let anEvent = self.eventSelected else {
+
+        guard let jsonEventsToLoop = self.jsonEvents else{
+            print("guard jsonEventsToLoop")
             return
         }
-        
-        guard let aSpeaker = anEvent.speaker else {
-            return
-        }
-        
-        guard let aPlace = anEvent.place else {
-            return
-        }
-        guard let photo = anEvent.image else{
-            return
-        }
-        guard let imageEvent = UIImage(data: photo) else{
-            return
-        }
-        
-        self.speaker = aSpeaker
-        self.place = aPlace
-        
-        self.LabelEventName.text = anEvent.nom
-        self.SpeakerName.setTitle(aSpeaker.nom, forState: .Normal)
-        self.LabelEventCategory.text = anEvent.categorie
-        self.TextEventDesc.text = anEvent.desc
-        self.EventPlace.setTitle(aPlace.nom, forState: .Normal)
-        self.EventDetailImage.image = imageEvent
-        
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        if(self.delete == true){
-            self.addButton.hidden = true
-            self.deleteButton.hidden = false
-        }
-        else{
-            self.addButton.hidden = false
-            self.deleteButton.hidden = true
+        for (key, events) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            guard let selection = self.eventSelected else{
+                return
+            }
+            //print("Numéro con: " + events["numeroEvent"].toString()) // TRACE
+            //print("Selectionné: " + String(selection)) // TRACE
+            if(events["numeroEvent"].toString() == String(selection)){
+                guard let profileImageUrl = NSURL(string:events["ImageEvent"].toString()) else{
+                    return
+                }
+                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+                    return
+                }
+                
+                //print(speaker["descriptionSpeaker"].toString())
+                let myImage =  UIImage(data: profileImageData)
+                print(events["nameEvent"].toString())
+                self.LabelEventName.text = events["nameEvent"].toString()
+                self.LabelEventCategory.text = events["Categorie"].toString()
+                self.TextEventDesc.text = events["DescEvent"].toString()
+                self.EventPlace.setTitle(events["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
+                self.EventDetailImage.image = myImage
+                
+            }
         }
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -172,20 +160,15 @@ class EventDetailViewController: UIViewController {
         guard let anEvent = self.eventSelected else {
             return
         }
-        guard let aSpeaker = anEvent.speaker else {
-            return
-        }
-        guard let aPlace = anEvent.place else {
-            return
-        }
+
         if (segue.identifier == "ProfileSpeakerDetailSegue") {
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
-            detailVC.speakerSelected = 2
+            detailVC.speakerSelected = 1
             //print("SPEAKER //////////// " + self.SpeakerName)
         }
         if (segue.identifier == "PlaceDetailSegue") {
             let detailVC = segue.destinationViewController as! PlaceViewController
-            detailVC.placeSelected = aPlace
+            //detailVC.placeSelected = aPlace
             //print("SPEAKER //////////// " + self.SpeakerName)
         }
     }

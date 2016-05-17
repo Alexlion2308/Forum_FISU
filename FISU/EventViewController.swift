@@ -11,6 +11,10 @@ import CoreData
 
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    
+    
+    let section = ["DAY 1 : Monday, July 4", "DAY 2 : Tuesday, July 5", "DAY 3 : Wednesday, July 6", "DAY 4 : Thursday, July 7", "DAY 5 : Friday, July 8", "DAY 6 : Friday, July 9"]
+    var sectionNumber = [0, 0, 0, 0, 0, 0]
     @IBOutlet weak var EventTableView: UITableView!
     @IBOutlet weak var LabelDaySelected: UILabel!
     var daySelected : Day?
@@ -29,19 +33,40 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print("guard jsonSpeakerToLoop")
                 return
             }
+            for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+                //print("Clé: " + String(key))
+                //print("Event: " + event.toString())
+                // print(keyEvent)
+                //print(attributEvent)
+                if(event["DateEvent"].toString() == "2016-07-04"){
+                    sectionNumber[0] = sectionNumber[0] + 1
+                }
+                if(event["DateEvent"].toString() == "2016-07-05"){
+                    sectionNumber[1] = sectionNumber[1] + 1
+                }
+                if(event["DateEvent"].toString() == "2016-07-06"){
+                    sectionNumber[2] = sectionNumber[2] + 1
+                }
+                if(event["DateEvent"].toString() == "2016-07-07"){
+                    sectionNumber[3] = sectionNumber[3] + 1
+                }
+                if(event["DateEvent"].toString() == "2016-07-08"){
+                    sectionNumber[4] = sectionNumber[4] + 1
+                }
+                if(event["DateEvent"].toString() == "2016-07-09"){
+                    sectionNumber[5] = sectionNumber[5] + 1
+                }
+            }
             //laCollection.reloadData()
             var currentNumber: NSNumber = 0
             for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                 currentNumber = key as! NSNumber
+                //"DateEvent":"2016-07-04"
             }
             self.numberOfEvents = Int(currentNumber) + 1
         }
     }
-    
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Day" + String(section + 1)
-    }
+
     
     override func viewWillAppear(animated: Bool) {
         self.downloadAndUpdate()
@@ -65,11 +90,21 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 7
+        return self.section.count
+    }
+
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.section[section]
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfEvents
+        
+        guard let jsonEventsToLoop = self.jsonEvents else{
+            print("guard jsonSpeakerToLoop")
+            return 0
+        }
+        //print(sectionNumber[section])
+        return sectionNumber[section]
     }
     
     
@@ -97,7 +132,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if(currentKey == indexPath.row){
                 thenamelabel.text = event["nameEvent"].toString()
                 thedatelabel.text = event["HourEvent"].toString()
-                guard let profileImageUrl = NSURL(string:event["imageSpeaker"].toString()) else{
+                guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
                     return cell
                 }
                 guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
@@ -118,6 +153,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if let indexPath = self.EventTableView.indexPathForSelectedRow {
                 let detailVC = segue.destinationViewController as! EventDetailViewController
                 detailVC.delete = false
+                detailVC.eventSelected = indexPath.row + 1
+                detailVC.jsonEvents = self.jsonEvents
+
             }
         }
         
