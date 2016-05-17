@@ -168,7 +168,7 @@ class EventDetailViewController: UIViewController {
         }
         if (segue.identifier == "PlaceDetailSegue") {
             let detailVC = segue.destinationViewController as! PlaceViewController
-            detailVC.placeSelected = aPlace
+            //detailVC.placeSelected = aPlace
             //print("SPEAKER //////////// " + self.SpeakerName)
         }
     }
