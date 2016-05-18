@@ -42,8 +42,8 @@ class EventDetailViewController: UIViewController {
                 return
             }
             let eventNum = cetEvent["numeroEvent"].toString()
-            let eventHour = cetEvent["hourEvent"].toString()
-            let eventNom = cetEvent["nomEvent"].toString()
+            let eventHour = cetEvent["HourEvent"].toString()
+            let eventNom = cetEvent["nameEvent"].toString()
             User.AddEventToUser(userMail , numEvent: eventNum, hour: eventHour, nom: eventNom)
             self.delete = true
             self.viewWillAppear(false)

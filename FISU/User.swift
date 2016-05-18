@@ -92,7 +92,10 @@ class User: NSManagedObject {
             }
             let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
             print("response http request: \(responseString)")
-            if(responseString != "success"){
+            guard let reponse = responseString else{
+                return
+            }
+            if(reponse != "success"){
                 database = false
             }        }
         task.resume()
@@ -191,7 +194,10 @@ class User: NSManagedObject {
             }
             let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
             print("response http request: \(responseString)")
-            if(responseString != "success"){
+            guard let reponse = responseString else{
+                return
+            }
+            if(reponse != "success"){
                 success = false
             }
         }
@@ -199,7 +205,8 @@ class User: NSManagedObject {
         
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
-        guard let entitySpeaker = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedObjectContext) else{
+        guard let entityEvent = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedObjectContext) else{
+            print("guard entity")
             return false
         }
         
@@ -210,12 +217,13 @@ class User: NSManagedObject {
         fetchRequestEvent.predicate = predicatEvent
         do
         {
-            let fetchResultsSpeaker =
+            let fetchResultsEvent =
                 try managedObjectContext.executeFetchRequest(fetchRequestEvent) as! [Event]
             // Vérification pour éviter les doublons, insertions si ok
-            if (fetchResultsSpeaker.count == 0)
+            if (fetchResultsEvent.count == 0)
             {
-                let event = NSManagedObject(entity: entitySpeaker, insertIntoManagedObjectContext: managedObjectContext)
+                print("Je récup un event")
+                let event = NSManagedObject(entity: entityEvent, insertIntoManagedObjectContext: managedObjectContext)
                 event.setValue(numEvent, forKey: "num")
                 event.setValue(hour, forKey: "hour")
                 event.setValue(nom, forKey: "nom")
@@ -227,7 +235,7 @@ class User: NSManagedObject {
                 do
                 {
                     let fetchResults =
-                        try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [Day]
+                        try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
                     let user = fetchResults[0]
                     event.setValue(user, forKey: "users")
                 }catch let error as NSError {
@@ -279,12 +287,15 @@ class User: NSManagedObject {
             }
             let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
             print("response http request: \(responseString)")
-            if(responseString != "success"){
+            guard let reponse = responseString else{
+                return
+            }
+            if(reponse != "success"){
                 success = false
             }
         }
         task.resume()
-        
+        /*
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
         guard let entitySpeaker = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedObjectContext) else{
@@ -315,7 +326,7 @@ class User: NSManagedObject {
                 do
                 {
                     let fetchResults =
-                        try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [Day]
+                        try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
                     let user = fetchResults[0]
                     //event.setValue(user, forKey: "users")
                 }catch let error as NSError {
@@ -327,7 +338,7 @@ class User: NSManagedObject {
         }catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
             success = false
-        }
+        }*/
         return success
     }
     
@@ -351,5 +362,36 @@ class User: NSManagedObject {
             return "No actual user"
         }
         return email
+    }
+    
+    class func getEventsOfActualUser() -> [Event]?{
+        var ownEvents: [Event]?
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Event")
+        // Create a sort descriptor object that sorts on the "title"
+        // property of the Core Data object
+        //let sortDescriptor = NSSortDescriptor(key: "hour", ascending: true)
+        
+        // Set the list of sort descriptors in the fetch request,
+        // so it includes the sort descriptor
+        //fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        //Recherche des restaurants dans le core data
+        do
+        {
+            let fetchResults =
+                try managedObjectContext.executeFetchRequest(fetchRequest) as! [Event]
+            ownEvents = fetchResults
+            guard let lesEvents = ownEvents else{
+                print("pas d'event core data")
+                return ownEvents
+            }
+            print("STOP")
+            print(lesEvents.count)
+        }catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        return ownEvents
     }
 }

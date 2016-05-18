@@ -32,23 +32,28 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         self.numberOfEvents = Int(currentNumber) + 1
     }
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.getAndCountOwnEvents()
         self.OwnCalendarEventTableView.delegate = self
         self.OwnCalendarEventTableView.dataSource = self
     }
     
+    func applicationWillEnterForeground(notification: NSNotification) {
+        self.viewDidLoad()
+        self.viewWillAppear(true)
+    }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         if Reachability.isConnectedToNetwork() == true {
-            print("Internet connection OK")
             self.getAndCountOwnEvents()
+            print("Internet connection OK")
+            User.getEventsOfActualUser()
+            self.getAndCountOwnEvents()
+            self.OwnCalendarEventTableView.reloadData()
             if(!(User.userExists())){
                 var home = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
-                //set properties of login
                 self.presentViewController(home, animated: true, completion: nil)
             }
         } else {
@@ -56,39 +61,19 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
             var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
             if(!(User.userExists())){
+                print("quitter l'appli")
                 //Quitter l'appli
             }
             else{
+                print("on est dans le else")
                 //On charge les events du core data
                 self.coreData = true
-                let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-                
-                let fetchRequest = NSFetchRequest(entityName: "Event")
-                // Create a sort descriptor object that sorts on the "title"
-                // property of the Core Data object
-                let sortDescriptor = NSSortDescriptor(key: "hour", ascending: true)
-                
-                // Set the list of sort descriptors in the fetch request,
-                // so it includes the sort descriptor
-                fetchRequest.sortDescriptors = [sortDescriptor]
-                
-                //Recherche des restaurants dans le core data
-                do
-                {
-                    let fetchResults =
-                        try managedObjectContext.executeFetchRequest(fetchRequest) as! [Event]
-                    ownEvents = fetchResults
-                    guard let lesEvents = ownEvents else{
-                        print("pas d'event core data")
-                        return
-                    }
-                    self.numberOfEvents = lesEvents.count
-                }catch let error as NSError {
-                    print("Could not fetch \(error), \(error.userInfo)")
+                guard let ownEvents = User.getEventsOfActualUser() else{
+                    return
                 }
+                self.numberOfEvents = ownEvents.count
             }
         }
-        //self.OwnCalendarEventTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -122,12 +107,9 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
             print("guard jsonSpeakerToLoop")
             return cell
         }
+        print(self.coreData)
         if(self.coreData == false){
             for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                print("Key: ")
-                print(key)
-                print("Event: ")
-                print(event)
                 let currentKey = key as! NSNumber
                 if(currentKey == indexPath.row){
                     thenamelabel.text = event["nameEvent"].toString()
