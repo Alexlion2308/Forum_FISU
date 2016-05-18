@@ -17,5 +17,6 @@ extension User {
     @NSManaged var name: String?
     @NSManaged var surname: String?
     @NSManaged var emailAdress: String?
+    @NSManaged var events: Event?
 
 }

@@ -23,7 +23,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
+        if Reachability.isConnectedToNetwork() == false {
+            print("Internet connection FAILED")
+            let alert = UIAlertView(title: "WARNING", message: "You must be connected to internet to register to events. Your own calendar will be visible without internet connection once you are registred. But your will not be able to add or delete events", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            //var own = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OwnCalendarViewController") as UIViewController
+            //set properties of login
+            //presentViewController(own, animated: true, completion: nil)
+            //root.presentViewController(own, animated: true, completion: nil)
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            guard let window = self.window else{
+                print("no window")
+                return false
+            }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("OwnCalendarViewController")
+            
+            window.rootViewController = initialViewController
+            window.makeKeyAndVisible()
+        }
         let notificationTypes : UIUserNotificationType = [.Alert, .Badge, .Sound]
         notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
         guard let settingNotif = self.notificationSettings else{
@@ -33,67 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
         GMSServices.provideAPIKey("AIzaSyAEtmY3vdAP89Si76FsqSjfb7VjLDYu3bQ")
-        //////////////////////// Test Alamofire //////////////////////////
-        
-       /* Alamofire.request(.GET, "https://fisuwebfinal-madonna.rhcloud.com/ListeEvent.php")
-            .responseJSON { response in
-                /*print("Requete: ")
-                 print(response.request)  // original URL request
-                 print("Reponse: ")
-                 print(response.response) // URL response
-                 print("Data: ")
-                 print(response.data)  // server data
-                 print("Result: ")
-                 print(response.result)   // result of response serialization*/
-                
-                if let obj = response.result.value { // Je récupere le json de la page
-                    let jsonEvent = JSON(obj)
-                    jsonEvent.toString()
-                    //print(jsonEvent)
-                    for (cle, event) in jsonEvent { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                        //print(cle)
-                        //print(event)
-                        for (cleEvent, attributEvent) in event {
-                            //print(attributEvent["DateEvent"])
-                            //print("========")
-                            let json = JSON(cleEvent)
-                            let jsonStr = json.toString()
-                            if(jsonStr == "SpeakersList"){
-                                if(attributEvent.toString() != "[]"){ // On regarde s'il y a des speakers
-                                    for (cleSpeaker, attributSpeaker) in attributEvent { // La on récupere les speakers
-                                        print(attributSpeaker)
-                                        print(attributSpeaker["NomSpeaker"].toString())
-                                        print(attributSpeaker["PrenomSpeaker"])
-                                        print(attributSpeaker["Profession"])
-                                        print(attributSpeaker["EmailSpeaker"])
-                                        print(attributSpeaker["NationaliteSpeaker"])
-                                        print(attributSpeaker["DescSpeaker"])
-                                    }
-                                }
-                                //print("StrB: " + b.toString())
-                            }
-                            //print(a)
-                            //print(b)
-                        }
-                    }
-                }
-        }*/
-        
-        //////////////////////// APPLICATION INIT //////////////////////////
-        
-        //Call de toutes les fonctions de création du coreData
-        
-        //Fisu.createDays(daySet,eventSet1: eventsDay1,eventSet2: eventsDay2,eventSet3: eventsDay3,eventSet4: eventsDay4,eventSet5: eventsDay5,eventSet6: eventsDay6)
-        
-        
-        /////////////////////// SAVE CONTEXT /////////////////////////
-        do {
-            try managedObjectContext.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
-        
-        
         
         return true
     }

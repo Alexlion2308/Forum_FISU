@@ -10,13 +10,13 @@ import UIKit
 import CoreData
 
 class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
     @IBOutlet weak var OwnCalendarEventTableView: UITableView!
     var ownCalendar = NSArray()
     var events: JSON?
     var numberOfEvents: Int = 0
-    
-    
+    var coreData: Bool = false
+    var ownEvents: [Event]?
     
     func getAndCountOwnEvents() {
         let email = User.getActualUserMail()
@@ -43,18 +43,59 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     
     
     override func viewWillAppear(animated: Bool) {
-        if(!(User.userExists())){
-            var home = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
-            //set properties of login
-            self.presentViewController(home, animated: true, completion: nil)
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+            self.getAndCountOwnEvents()
+            if(!(User.userExists())){
+                var home = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+                //set properties of login
+                self.presentViewController(home, animated: true, completion: nil)
+            }
+        } else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            if(!(User.userExists())){
+                //Quitter l'appli
+            }
+            else{
+                //On charge les events du core data
+                self.coreData = true
+                let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+                
+                let fetchRequest = NSFetchRequest(entityName: "Event")
+                // Create a sort descriptor object that sorts on the "title"
+                // property of the Core Data object
+                let sortDescriptor = NSSortDescriptor(key: "hour", ascending: true)
+                
+                // Set the list of sort descriptors in the fetch request,
+                // so it includes the sort descriptor
+                fetchRequest.sortDescriptors = [sortDescriptor]
+                
+                //Recherche des restaurants dans le core data
+                do
+                {
+                    let fetchResults =
+                        try managedObjectContext.executeFetchRequest(fetchRequest) as! [Event]
+                    ownEvents = fetchResults
+                    guard let lesEvents = ownEvents else{
+                        print("pas d'event core data")
+                        return
+                    }
+                    self.numberOfEvents = lesEvents.count
+                }catch let error as NSError {
+                    print("Could not fetch \(error), \(error.userInfo)")
+                }
+            }
         }
-        self.OwnCalendarEventTableView.reloadData()
+        //self.OwnCalendarEventTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: - Table view data source
     
@@ -77,32 +118,36 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         guard let thedatelabel = cell.TimeLabelOwnEvent else{
             return cell
         }
-        guard let theimage = cell.ImageOwnEvent else{
-            return cell
-        }
         guard let jsonEventsToLoop = self.events else{
             print("guard jsonSpeakerToLoop")
             return cell
         }
-        for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-            print("Key: ")
-            print(key)
-            print("Event: ")
-            print(event)
-            let currentKey = key as! NSNumber
-            if(currentKey == indexPath.row){
-                thenamelabel.text = event["nameEvent"].toString()
-                thedatelabel.text = event["HourEvent"].toString()
-                guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
-                    return cell
+        if(self.coreData == false){
+            for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+                print("Key: ")
+                print(key)
+                print("Event: ")
+                print(event)
+                let currentKey = key as! NSNumber
+                if(currentKey == indexPath.row){
+                    thenamelabel.text = event["nameEvent"].toString()
+                    thedatelabel.text = event["HourEvent"].toString()
                 }
-                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
-                    return cell
-                }
-                //print(speaker["descriptionSpeaker"].toString())
-                let myImage =  UIImage(data: profileImageData)
-                theimage.image = myImage
             }
+        }
+        else{
+            guard let ownEvent =  self.ownEvents else{
+                return cell
+            }
+            guard let nomEvent = ownEvent[indexPath.row].nom else {
+                return cell
+            }
+            guard let hourEvent = ownEvent[indexPath.row].hour else {
+                return cell
+            }
+            thenamelabel.text = nomEvent
+            thedatelabel.text = hourEvent
+
         }
         return cell
     }
@@ -114,6 +159,9 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         }
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        return !(self.coreData)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "OwnEventDetailSegue") {
@@ -121,7 +169,7 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
                 let detailVC = segue.destinationViewController as! EventDetailViewController
                 //detailVC.eventSelected = self.ownCalendar[indexPath.row] as? Event
                 detailVC.delete = true
-                detailVC.eventSelected = indexPath.row + 1
+                detailVC.eventSelected = indexPath.row
                 detailVC.jsonEvents = self.events
             }
         }

@@ -78,6 +78,8 @@
 		5D20A4D41CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */; };
 		5D20A4D61CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
 		5D20A4D71CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */; };
+		5D2FE3F51CEC9CE10023665E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FE3F41CEC9CE10023665E /* Reachability.swift */; };
+		5D2FE3F61CEC9CE10023665E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FE3F41CEC9CE10023665E /* Reachability.swift */; };
 		5D343F081C7730A9005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
 		5D343F091C7730AA005BFB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3565A1C614A1F00146D0A /* AppDelegate.swift */; };
 		5D4EEE711CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */; };
@@ -171,6 +173,7 @@
 		5D1DEC6D1CA801160087498F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FISU/User.swift; sourceTree = SOURCE_ROOT; };
 		5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewCell.swift; path = FISU/OwnCalendarTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5D20A4D51CA7F2D7001A920F /* OwnCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OwnCalendarTableViewController.swift; path = FISU/OwnCalendarTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D2FE3F41CEC9CE10023665E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileViewController.swift; path = FISU/SpeakerProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ../ImageLoader.swift; sourceTree = "<group>"; };
 		5D747F501CB79F290015305E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = FISU/PageViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -346,6 +349,7 @@
 		5DE356591C614A1F00146D0A /* FISU */ = {
 			isa = PBXGroup;
 			children = (
+				5D2FE3F41CEC9CE10023665E /* Reachability.swift */,
 				5DE3565A1C614A1F00146D0A /* AppDelegate.swift */,
 				5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */,
 				5D7BC8521CE4AEC3008EB224 /* Json.swift */,
@@ -707,6 +711,7 @@
 				06698D1A1CBBF002006A74DA /* Restaurant.swift in Sources */,
 				5D7FB4231CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */,
 				5D7BC8531CE4AEC3008EB224 /* Json.swift in Sources */,
+				5D2FE3F51CEC9CE10023665E /* Reachability.swift in Sources */,
 				5D7AE2291CB7CB4700E26E2E /* Place+CoreDataProperties.swift in Sources */,
 				06698D0E1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
 				5D50765D1CE6241E00E70FE2 /* ImageLoader.swift in Sources */,
@@ -754,6 +759,7 @@
 				0609A3971CB3B590002B82A1 /* Fisu.swift in Sources */,
 				5D7BC8541CE4AEC3008EB224 /* Json.swift in Sources */,
 				5D83D3861C7AF7AF00A24A8A /* EventDetailViewController.swift in Sources */,
+				5D2FE3F61CEC9CE10023665E /* Reachability.swift in Sources */,
 				5D747F521CB79F290015305E /* PageViewController.swift in Sources */,
 				5D50765E1CE6241E00E70FE2 /* ImageLoader.swift in Sources */,
 				0616237F1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */,

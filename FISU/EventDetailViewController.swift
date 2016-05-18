@@ -38,11 +38,13 @@ class EventDetailViewController: UIViewController {
         addEventAlert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             let userMail = User.getActualUserMail()
             guard let cetEvent = self.event else{
-                print("pas d'event")
+                print("pas d'event cetEvent")
                 return
             }
             let eventNum = cetEvent["numeroEvent"].toString()
-            User.AddEventToUser(userMail , numEvent: eventNum)
+            let eventHour = cetEvent["hourEvent"].toString()
+            let eventNom = cetEvent["nomEvent"].toString()
+            User.AddEventToUser(userMail , numEvent: eventNum, hour: eventHour, nom: eventNom)
             self.delete = true
             self.viewWillAppear(false)
         }))
@@ -53,13 +55,15 @@ class EventDetailViewController: UIViewController {
         let removeEventAlert = UIAlertController(title: "Own calendar", message: "Remove this event from your calendar ?", preferredStyle: UIAlertControllerStyle.Alert)
         removeEventAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         removeEventAlert.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            let userName = User.getActualUserMail()
+            let userMail = User.getActualUserMail()
             guard let cetEvent = self.event else{
-                print("pas d'event")
+                print("pas d'event cetEvent")
                 return
             }
             let eventNum = cetEvent["numeroEvent"].toString()
-            User.DeleteEventFromUser(userName , numEvent: eventNum)
+            let eventHour = cetEvent["hourEvent"].toString()
+            let eventNom = cetEvent["nomEvent"].toString()
+            User.DeleteEventFromUser(userMail , numEvent: eventNum, hour: eventHour, nom: eventNom)
             self.delete = false
             self.viewWillAppear(false)
         }))
@@ -90,14 +94,15 @@ class EventDetailViewController: UIViewController {
         }
         for (key, events) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
             guard let selection = self.eventSelected else{
+                print("pas de selection")
                 return
             }
-            if(events["numeroEvent"].toString() == String(selection)){
+            if(String(key) == String(selection)){
                 self.event = events
             }
         }   
         guard let event = self.event else{
-            print("pas d'event")
+            print("pas d'event event")
             return
         }
         guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{

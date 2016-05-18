@@ -14,12 +14,9 @@ import CoreData
 
 extension Event {
 
-    @NSManaged var categorie: String?
     @NSManaged var hour: String?
-    @NSManaged var desc: String?
     @NSManaged var image: NSData?
     @NSManaged var nom: String?
-    @NSManaged var day: Day?
-    @NSManaged var place: Place?
-    @NSManaged var speaker: Speaker?
+    @NSManaged var num: String?
+    @NSManaged var users: User?
 }
