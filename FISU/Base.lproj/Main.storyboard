@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter firstname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udh-Ou-9W4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter firstname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udh-Ou-9W4">
                                 <rect key="frame" x="194" y="200" width="212" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="p5m-TG-mfr"/>
@@ -30,7 +30,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgI-zb-UMe">
+                            <button opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgI-zb-UMe">
                                 <rect key="frame" x="214" y="323" width="172" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="172" id="0ea-7a-rdt"/>
@@ -41,7 +41,7 @@
                                     <segue destination="JTe-2O-bit" kind="show" identifier="ownCalendarSegue" id="FFy-fn-yFe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aik-XW-hGi">
+                            <button opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aik-XW-hGi">
                                 <rect key="frame" x="194" y="374" width="212" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="S18-gD-nYg"/>
@@ -52,14 +52,14 @@
                                     <segue destination="JTe-2O-bit" kind="show" id="fkH-hh-6DA"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="FISU FORUM 2" translatesAutoresizingMaskIntoConstraints="NO" id="yii-YH-UD8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="FISU FORUM 2" translatesAutoresizingMaskIntoConstraints="NO" id="yii-YH-UD8">
                                 <rect key="frame" x="259" y="28" width="82" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="sLY-0y-Qfg"/>
                                     <constraint firstAttribute="height" constant="128" id="yPd-Ce-hwc"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-1p-1kU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-1p-1kU">
                                 <rect key="frame" x="194" y="238" width="212" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="6Ld-64-DeE"/>
@@ -68,24 +68,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-4h-ljl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-4h-ljl">
                                 <rect key="frame" x="194" y="276" width="212" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QDN-86-r1x"/>
+                                    <constraint firstAttribute="width" constant="212" id="gRk-MH-a8W"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vgI-zb-UMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ET-M1-2YM"/>
-                            <constraint firstItem="aik-XW-hGi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Da3-wn-Ye3"/>
-                            <constraint firstItem="aik-XW-hGi" firstAttribute="top" secondItem="vgI-zb-UMe" secondAttribute="bottom" constant="-8" id="QnG-O6-0vE"/>
-                            <constraint firstItem="yii-YH-UD8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SoH-e5-sFL"/>
-                            <constraint firstItem="udh-Ou-9W4" firstAttribute="top" secondItem="yii-YH-UD8" secondAttribute="bottom" constant="16" id="ZVg-15-Cxa"/>
-                            <constraint firstItem="udh-Ou-9W4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="cUI-au-AYZ"/>
-                            <constraint firstItem="EO5-1p-1kU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eX8-87-Omh"/>
-                            <constraint firstItem="EO5-1p-1kU" firstAttribute="top" secondItem="udh-Ou-9W4" secondAttribute="bottom" constant="8" id="wy8-HI-QYS"/>
-                            <constraint firstItem="udh-Ou-9W4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yZC-n5-J9r"/>
-                            <constraint firstItem="vgI-zb-UMe" firstAttribute="top" secondItem="EO5-1p-1kU" secondAttribute="bottom" constant="16" id="yhl-bs-vqY"/>
+                            <constraint firstItem="vgI-zb-UMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="222-vH-VQD"/>
+                            <constraint firstItem="EO5-1p-1kU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A02-go-qsn"/>
+                            <constraint firstItem="aik-XW-hGi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Awn-fZ-xu8"/>
+                            <constraint firstItem="Exw-4h-ljl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K1c-UW-Gy5"/>
+                            <constraint firstItem="udh-Ou-9W4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NWF-jl-MBr"/>
+                            <constraint firstItem="yii-YH-UD8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qao-ld-iYF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cNz-cK-XDr"/>
