@@ -129,6 +129,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("guard jsonSpeakerToLoop")
             return cell
         }
+        //let resultsArray = jsonEventsToLoop.arrayValue
         for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
             let currentKey = key as! NSNumber
             if(currentKey == indexPath.row){
@@ -155,7 +156,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if let indexPath = self.EventTableView.indexPathForSelectedRow {
                 let detailVC = segue.destinationViewController as! EventDetailViewController
                 detailVC.delete = false
-                detailVC.eventSelected = indexPath.row + 1
+                detailVC.eventSelected = indexPath.row
                 detailVC.jsonEvents = self.jsonEvents
 
             }

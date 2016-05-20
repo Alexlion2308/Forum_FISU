@@ -16,9 +16,14 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
     let reuseIdentifier: String = "speakersCollectionCell"
     var jsonSpeaker: JSON?
     var numberOfSpeakers: Int = 0
+    var eventSpeaker: Bool = false
     
     func downloadAndUpdate() {
-        jsonSpeaker = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+        if(eventSpeaker == false){
+            jsonSpeaker = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+        }else{
+            jsonSpeaker = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+        }
         if let obj = jsonSpeaker { // Je récupere le json de la page
             self.jsonSpeaker = JSON(obj)
             guard let laCollection = self.collectionView else{

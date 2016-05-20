@@ -17,8 +17,10 @@ class EventDetailViewController: UIViewController {
     var jsonEvents: JSON?
     var event: JSON?
     var jsonPlacesToPass: JSON?
+    var jsonSpeakersToPass: JSON?
     
     override func viewWillAppear(animated: Bool) {
+        print(jsonEvents)
         if(self.delete == true){
             self.addButton.hidden = true
             self.deleteButton.hidden = false
@@ -114,7 +116,7 @@ class EventDetailViewController: UIViewController {
         
         //print(speaker["descriptionSpeaker"].toString())
         let myImage =  UIImage(data: profileImageData)
-        print(event["nameEvent"].toString())
+        //print(event["nameEvent"].toString())
         self.LabelEventName.text = event["nameEvent"].toString()
         self.LabelEventCategory.text = event["Categorie"].toString()
         self.TextEventDesc.text = event["DescEvent"].toString()
@@ -139,16 +141,17 @@ class EventDetailViewController: UIViewController {
             return
         }
         
-        if (segue.identifier == "ProfileSpeakerDetailSegue") {
+        if (segue.identifier == "ListSpeakerDetailSegue") {
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
             detailVC.speakerSelected = 1
+            detailVC.jsonSpeakers = jsonSpeakersToPass
             //print("SPEAKER //////////// " + self.SpeakerName)
         }
         if (segue.identifier == "PlaceDetailSegue") {
             let detailVC = segue.destinationViewController as! PlaceViewController
             //detailVC.placeSelected = jsonPlacesToPass["NumPlace"]
             detailVC.jsonPlaces = jsonPlacesToPass
-            //print("SPEAKER //////////// " + self.SpeakerName)
+            //print("SPEAKER //////////// " + self.SpeakerName)   SpeakersList
         }
     }
     
