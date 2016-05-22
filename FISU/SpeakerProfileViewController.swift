@@ -13,6 +13,7 @@ class SpeakerProfileViewController: UIViewController {
     var speakerSelected : NSNumber?
     var jsonSpeaker: JSON?
     
+    
     @IBOutlet weak var ProfilImageSpeaker: UIImageView!
     
     @IBOutlet weak var DescriptionLabelSpeaker: UITextView!
@@ -37,6 +38,8 @@ class SpeakerProfileViewController: UIViewController {
                 return
             }
             if(speaker["numeroSpeaker"].toString() == String(selection)){
+                print(selection)
+                print(jsonSpeakerToLoop)
                 guard let profileImageUrl = NSURL(string:speaker["imageSpeaker"].toString()) else{
                     return
                 }

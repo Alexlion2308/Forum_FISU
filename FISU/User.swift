@@ -13,6 +13,16 @@ import UIKit
 
 class User: NSManagedObject {
     
+    
+    class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
+        let FetchRequest = NSFetchRequest ( entityName:c)
+        let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
+        FetchRequest.sortDescriptors = [ sortDescriptor]
+        return FetchRequest
+    }
+
+    
+    
     class func checkLogin(name: String, surname: String, email: String) -> Bool{
         var user = [User]()
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -100,38 +110,52 @@ class User: NSManagedObject {
             }        }
         task.resume()
         // fin insert database
+        
         if(database){
-            
             let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-            
-            guard let entityUser = NSEntityDescription.entityForName("User", inManagedObjectContext: managedObjectContext) else{
-                print("Entity not reached")
-                return nil
-            }
-            
-            userToReturn = User(entity: entityUser, insertIntoManagedObjectContext: managedObjectContext)
-            guard let user = userToReturn else{
-                print("guard user = userToReturn")
-                return userToReturn
-            }
-            user.name = name
-            user.surname = surname
-            user.emailAdress =  email
-            
+            let UserDescription = NSEntityDescription.entityForName( "User", inManagedObjectContext : managedObjectContext)
+            let request = NSFetchRequest()
+            request.entity = UserDescription
+            let pred = NSPredicate(format: "(emailAdress = %@)", email)
+            request.predicate = pred
+            var user: User? = nil
             do{
-                try managedObjectContext.save()
-                print("Saved (createUsers)")
+                var result = try managedObjectContext.executeFetchRequest(request)
+                // on vérifie que le user n'existe pas déja dans la base
+                
+                if result.count == 0 {
+                    
+                    
+                    let newUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext:managedObjectContext ) as! User
+                    newUser.emailAdress = email
+                    newUser.name = name
+                    newUser.surname = surname
+                    
+                    //m
+                    user = newUser
+                    do{
+                        try managedObjectContext.save()   //newUser.managedObjectContext?.save()
+                        
+                    } catch{
+                        print("there was an error saving data")
+                        
+                    }
+                }
+                else {
+                    // pour recuperer l user qui est deja dans la bd
+                    let user = result[0] as! User
+                    userToReturn = user
+                }
+                
             }
-            catch{
-                fatalError("Error while saving user yeaaaaaah: \(error)")
+                
+            catch {
+                print("insertion not done")
+                
             }
-            print("Created (createUsers)")
-            
-            return user
+            userToReturn = user
         }
-        else{
-            return userToReturn
-        }
+        return userToReturn
     }
     
     class func getUserByUsername(username: String) -> User?{
@@ -296,49 +320,49 @@ class User: NSManagedObject {
         }
         task.resume()
         /*
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        
-        guard let entitySpeaker = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedObjectContext) else{
-            return false
-        }
-        
-        let fetchRequestEvent = NSFetchRequest(entityName: "Event")
-        
-        
-        let predicatEvent = NSPredicate(format: "num=%@",numEvent)
-        fetchRequestEvent.predicate = predicatEvent
-        do
-        {
-            let fetchResultsSpeaker =
-                try managedObjectContext.executeFetchRequest(fetchRequestEvent) as! [Event]
-            // Vérification pour éviter les doublons, insertions si ok
-            if (fetchResultsSpeaker.count == 0)
-            {
-                let event = NSManagedObject(entity: entitySpeaker, insertIntoManagedObjectContext: managedObjectContext)
-                /*event.setValue(numEvent, forKey: "num") ENlever l'event
-                 event.setValue(hour, forKey: "hour")
-                 event.setValue(nom, forKey: "nom")*/
-                let fetchRequestUser = NSFetchRequest(entityName: "User")
-                
-                let predicatUser = NSPredicate(format: "emailAdress=%@",emailUser)
-                fetchRequestUser.predicate = predicatUser
-                
-                do
-                {
-                    let fetchResults =
-                        try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
-                    let user = fetchResults[0]
-                    //event.setValue(user, forKey: "users")
-                }catch let error as NSError {
-                    print("Could not fetch \(error), \(error.userInfo)")
-                    success = false
-                }
-                
-            }
-        }catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-            success = false
-        }*/
+         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+         
+         guard let entitySpeaker = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedObjectContext) else{
+         return false
+         }
+         
+         let fetchRequestEvent = NSFetchRequest(entityName: "Event")
+         
+         
+         let predicatEvent = NSPredicate(format: "num=%@",numEvent)
+         fetchRequestEvent.predicate = predicatEvent
+         do
+         {
+         let fetchResultsSpeaker =
+         try managedObjectContext.executeFetchRequest(fetchRequestEvent) as! [Event]
+         // Vérification pour éviter les doublons, insertions si ok
+         if (fetchResultsSpeaker.count == 0)
+         {
+         let event = NSManagedObject(entity: entitySpeaker, insertIntoManagedObjectContext: managedObjectContext)
+         /*event.setValue(numEvent, forKey: "num") ENlever l'event
+         event.setValue(hour, forKey: "hour")
+         event.setValue(nom, forKey: "nom")*/
+         let fetchRequestUser = NSFetchRequest(entityName: "User")
+         
+         let predicatUser = NSPredicate(format: "emailAdress=%@",emailUser)
+         fetchRequestUser.predicate = predicatUser
+         
+         do
+         {
+         let fetchResults =
+         try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
+         let user = fetchResults[0]
+         //event.setValue(user, forKey: "users")
+         }catch let error as NSError {
+         print("Could not fetch \(error), \(error.userInfo)")
+         success = false
+         }
+         
+         }
+         }catch let error as NSError {
+         print("Could not fetch \(error), \(error.userInfo)")
+         success = false
+         }*/
         return success
     }
     
@@ -364,34 +388,17 @@ class User: NSManagedObject {
         return email
     }
     
-    class func getEventsOfActualUser() -> [Event]?{
-        var ownEvents: [Event]?
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    class  func FetchRequestWithPredicat( c : String  , key : String) -> NSFetchRequest{
+        let FetchRequest = NSFetchRequest ( entityName:c)
+        let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
+        FetchRequest.sortDescriptors = [ sortDescriptor]
+        return FetchRequest
+    }
+    
+    class func getEventsOfActualUser(  c : String  , key : String) -> NSFetchedResultsController{
         
-        let fetchRequest = NSFetchRequest(entityName: "Event")
-        // Create a sort descriptor object that sorts on the "title"
-        // property of the Core Data object
-        //let sortDescriptor = NSSortDescriptor(key: "hour", ascending: true)
-        
-        // Set the list of sort descriptors in the fetch request,
-        // so it includes the sort descriptor
-        //fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        //Recherche des restaurants dans le core data
-        do
-        {
-            let fetchResults =
-                try managedObjectContext.executeFetchRequest(fetchRequest) as! [Event]
-            ownEvents = fetchResults
-            guard let lesEvents = ownEvents else{
-                print("pas d'event core data")
-                return ownEvents
-            }
-            print("STOP")
-            print(lesEvents.count)
-        }catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-        return ownEvents
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let eventsFetchController = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
+        return eventsFetchController
     }
 }

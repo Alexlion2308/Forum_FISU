@@ -20,7 +20,6 @@ class EventDetailViewController: UIViewController {
     var jsonSpeakersToPass: JSON?
     
     override func viewWillAppear(animated: Bool) {
-        print(jsonEvents)
         if(self.delete == true){
             self.addButton.hidden = true
             self.deleteButton.hidden = false
@@ -116,13 +115,14 @@ class EventDetailViewController: UIViewController {
         
         //print(speaker["descriptionSpeaker"].toString())
         let myImage =  UIImage(data: profileImageData)
-        //print(event["nameEvent"].toString())
         self.LabelEventName.text = event["nameEvent"].toString()
         self.LabelEventCategory.text = event["Categorie"].toString()
         self.TextEventDesc.text = event["DescEvent"].toString()
         self.EventPlace.setTitle(event["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
-        self.jsonPlacesToPass = event["PlaceList"]
         self.EventDetailImage.image = myImage
+        // Passing parametre to other views
+        self.jsonPlacesToPass = event["PlaceList"]
+        self.jsonSpeakersToPass = event["SpeakersList"]
     }
     
     
@@ -137,21 +137,14 @@ class EventDetailViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        guard let anEvent = self.eventSelected else {
-            return
-        }
-        
         if (segue.identifier == "ListSpeakerDetailSegue") {
-            let detailVC = segue.destinationViewController as! SpeakerProfileViewController
-            detailVC.speakerSelected = 1
+            let detailVC = segue.destinationViewController as! SpeakersCollectionViewController
             detailVC.jsonSpeakers = jsonSpeakersToPass
-            //print("SPEAKER //////////// " + self.SpeakerName)
+            detailVC.eventSpeaker = true
         }
         if (segue.identifier == "PlaceDetailSegue") {
             let detailVC = segue.destinationViewController as! PlaceViewController
-            //detailVC.placeSelected = jsonPlacesToPass["NumPlace"]
             detailVC.jsonPlaces = jsonPlacesToPass
-            //print("SPEAKER //////////// " + self.SpeakerName)   SpeakersList
         }
     }
     

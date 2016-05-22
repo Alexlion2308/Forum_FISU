@@ -2,7 +2,6 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Automatic">
     <entity name="Event" representedClassName=".Event" syncable="YES">
         <attribute name="hour" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="num" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
@@ -13,7 +12,7 @@
         <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-1782" positionY="-738" width="128" height="118"/>
+        <element name="Event" positionX="-1782" positionY="-738" width="128" height="103"/>
         <element name="User" positionX="-1946" positionY="-837" width="128" height="88"/>
     </elements>
 </model>

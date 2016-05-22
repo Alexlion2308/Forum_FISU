@@ -14,6 +14,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     let section = ["DAY 1 : Monday, July 4", "DAY 2 : Tuesday, July 5", "DAY 3 : Wednesday, July 6", "DAY 4 : Thursday, July 7", "DAY 5 : Friday, July 8", "DAY 6 : Friday, July 9"]
+    let sectionDay = ["2016-07-04", "2016-07-05", "2016-07-06", "2016-07-07", "2016-07-08", "2016-07-09"]
     var sectionNumber = [0, 0, 0, 0, 0, 0]
     @IBOutlet weak var EventTableView: UITableView!
     @IBOutlet weak var LabelDaySelected: UILabel!
@@ -109,7 +110,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return sectionNumber[section]
     }
     
-    
     //Affichage des éléments de la variable events à l'écran
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -129,10 +129,15 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("guard jsonSpeakerToLoop")
             return cell
         }
+        //print(event["DateEvent"].toString())
+        print(sectionNumber)
+        print(indexPath.section)
+        print(indexPath.row)
         //let resultsArray = jsonEventsToLoop.arrayValue
         for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
             let currentKey = key as! NSNumber
-            if(currentKey == indexPath.row){
+            if(event["DateEvent"].toString() == sectionDay[indexPath.section]){
+                print(sectionDay[indexPath.section])
                 thenamelabel.text = event["nameEvent"].toString()
                 thedatelabel.text = event["HourEvent"].toString()
                 guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
