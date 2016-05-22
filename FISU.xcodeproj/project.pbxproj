@@ -39,23 +39,9 @@
 		061623801CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */; };
 		064FD7331C9C6677000E00F3 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD7321C9C6677000E00F3 /* DayViewController.swift */; };
 		064FD7351C9C684A000E00F3 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */; };
-		06698D0E1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */; };
-		06698D0F1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */; };
-		06698D101CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */; };
 		06698D121CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */; };
 		06698D131CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */; };
 		06698D141CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */; };
-		06698D171CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */; };
-		06698D181CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */; };
-		06698D191CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */; };
-		06698D1A1CBBF002006A74DA /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D161CBBF002006A74DA /* Restaurant.swift */; };
-		06698D1B1CBBF002006A74DA /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D161CBBF002006A74DA /* Restaurant.swift */; };
-		06698D1C1CBBF002006A74DA /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D161CBBF002006A74DA /* Restaurant.swift */; };
-		06698D1E1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */; };
-		06698D1F1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */; };
-		06698D201CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */; };
-		06698D221CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */; };
-		06698D231CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */; };
 		06BBB2DC1CB7BC0B004C8F71 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2D81CB7BC0B004C8F71 /* Place+CoreDataProperties.swift */; };
 		06BBB2DF1CB7BC0B004C8F71 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2D91CB7BC0B004C8F71 /* Place.swift */; };
 		06BBB2E11CB7E699004C8F71 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */; };
@@ -153,12 +139,7 @@
 		0616237D1CA5A45B005AAB1F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "FISU/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		064FD7321C9C6677000E00F3 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayViewController.swift; path = FISU/DayViewController.swift; sourceTree = SOURCE_ROOT; };
 		064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayTableViewCell.swift; path = FISU/DayTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		06698D111CBBEC50006A74DA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
-		06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Restaurant+CoreDataProperties.swift"; path = "FISU/Restaurant+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		06698D161CBBF002006A74DA /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Restaurant.swift; path = FISU/Restaurant.swift; sourceTree = SOURCE_ROOT; };
-		06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
-		06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantVCMapView.swift; sourceTree = "<group>"; };
 		06BBB2D81CB7BC0B004C8F71 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		06BBB2D91CB7BC0B004C8F71 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceViewController.swift; path = FISU/PlaceViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -273,8 +254,6 @@
 				5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */,
 				5D7BC8521CE4AEC3008EB224 /* Json.swift */,
 				5DE356611C614A1F00146D0A /* FISU.xcdatamodeld */,
-				06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */,
-				06698D161CBBF002006A74DA /* Restaurant.swift */,
 				0609A3911CB3B590002B82A1 /* Fisu+CoreDataProperties.swift */,
 				5D7AE2271CB7CB4700E26E2E /* Place+CoreDataProperties.swift */,
 				5D7AE2281CB7CB4700E26E2E /* Place.swift */,
@@ -301,7 +280,6 @@
 				5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */,
 				5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */,
 				06BBB2E81CB7F4A8004C8F71 /* PlaceVCMapView.swift */,
-				06698D211CBBFB8B006A74DA /* RestaurantVCMapView.swift */,
 				06BBB2E41CB7EFA0004C8F71 /* Artwork.swift */,
 				060C23A81CA45E8B00388BD6 /* EventTableViewCell.swift */,
 				064FD7341C9C684A000E00F3 /* DayTableViewCell.swift */,
@@ -324,8 +302,6 @@
 				064FD7321C9C6677000E00F3 /* DayViewController.swift */,
 				060C23A41CA4493A00388BD6 /* EventViewController.swift */,
 				06BBB2E01CB7E699004C8F71 /* PlaceViewController.swift */,
-				06698D0D1CBBEBFE006A74DA /* RestaurantViewController.swift */,
-				06698D1D1CBBF671006A74DA /* RestaurantDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -681,14 +657,11 @@
 			files = (
 				06BBB2E51CB7EFA0004C8F71 /* Artwork.swift in Sources */,
 				060C23921CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */,
-				06698D1E1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */,
 				5D7AE22B1CB7CB4700E26E2E /* Place.swift in Sources */,
 				064FD7331C9C6677000E00F3 /* DayViewController.swift in Sources */,
 				5D1DEC6E1CA801160087498F /* User+CoreDataProperties.swift in Sources */,
 				5D15BC691CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */,
 				06698D121CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */,
-				06698D221CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */,
-				06698D171CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */,
 				5D4EEE711CA6DF2100F12D72 /* SpeakerProfileViewController.swift in Sources */,
 				06BBB2E91CB7F4A8004C8F71 /* PlaceVCMapView.swift in Sources */,
 				0616237E1CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */,
@@ -708,12 +681,10 @@
 				060C239E1CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */,
 				064FD7351C9C684A000E00F3 /* DayTableViewCell.swift in Sources */,
 				5DE3565B1C614A1F00146D0A /* AppDelegate.swift in Sources */,
-				06698D1A1CBBF002006A74DA /* Restaurant.swift in Sources */,
 				5D7FB4231CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */,
 				5D7BC8531CE4AEC3008EB224 /* Json.swift in Sources */,
 				5D2FE3F51CEC9CE10023665E /* Reachability.swift in Sources */,
 				5D7AE2291CB7CB4700E26E2E /* Place+CoreDataProperties.swift in Sources */,
-				06698D0E1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
 				5D50765D1CE6241E00E70FE2 /* ImageLoader.swift in Sources */,
 				5D747F511CB79F290015305E /* PageViewController.swift in Sources */,
 				060C23A11CA42C0200388BD6 /* Day.swift in Sources */,
@@ -735,7 +706,6 @@
 				5D1DEC711CA801160087498F /* User.swift in Sources */,
 				5D15BC6A1CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */,
 				06BBB2E21CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
-				06698D231CBBFB8B006A74DA /* RestaurantVCMapView.swift in Sources */,
 				5D343F081C7730A9005BFB8A /* AppDelegate.swift in Sources */,
 				5DE356731C614A1F00146D0A /* FISUTests.swift in Sources */,
 				060C23A21CA42C0200388BD6 /* Day.swift in Sources */,
@@ -744,14 +714,10 @@
 				5D7AE22C1CB7CB4700E26E2E /* Place.swift in Sources */,
 				5D20A4D41CA7EA79001A920F /* OwnCalendarTableViewCell.swift in Sources */,
 				5D747F551CB79FEA0015305E /* WalkthroughViewController.swift in Sources */,
-				06698D1B1CBBF002006A74DA /* Restaurant.swift in Sources */,
 				060C23961CA42C0200388BD6 /* Speaker.swift in Sources */,
 				5D7FB4241CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */,
 				06698D131CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */,
-				06698D0F1CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
-				06698D1F1CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */,
 				0609A3941CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */,
-				06698D181CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */,
 				060C23931CA42C0200388BD6 /* Speaker+CoreDataProperties.swift in Sources */,
 				060C239F1CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */,
 				5D20A4D71CA7F2D7001A920F /* OwnCalendarTableViewController.swift in Sources */,
@@ -781,7 +747,6 @@
 				06BBB2E71CB7EFA0004C8F71 /* Artwork.swift in Sources */,
 				060C23A71CA4493A00388BD6 /* EventViewController.swift in Sources */,
 				06698D141CBBEC50006A74DA /* RestaurantTableViewCell.swift in Sources */,
-				06698D201CBBF671006A74DA /* RestaurantDetailViewController.swift in Sources */,
 				06BBB2E31CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
 				5D343F091C7730AA005BFB8A /* AppDelegate.swift in Sources */,
 				061623801CA5A45B005AAB1F /* Event+CoreDataProperties.swift in Sources */,
@@ -790,10 +755,7 @@
 				060C23A01CA42C0200388BD6 /* Day+CoreDataProperties.swift in Sources */,
 				060C23971CA42C0200388BD6 /* Speaker.swift in Sources */,
 				06BBB2DC1CB7BC0B004C8F71 /* Place+CoreDataProperties.swift in Sources */,
-				06698D191CBBF002006A74DA /* Restaurant+CoreDataProperties.swift in Sources */,
-				06698D101CBBEBFE006A74DA /* RestaurantViewController.swift in Sources */,
 				0609A3981CB3B590002B82A1 /* Fisu.swift in Sources */,
-				06698D1C1CBBF002006A74DA /* Restaurant.swift in Sources */,
 				0609A3951CB3B590002B82A1 /* Fisu+CoreDataProperties.swift in Sources */,
 				5DE3567E1C614A1F00146D0A /* FISUUITests.swift in Sources */,
 				060C23A31CA42C0200388BD6 /* Day.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import GoogleMaps
+import GoogleMaps // Relatif a l'API Google qu'on utilise
 
 
 @UIApplicationMain
@@ -16,14 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     var window: UIWindow?
-    var notificationSettings: UIUserNotificationSettings?
+    var notificationSettings: UIUserNotificationSettings? // Les options de notifications que l'on parametrera plus tard
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        if Reachability.isConnectedToNetwork() == false {
-            print("Internet connection FAILED")
-            let alert = UIAlertView(title: "WARNING", message: "You must be connected to internet to register to events. Your own calendar will be visible without internet connection once you are registred. But your will not be able to add or delete events", delegate: nil, cancelButtonTitle: "OK")
+        if Reachability.isConnectedToNetwork() == false { // On vérifie la connexion à internet de l'utilisateur
+            // print("Internet connection FAILED") // TRACE
+            let alert = UIAlertView(title: "WARNING", message: "You must be connected to internet to register to events. Your own calendar will be visible without internet connection once you are registred. But your will not be able to add or delete events", delegate: nil, cancelButtonTitle: "OK") // On le notifie qu'il a pas internet
             alert.show()
             //var own = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OwnCalendarViewController") as UIViewController
             //set properties of login
@@ -36,22 +36,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("OwnCalendarViewController")
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("OwnCalendarViewController") // Et on redirige directement vers OwnCalendar
             
             window.rootViewController = initialViewController
             window.makeKeyAndVisible()
         }
-        let notificationTypes : UIUserNotificationType = [.Alert, .Badge, .Sound]
+        
+        let notificationTypes : UIUserNotificationType = [.Alert, .Badge, .Sound] // On récupere les option pour les notifs
         notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
         guard let settingNotif = self.notificationSettings else{
             return false
         }
-        UIApplication.sharedApplication().registerUserNotificationSettings(settingNotif)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settingNotif) // Et on parametre selon le souhait de l'user
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
-        GMSServices.provideAPIKey("AIzaSyAEtmY3vdAP89Si76FsqSjfb7VjLDYu3bQ")
+        GMSServices.provideAPIKey("AIzaSyAEtmY3vdAP89Si76FsqSjfb7VjLDYu3bQ") // API KEY de Google places
         
-        return true
+        return true // Tous s'est bien passé mazeltof
     }
 
     
@@ -59,19 +60,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let characterSet: NSCharacterSet = NSCharacterSet(charactersInString: "<>")
         let tokenString: String = (deviceToken.description as NSString).stringByTrimmingCharactersInSet(characterSet).stringByReplacingOccurrencesOfString(" ", withString: "") as String
-        
-        print("Device Token: \(tokenString)")
-        
+        // On récup le token et l'ecrit correctement sans les <> et les espaces
         guard let settingNotif = self.notificationSettings else{
             return
         }
         
-        let pushBadge = settingNotif.types.contains(.Badge) ? "enabled" : "disabled"
-        let pushAlert = settingNotif.types.contains(.Alert) ? "enabled" : "disabled"
-        let pushSound = settingNotif.types.contains(.Sound) ? "enabled" : "disabled"
+        let pushBadge = settingNotif.types.contains(.Badge) ? "enabled" : "disabled" // Le param de chaque type de notif est récuperé
+        let pushAlert = settingNotif.types.contains(.Alert) ? "enabled" : "disabled" // Le param de chaque type de notif est récuperé
+        let pushSound = settingNotif.types.contains(.Sound) ? "enabled" : "disabled" // Le param de chaque type de notif est récuperé
         
         
-        let myDevice = UIDevice();
+        let myDevice = UIDevice(); // On récupere les infos du device nom, uid etc..
         let deviceName = myDevice.name
         let deviceModel = myDevice.model
         let systemVersion = myDevice.systemVersion
@@ -92,18 +91,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String
         
         
-        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/apns/apns.php") else{
+        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/apns/apns.php") else{ // Serveur qui sert à envoyer la notif
             print("guard my url")
             return
         }
         let request  = NSMutableURLRequest(URL: myUrl)
-        request.HTTPMethod = "POST"
+        request.HTTPMethod = "POST" // peut etre GET mais doit etre modifié dans le code php également
         
-        let postString = "task=register&appname=\(appName)&appversion=\(appVersion)&deviceuid=\(deviceId)&devicetoken=\(tokenString)&devicename=\(deviceName)&devicemodel=\(deviceModel)&deviceversion=\(systemVersion)&pushbadge=\(pushBadge)&pushalert=\(pushAlert)&pushsound=\(pushSound)"
+        let postString = "task=register&appname=\(appName)&appversion=\(appVersion)&deviceuid=\(deviceId)&devicetoken=\(tokenString)&devicename=\(deviceName)&devicemodel=\(deviceModel)&deviceversion=\(systemVersion)&pushbadge=\(pushBadge)&pushalert=\(pushAlert)&pushsound=\(pushSound)" // Tous les parametre du device
         
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding) // on parse l'url
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ // On exec la requete et on récupere la réponse
             data, response, error in
             
             if error != nil{
@@ -114,10 +113,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("guard datareceived")
                 return
             }
-            let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
-            print("response http request: \(responseString)")
+            let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding) // On reçoit une réponse du serveur quand on s'enregistre
+            // print("response http request: \(responseString)") // TRACE
         }
-        task.resume()
+        task.resume() // La requete est executée
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -125,14 +124,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(error)
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) { // Gerer la réception d'une notif
         
-        print("Message detail: \(userInfo)")
-        if let aps = userInfo["aps"] as? NSDictionary{
-            let alertMessage = aps["alert"] as? String
-
+        // print("Message detail: \(userInfo)") // TRACE
+        if let aps = userInfo["aps"] as? NSDictionary{ // On récupere les infos au format JSON
+            let alertMessage = aps["alert"] as? String // Contenu du message
+            // Ici le titre a été réglé par défaut mais on peut le passer en parametre si on souhaite
             let myAlert = UIAlertController(title: "A change has occured in the events", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
-            let okAction = UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default , handler: nil)
+            let okAction = UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default , handler: nil) // Bouton pour 'accepter' la notif
             myAlert.addAction(okAction)
             guard let fenetre = self.window else{
                 return
@@ -140,7 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard let racine = fenetre.rootViewController else{
                 return
             }
-            racine.presentViewController(myAlert, animated: true, completion: nil)
+            racine.presentViewController(myAlert, animated: true, completion: nil) // On affiche l'alerte de la notif
         }
     }
     

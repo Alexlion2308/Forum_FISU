@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+/*
 
 class ImageLoader {
     
@@ -53,4 +53,4 @@ class ImageLoader {
         })
         
     }
-}
+}*/

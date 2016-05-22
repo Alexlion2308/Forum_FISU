@@ -18,16 +18,13 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
     var numberOfSpeakers: Int = 0
     var eventSpeaker: Bool = false
     var jsonSpeakers: JSON?
-    var jsonSpeakerToPass: JSON?
     
     func downloadAndUpdate() {
         if(eventSpeaker == true){
             guard let speakersForEvent = jsonSpeakers else{
                 return
             }
-            print(speakersForEvent)
             self.numberOfSpeakers = speakersForEvent.count
-            
         }else{
             jsonSpeaker = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
             if let obj = jsonSpeaker { // Je récupere le json de la page
@@ -36,11 +33,7 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
                     print("guard jsonSpeakerToLoop")
                     return
                 }
-                var currentNumber: NSNumber = 0
-                for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                    currentNumber = key as! NSNumber
-                }
-                self.numberOfSpeakers = Int(currentNumber) + 1
+                self.numberOfSpeakers = jsonSpeakerToLoop.count
             }
         }
     }
@@ -87,42 +80,25 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
             print("guard theProfilePicture")
             return cell
         }
-        if(eventSpeaker == false){
-            guard let jsonSpeakerToLoop = self.jsonSpeaker else{
-                print("guard jsonSpeakerToLoop collection")
-                return cell
-            }
-            for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                let currentKey = key as! NSNumber
-                if(currentKey == indexPath.row){
-                    theNameLabel.text = speaker["surnameSpeaker"].toString()
-                    guard let profileImageUrl = NSURL(string:speaker["imageSpeaker"].toString()) else{
-                        return cell
-                    }
-                    guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
-                        return cell
-                    }
-                    //print(speaker["descriptionSpeaker"].toString())
-                    let myImage =  UIImage(data: profileImageData)
-                    theProfilePicture.image = myImage
-                }
-            }
-        }else{
-            guard let speakersForEvent = jsonSpeakers else{
-                return cell
-            }
-            theNameLabel.text = speakersForEvent[indexPath.row]["NomSpeaker"].toString()
-            guard let profileImageUrl = NSURL(string:speakersForEvent[indexPath.row]["ImageProfil"].toString()) else{
-                return cell
-            }
-            guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
-                return cell
-            }
-            let myImage =  UIImage(data: profileImageData)
-            theProfilePicture.image = myImage
+        guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+            print("guard jsonSpeakerToLoop collection")
+            return cell
         }
-        
-        
+        for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            let currentKey = key as! NSNumber
+            if(currentKey == indexPath.row){
+                theNameLabel.text = speaker["surnameSpeaker"].toString()
+                guard let profileImageUrl = NSURL(string:speaker["imageSpeaker"].toString()) else{
+                    return cell
+                }
+                guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+                    return cell
+                }
+                //print(speaker["descriptionSpeaker"].toString())
+                let myImage =  UIImage(data: profileImageData)
+                theProfilePicture.image = myImage
+            }
+        }
         return cell;
     }
     
@@ -137,17 +113,11 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
             }
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
             detailVC.speakerSelected = SpeakerIndex.row + 1
-            detailVC.jsonSpeaker = self.jsonSpeakerToPass
             guard let jsonSpeakerToLoop = self.jsonSpeaker else{
                 print("guard jsonSpeakerToLoop collection")
                 return
             }
-            for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                let currentKey = key as! NSNumber
-                if(currentKey == SpeakerIndex.row){
-                    self.jsonSpeakerToPass = speaker
-                }
-            }
+            detailVC.jsonSpeaker = jsonSpeakerToLoop[SpeakerIndex.row]
         }
     }
     

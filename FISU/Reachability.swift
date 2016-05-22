@@ -9,7 +9,7 @@
 import Foundation
 import SystemConfiguration
 
-public class Reachability {
+public class Reachability { // Classe responsable de la verification de la connectivitée
     
     class func isConnectedToNetwork() -> Bool {
         
