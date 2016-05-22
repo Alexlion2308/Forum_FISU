@@ -18,7 +18,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var sectionNumber = [0, 0, 0, 0, 0, 0]
     @IBOutlet weak var EventTableView: UITableView!
     @IBOutlet weak var LabelDaySelected: UILabel!
-    var daySelected : Day?
     var numberOfEvents:Int = 0
     var jsonEvents:JSON?
     
