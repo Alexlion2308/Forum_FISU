@@ -51,8 +51,8 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         if Reachability.isConnectedToNetwork() == true {
             self.getAndCountOwnEvents()
             print("Internet connection OK")
-            User.getEventsOfActualUser("Event", key: "hour")
-            self.getAndCountOwnEvents()
+            //User.getEventsOfActualUser("Event", key: "hour")
+            //self.getAndCountOwnEvents()
             self.OwnCalendarEventTableView.reloadData()
             if(!(User.userExists())){
                 var home = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
@@ -120,7 +120,7 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
             print("guard jsonSpeakerToLoop")
             return cell
         }
-        if(self.coreData == false){
+        if(true){
             for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                 let currentKey = key as! NSNumber
                 if(currentKey == indexPath.row){

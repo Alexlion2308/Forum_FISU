@@ -89,11 +89,10 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
         }
         if(eventSpeaker == false){
             guard let jsonSpeakerToLoop = self.jsonSpeaker else{
-                print("guard jsonSpeakerToLoop")
+                print("guard jsonSpeakerToLoop collection")
                 return cell
             }
             for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                self.jsonSpeakerToPass = speaker
                 let currentKey = key as! NSNumber
                 if(currentKey == indexPath.row){
                     theNameLabel.text = speaker["surnameSpeaker"].toString()
@@ -139,6 +138,16 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
             detailVC.speakerSelected = SpeakerIndex.row + 1
             detailVC.jsonSpeaker = self.jsonSpeakerToPass
+            guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+                print("guard jsonSpeakerToLoop collection")
+                return
+            }
+            for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+                let currentKey = key as! NSNumber
+                if(currentKey == SpeakerIndex.row){
+                    self.jsonSpeakerToPass = speaker
+                }
+            }
         }
     }
     

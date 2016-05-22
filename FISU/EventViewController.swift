@@ -130,14 +130,14 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         }
         //print(event["DateEvent"].toString())
-        print(sectionNumber)
-        print(indexPath.section)
-        print(indexPath.row)
+        //print(sectionNumber)
+        //print(indexPath.section)
+        //print(indexPath.row)
         //let resultsArray = jsonEventsToLoop.arrayValue
         for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
             let currentKey = key as! NSNumber
             if(event["DateEvent"].toString() == sectionDay[indexPath.section]){
-                print(sectionDay[indexPath.section])
+                //print(sectionDay[indexPath.section])
                 thenamelabel.text = event["nameEvent"].toString()
                 thedatelabel.text = event["HourEvent"].toString()
                 guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{

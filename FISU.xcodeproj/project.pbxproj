@@ -268,6 +268,10 @@
 		5D747F571CB7B2140015305E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5D2FE3F41CEC9CE10023665E /* Reachability.swift */,
+				5DE3565A1C614A1F00146D0A /* AppDelegate.swift */,
+				5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */,
+				5D7BC8521CE4AEC3008EB224 /* Json.swift */,
 				5DE356611C614A1F00146D0A /* FISU.xcdatamodeld */,
 				06698D151CBBF002006A74DA /* Restaurant+CoreDataProperties.swift */,
 				06698D161CBBF002006A74DA /* Restaurant.swift */,
@@ -290,6 +294,9 @@
 		5D747F581CB7B25A0015305E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5DE356641C614A1F00146D0A /* Assets.xcassets */,
+				5DE356661C614A1F00146D0A /* LaunchScreen.storyboard */,
+				5DE3565E1C614A1F00146D0A /* Main.storyboard */,
 				5D7FB4251CBAB5840029A2E1 /* SpeakersCollectionViewCell.swift */,
 				5D9519571C7DB4D600765B9D /* DateEventTableViewCell.swift */,
 				5D20A4D21CA7EA79001A920F /* OwnCalendarTableViewCell.swift */,
@@ -349,13 +356,6 @@
 		5DE356591C614A1F00146D0A /* FISU */ = {
 			isa = PBXGroup;
 			children = (
-				5D2FE3F41CEC9CE10023665E /* Reachability.swift */,
-				5DE3565A1C614A1F00146D0A /* AppDelegate.swift */,
-				5D50765C1CE6241E00E70FE2 /* ImageLoader.swift */,
-				5D7BC8521CE4AEC3008EB224 /* Json.swift */,
-				5DE3565E1C614A1F00146D0A /* Main.storyboard */,
-				5DE356641C614A1F00146D0A /* Assets.xcassets */,
-				5DE356661C614A1F00146D0A /* LaunchScreen.storyboard */,
 				5DE356691C614A1F00146D0A /* Info.plist */,
 				5D747F571CB7B2140015305E /* Model */,
 				5D747F591CB7B2720015305E /* Controllers */,

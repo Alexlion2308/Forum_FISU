@@ -14,7 +14,7 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    
+
     var window: UIWindow?
     var notificationSettings: UIUserNotificationSettings?
 
