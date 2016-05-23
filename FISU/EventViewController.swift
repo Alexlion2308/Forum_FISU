@@ -19,39 +19,49 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var EventTableView: UITableView!
     @IBOutlet weak var LabelDaySelected: UILabel!
     var numberOfEvents:Int = 0
+    var jsonEventsDay1:JSON?
+    var jsonEventsDay2:JSON?
+    var jsonEventsDay3:JSON?
+    var jsonEventsDay4:JSON?
+    var jsonEventsDay5:JSON?
+    var jsonEventsDay6:JSON?
+    var jsonEventsToLoop:JSON?
     var jsonEvents:JSON?
-    
+    var eventDayOne:JSON?
+    var nombreEvent:Int=0
+
     func downloadAndUpdate() {
-        jsonEvents = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEvent.php")
-        if let obj = jsonEvents { // Je récupere le json de la page
-            self.jsonEvents = JSON(obj)
-            guard let jsonEventsToLoop = self.jsonEvents else{
-                print("guard jsonSpeakerToLoop")
-                return
-            }
-            self.numberOfEvents = jsonEventsToLoop.count
-            for (_, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                //print(event["DateEvent"]["2016-07-04"].count)
-                if(event["DateEvent"].toString() == "2016-07-04"){
-                    sectionNumber[0] = sectionNumber[0] + 1
-                }
-                if(event["DateEvent"].toString() == "2016-07-05"){
-                    sectionNumber[1] = sectionNumber[1] + 1
-                }
-                if(event["DateEvent"].toString() == "2016-07-06"){
-                    sectionNumber[2] = sectionNumber[2] + 1
-                }
-                if(event["DateEvent"].toString() == "2016-07-07"){
-                    sectionNumber[3] = sectionNumber[3] + 1
-                }
-                if(event["DateEvent"].toString() == "2016-07-08"){
-                    sectionNumber[4] = sectionNumber[4] + 1
-                }
-                if(event["DateEvent"].toString() == "2016-07-09"){
-                    sectionNumber[5] = sectionNumber[5] + 1
-                }
-            }
+        jsonEventsDay1 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay1.php")
+        jsonEventsDay2 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay2.php")
+        jsonEventsDay3 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay3.php")
+        jsonEventsDay4 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay4.php")
+        jsonEventsDay5 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay5.php")
+        jsonEventsDay6 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay6.php")
+        guard let eventsDay1 = jsonEventsDay1 else{
+            return
         }
+        guard let eventsDay2 = jsonEventsDay2 else{
+            return
+        }
+        guard let eventsDay3 = jsonEventsDay3 else{
+            return
+        }
+        guard let eventsDay4 = jsonEventsDay4 else{
+            return
+        }
+        guard let eventsDay5 = jsonEventsDay5 else{
+            return
+        }
+        guard let eventsDay6 = jsonEventsDay6 else{
+            return
+        }
+        sectionNumber[0] = eventsDay1.count
+        sectionNumber[1] = eventsDay2.count
+        sectionNumber[2] = eventsDay3.count
+        sectionNumber[3] = eventsDay4.count
+        sectionNumber[4] = eventsDay5.count
+        sectionNumber[5] = eventsDay6.count
+        
     }
 
     
@@ -112,18 +122,31 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         guard let theimage = cell.ImageEvent else{
             return cell
         }
-        
-        guard let jsonEventsToLoop = self.jsonEvents else{
-            print("guard jsonSpeakerToLoop")
+        if(indexPath.section == 0){
+            self.jsonEventsToLoop = self.jsonEventsDay1
+        }
+        if(indexPath.section == 1){
+            self.jsonEventsToLoop = self.jsonEventsDay2
+        }
+        if(indexPath.section == 2){
+            self.jsonEventsToLoop = self.jsonEventsDay3
+        }
+        if(indexPath.section == 3){
+            self.jsonEventsToLoop = self.jsonEventsDay4
+        }
+        if(indexPath.section == 4){
+            self.jsonEventsToLoop = self.jsonEventsDay5
+        }
+        if(indexPath.section == 5){
+            self.jsonEventsToLoop = self.jsonEventsDay6
+        }
+        guard let toLoop = jsonEventsToLoop else{
             return cell
         }
-        
-        for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+        for (key, event) in toLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
             let currentEvent = key as! NSNumber
-            if(currentEvent == indexPath.row){
-                print(indexPath.row)
-                print(event["DateEvent"].toString())
-                print(sectionDay[indexPath.section])
+            
+            if(currentEvent == indexPath.row + nombreEvent && event["DateEvent"].toString() == sectionDay[indexPath.section]){
                 thenamelabel.text = event["nameEvent"].toString()
                 thedatelabel.text = event["HourEvent"].toString()
                 guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
@@ -145,6 +168,24 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "EventDetailSegue") {
             if let indexPath = self.EventTableView.indexPathForSelectedRow {
+                if(indexPath.section == 0){
+                    self.jsonEvents     = self.jsonEventsDay1
+                }
+                if(indexPath.section == 1){
+                    self.jsonEvents = self.jsonEventsDay2
+                }
+                if(indexPath.section == 2){
+                    self.jsonEvents = self.jsonEventsDay3
+                }
+                if(indexPath.section == 3){
+                    self.jsonEvents = self.jsonEventsDay4
+                }
+                if(indexPath.section == 4){
+                    self.jsonEvents = self.jsonEventsDay5
+                }
+                if(indexPath.section == 5){
+                    self.jsonEvents = self.jsonEventsDay6
+                }
                 let detailVC = segue.destinationViewController as! EventDetailViewController
                 detailVC.delete = false
                 detailVC.eventSelected = indexPath.row

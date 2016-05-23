@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JTe-2O-bit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JTe-2O-bit">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -123,7 +123,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yd8-SS-tji" id="hfd-nd-ToM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="68.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVo-wd-lfW">
@@ -204,6 +204,7 @@
                         <segue destination="T3b-AF-cPc" kind="relationship" relationship="viewControllers" id="vFE-6z-N53"/>
                         <segue destination="qCg-JH-nN1" kind="relationship" relationship="viewControllers" id="jgZ-5S-78U"/>
                         <segue destination="034-cP-PAd" kind="relationship" relationship="viewControllers" id="2XJ-w8-YYO"/>
+                        <segue destination="qw8-Q2-Htu" kind="relationship" relationship="viewControllers" id="iNP-k0-og8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1M-Ne-Dqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,7 +237,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SXg-tY-gaZ" id="lUb-3B-Sfw">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ek-vE-mEz">
@@ -752,6 +753,93 @@
             </objects>
             <point key="canvasLocation" x="1823" y="1499"/>
         </scene>
+        <!--Emergencys View Controller-->
+        <scene sceneID="G3L-eh-Z2h">
+            <objects>
+                <viewController id="LzC-zm-Wag" customClass="EmergencysViewController" customModule="FISU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wQo-Ge-SI1"/>
+                        <viewControllerLayoutGuide type="bottom" id="4bq-Tv-kSt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rbI-RG-sWP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="policeman" translatesAutoresizingMaskIntoConstraints="NO" id="sh6-Gu-R2A">
+                                <rect key="frame" x="40" y="78" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="DAL-uL-reT"/>
+                                    <constraint firstAttribute="height" constant="128" id="eIo-sd-Mud"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poison-bottle-with-a-skull-symbol" translatesAutoresizingMaskIntoConstraints="NO" id="D9f-MW-VEq">
+                                <rect key="frame" x="202" y="219" width="127" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="7Au-De-Sbm"/>
+                                    <constraint firstAttribute="height" constant="127" id="jW4-ND-UZr"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor-stethoscope" translatesAutoresizingMaskIntoConstraints="NO" id="blJ-iZ-Hzf">
+                                <rect key="frame" x="40" y="219" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="HcF-GV-3aJ"/>
+                                    <constraint firstAttribute="width" constant="128" id="aVd-AP-zwq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ambulance" translatesAutoresizingMaskIntoConstraints="NO" id="Dv3-JX-XRl">
+                                <rect key="frame" x="40" y="363" width="127" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="8oE-gZ-BWQ"/>
+                                    <constraint firstAttribute="width" constant="127" id="cxL-Fx-mFU"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ambulance" translatesAutoresizingMaskIntoConstraints="NO" id="vE6-Cb-UHo">
+                                <rect key="frame" x="201" y="362" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="ZJF-ss-JPF"/>
+                                    <constraint firstAttribute="height" constant="128" id="qgJ-LK-BjE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firefighter-silhouette" translatesAutoresizingMaskIntoConstraints="NO" id="bie-as-nwZ">
+                                <rect key="frame" x="202" y="78" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="O6Y-tG-QzO"/>
+                                    <constraint firstAttribute="height" constant="128" id="cqn-kR-8po"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dv3-JX-XRl" firstAttribute="top" secondItem="blJ-iZ-Hzf" secondAttribute="bottom" constant="16" id="2lQ-Fa-I3x"/>
+                            <constraint firstItem="vE6-Cb-UHo" firstAttribute="top" secondItem="D9f-MW-VEq" secondAttribute="bottom" constant="16" id="9TB-OW-QcM"/>
+                            <constraint firstItem="Dv3-JX-XRl" firstAttribute="leading" secondItem="rbI-RG-sWP" secondAttribute="leadingMargin" constant="20" id="B9r-k1-7cS"/>
+                            <constraint firstItem="blJ-iZ-Hzf" firstAttribute="leading" secondItem="rbI-RG-sWP" secondAttribute="leadingMargin" constant="20" id="CC8-7h-4gF"/>
+                            <constraint firstItem="D9f-MW-VEq" firstAttribute="top" secondItem="bie-as-nwZ" secondAttribute="bottom" constant="13" id="MAw-cn-c6O"/>
+                            <constraint firstItem="bie-as-nwZ" firstAttribute="leading" secondItem="sh6-Gu-R2A" secondAttribute="trailing" constant="34" id="MKR-LE-z8T"/>
+                            <constraint firstItem="D9f-MW-VEq" firstAttribute="leading" secondItem="blJ-iZ-Hzf" secondAttribute="trailing" constant="34" id="NWa-Nn-7Zb"/>
+                            <constraint firstItem="sh6-Gu-R2A" firstAttribute="leading" secondItem="rbI-RG-sWP" secondAttribute="leadingMargin" constant="20" id="def-Kj-c2Z"/>
+                            <constraint firstItem="vE6-Cb-UHo" firstAttribute="leading" secondItem="Dv3-JX-XRl" secondAttribute="trailing" constant="34" id="jBQ-Op-SJF"/>
+                            <constraint firstItem="bie-as-nwZ" firstAttribute="top" secondItem="wQo-Ge-SI1" secondAttribute="bottom" constant="14" id="leS-KW-5xa"/>
+                            <constraint firstItem="sh6-Gu-R2A" firstAttribute="top" secondItem="wQo-Ge-SI1" secondAttribute="bottom" constant="14" id="oI9-vw-Eng"/>
+                            <constraint firstItem="blJ-iZ-Hzf" firstAttribute="top" secondItem="sh6-Gu-R2A" secondAttribute="bottom" constant="13" id="pWJ-x7-eb6"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="9bG-lt-KEi"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageAmbulance" destination="Dv3-JX-XRl" id="QzV-LR-xbw"/>
+                        <outlet property="imageDoctor" destination="blJ-iZ-Hzf" id="1d2-91-42D"/>
+                        <outlet property="imageFire" destination="bie-as-nwZ" id="btj-fI-uqL"/>
+                        <outlet property="imageOrganisateurs" destination="vE6-Cb-UHo" id="Afz-a3-DhE"/>
+                        <outlet property="imagePoison" destination="D9f-MW-VEq" id="j8q-3k-NBW"/>
+                        <outlet property="imagePolice" destination="sh6-Gu-R2A" id="RhF-GK-ym1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtc-Un-IKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1823" y="2298"/>
+        </scene>
         <!--Place View Controller-->
         <scene sceneID="dgF-iy-UsF">
             <objects>
@@ -1035,20 +1123,46 @@
             </objects>
             <point key="canvasLocation" x="1073" y="1499"/>
         </scene>
+        <!--emergency-->
+        <scene sceneID="3d4-lK-fky">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qw8-Q2-Htu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="emergency" image="alarm" selectedImage="alarm" id="4tO-3r-TKh"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G4E-qh-Wr4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LzC-zm-Wag" kind="relationship" relationship="rootViewController" id="uV0-5E-bIU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhG-Be-baS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="2298"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Corum" width="1061" height="796"/>
         <image name="Events" width="24" height="21"/>
         <image name="FISU FORUM 2" width="858" height="1500"/>
+        <image name="alarm" width="32" height="32"/>
+        <image name="ambulance" width="128" height="128"/>
         <image name="app1" width="432" height="881"/>
+        <image name="doctor-stethoscope" width="128" height="128"/>
+        <image name="firefighter-silhouette" width="128" height="128"/>
         <image name="image10" width="480" height="104"/>
         <image name="map-marker-icon" width="1024" height="1024"/>
+        <image name="poison-bottle-with-a-skull-symbol" width="128" height="128"/>
+        <image name="policeman" width="128" height="128"/>
         <image name="profilePicture1" width="123" height="161"/>
         <image name="speakers" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FFy-fn-yFe"/>
-        <segue reference="NhJ-in-rEF"/>
+        <segue reference="fkH-hh-6DA"/>
+        <segue reference="OaA-AO-sXa"/>
         <segue reference="Xeu-gz-uiJ"/>
     </inferredMetricsTieBreakers>
 </document>

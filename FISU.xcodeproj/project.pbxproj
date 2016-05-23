@@ -72,6 +72,8 @@
 		5DE356731C614A1F00146D0A /* FISUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE356721C614A1F00146D0A /* FISUTests.swift */; };
 		5DE3567E1C614A1F00146D0A /* FISUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3567D1C614A1F00146D0A /* FISUUITests.swift */; };
 		5DE43D791C846833003819C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE356641C614A1F00146D0A /* Assets.xcassets */; };
+		5DE7D9021CF32852007FFF68 /* EmergencysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7D9011CF32852007FFF68 /* EmergencysViewController.swift */; };
+		5DE7D9031CF32852007FFF68 /* EmergencysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7D9011CF32852007FFF68 /* EmergencysViewController.swift */; };
 		75A23F7B9229ED6C1ECBD857 /* Pods_FISUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A057438B600C6D688D62D917 /* Pods_FISUTests.framework */; };
 		95316D059277A5B87AF14B38 /* Pods_FISUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4893A733275C36109638C3 /* Pods_FISUUITests.framework */; };
 		FF787AFE084E053B71722A43 /* Pods_FISUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DA5A245FE782CBCF44DF16 /* Pods_FISUUITests.framework */; };
@@ -138,6 +140,7 @@
 		5DE356791C614A1F00146D0A /* FISUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FISUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE3567D1C614A1F00146D0A /* FISUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FISUUITests.swift; sourceTree = "<group>"; };
 		5DE3567F1C614A1F00146D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DE7D9011CF32852007FFF68 /* EmergencysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencysViewController.swift; sourceTree = "<group>"; };
 		6A12498DF6C1981B1BE563B5 /* Pods-FISUUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		6D81D736874AD55E8F4C351C /* Pods_FISU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FISU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855D3854A8A50EB4F1AFF957 /* Pods-FISUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FISUUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FISUUITests/Pods-FISUUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 			children = (
 				5D15BC681CE2687E00BB7BF5 /* GoogleApiViewController.swift */,
 				5D7FB4221CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift */,
+				5DE7D9011CF32852007FFF68 /* EmergencysViewController.swift */,
 				5DE3565C1C614A1F00146D0A /* ViewController.swift */,
 				5D4EEE701CA6DF2100F12D72 /* SpeakerProfileViewController.swift */,
 				5D83D3841C7AF7AF00A24A8A /* EventDetailViewController.swift */,
@@ -617,6 +621,7 @@
 				06BBB2E11CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
 				5D1DEC701CA801160087498F /* User.swift in Sources */,
 				5DAE87E21CF218AB00A6048A /* Event+CoreDataProperties.swift in Sources */,
+				5DE7D9021CF32852007FFF68 /* EmergencysViewController.swift in Sources */,
 				5DE3565B1C614A1F00146D0A /* AppDelegate.swift in Sources */,
 				5D7FB4231CBAB28C0029A2E1 /* SpeakersCollectionViewController.swift in Sources */,
 				5D7BC8531CE4AEC3008EB224 /* Json.swift in Sources */,
@@ -637,6 +642,7 @@
 				060C23AA1CA45E8B00388BD6 /* EventTableViewCell.swift in Sources */,
 				5D1DEC711CA801160087498F /* User.swift in Sources */,
 				5D15BC6A1CE2687E00BB7BF5 /* GoogleApiViewController.swift in Sources */,
+				5DE7D9031CF32852007FFF68 /* EmergencysViewController.swift in Sources */,
 				06BBB2E21CB7E699004C8F71 /* PlaceViewController.swift in Sources */,
 				5D343F081C7730A9005BFB8A /* AppDelegate.swift in Sources */,
 				5DE356731C614A1F00146D0A /* FISUTests.swift in Sources */,
