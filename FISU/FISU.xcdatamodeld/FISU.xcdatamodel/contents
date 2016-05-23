@@ -4,7 +4,6 @@
         <attribute name="hour" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="num" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="emailAdress" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +11,7 @@
         <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-1782" positionY="-738" width="128" height="103"/>
+        <element name="Event" positionX="-1739" positionY="-835" width="128" height="88"/>
         <element name="User" positionX="-1946" positionY="-837" width="128" height="88"/>
     </elements>
 </model>
