@@ -79,6 +79,8 @@ class EventDetailViewController: UIViewController {
     
     @IBOutlet weak var SpeakerName: UIButton!
     
+    @IBOutlet weak var LabelHour: UILabel!
+    
     @IBOutlet weak var LabelEventCategory: UILabel!
     
     @IBOutlet weak var TextEventDesc: UITextView!
@@ -117,6 +119,7 @@ class EventDetailViewController: UIViewController {
         let myImage =  UIImage(data: profileImageData)
         self.LabelEventName.text = event["nameEvent"].toString()
         self.LabelEventCategory.text = event["Categorie"].toString()
+        self.LabelHour.text = event["HourEvent"].toString()
         self.TextEventDesc.text = event["DescEvent"].toString()
         self.EventPlace.setTitle(event["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
         self.EventDetailImage.image = myImage
