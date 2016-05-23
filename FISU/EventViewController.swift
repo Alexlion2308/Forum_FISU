@@ -25,18 +25,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         jsonEvents = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEvent.php")
         if let obj = jsonEvents { // Je récupere le json de la page
             self.jsonEvents = JSON(obj)
-            guard let laVue = self.view else{
-                print("guard laCollection")
-                return
-            }
             guard let jsonEventsToLoop = self.jsonEvents else{
                 print("guard jsonSpeakerToLoop")
                 return
             }
             self.numberOfEvents = jsonEventsToLoop.count
-            var currentNumber: NSNumber = 0
-            for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                currentNumber = key as! NSNumber
+            for (_, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                 //print(event["DateEvent"]["2016-07-04"].count)
                 if(event["DateEvent"].toString() == "2016-07-04"){
                     sectionNumber[0] = sectionNumber[0] + 1
@@ -101,12 +95,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        guard let jsonEventsToLoop = self.jsonEvents else{
-            print("guard jsonSpeakerToLoop")
-            return 0
-        }
-        //print(sectionNumber[section])
         return sectionNumber[section]
     }
     
@@ -129,9 +117,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("guard jsonSpeakerToLoop")
             return cell
         }
-        for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-            let currentKey = key as! NSNumber
-            //if(event["DateEvent"].toString() == sectionDay[indexPath.section]){
+        for (_, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                 thenamelabel.text = event["nameEvent"].toString()
                 thedatelabel.text = event["HourEvent"].toString()
                 guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
@@ -143,7 +129,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 //print(speaker["descriptionSpeaker"].toString())
                 let myImage =  UIImage(data: profileImageData)
                 theimage.image = myImage
-            //}
         }
         
         return cell

@@ -31,7 +31,7 @@ class PlaceViewController: UIViewController {
             print("guard jsonEventsToLoop")
             return
         }
-        for (key, places) in jsonPlacesToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+        for (_, places) in jsonPlacesToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
             //print("Numéro con: " + events["numeroEvent"].toString()) // TRACE
             //print("Selectionné: " + String(selection)) // TRACE
                 guard let latitude = Double(places["LatitudePlace"].toString()) else{
