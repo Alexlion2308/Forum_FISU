@@ -21,11 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
-        //print(User.getUserByUsername("maachi.reda@gmail.com"))
-        //print(User.checkLogin("reda", surname: "reda", email: "maachi.reda@gmail.com"))
-        //print(User.getEventsFromUser("maachi.reda@gmail.com"))
-        //print(User.getActualUserMail())
+        print("==========")
+        print(User.checkLogin("reda", surname: "reda", email: "maachi.reda@gmail.com"))
+        print("==========")
         
         if Reachability.isConnectedToNetwork() == false { // On vérifie la connexion à internet de l'utilisateur
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

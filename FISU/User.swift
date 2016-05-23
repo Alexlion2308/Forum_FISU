@@ -23,29 +23,65 @@ class User: NSManagedObject {
     
     
     
-    class func checkLogin(name: String, surname: String, email: String) -> Bool{
-        var user = [User]()
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    class func checkLogin(name: String, surname: String, email: String) -> Void{ //
+        /*
+        let urlPath: String = "https://fisuwebfinal-madonna.rhcloud.com/checkUserExist.php?emailUser=\(email)"
+        let url: NSURL = NSURL(string: urlPath)!
+        let request1: NSURLRequest = NSURLRequest(URL: url)
+        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
         
-        let fetchRequestUser = NSFetchRequest(entityName: "User")
         
-        let predicatUsername = NSPredicate(format: "name=%@",name)
-        let predicatPassword = NSPredicate(format: "surname=%@",surname)
-        let predicatEmail = NSPredicate(format: "emailAdress=%@",email)
-        let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [predicatUsername,predicatPassword])
-        
-        fetchRequestUser.predicate = compound
         do{
-            let fetchResultUser = try managedObjectContext.executeFetchRequest(fetchRequestUser) as! [User]
-            user = fetchResultUser
+            
+            let dataVal = try NSURLConnection.sendSynchronousRequest(request1, returningResponse: response)
+            
+            print(response)
+            do {
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(dataVal, options: []) as? NSDictionary {
+                    print("Synchronous\(jsonResult)")
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+            
+            
+        }catch let error as NSError
+        {
+            print(error.localizedDescription)
+        }*/
+        var exist: Bool?
+        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/checkUserExist.php") else{
+            print("guard my url")
+            return
         }
-        catch let error as NSError{
-            print("Could not fetch \(error), \(error.userInfo)")
+        let request  = NSMutableURLRequest(URL: myUrl)
+        request.HTTPMethod = "POST"
+        
+        let postString = "emailUser=\(email)"
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        /*let task = NSURLConnection.sendSynchronousRequest(request){
+            data, response, error in
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            if error != nil{
+                print("error=\(error)")
+                return
+            }
+            guard let dataReceived = data else{
+                print("guard datareceived")
+                return
+            }
+            guard let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding) else{
+                return
+            }
+            print(responseString)
         }
-        if(user.count == 0){
-            return false
-        }
-        return true
+        task.resume()*/
     }
     
     
@@ -107,7 +143,8 @@ class User: NSManagedObject {
             }
             if(reponse != "success"){
                 database = false
-            }        }
+            }
+        }
         task.resume()
         // fin insert database
         
