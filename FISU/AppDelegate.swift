@@ -21,14 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
+        //print(User.getUserByUsername("maachi.reda@gmail.com"))
+        //print(User.checkLogin("reda", surname: "reda", email: "maachi.reda@gmail.com"))
+        //print(User.getEventsFromUser("maachi.reda@gmail.com"))
+        //print(User.getActualUserMail())
+        
         if Reachability.isConnectedToNetwork() == false { // On vérifie la connexion à internet de l'utilisateur
-            // print("Internet connection FAILED") // TRACE
-            let alert = UIAlertView(title: "WARNING", message: "You must be connected to internet to register to events. Your own calendar will be visible without internet connection once you are registred. But your will not be able to add or delete events", delegate: nil, cancelButtonTitle: "OK") // On le notifie qu'il a pas internet
-            alert.show()
-            //var own = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OwnCalendarViewController") as UIViewController
-            //set properties of login
-            //presentViewController(own, animated: true, completion: nil)
-            //root.presentViewController(own, animated: true, completion: nil)
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             guard let window = self.window else{
                 print("no window")
