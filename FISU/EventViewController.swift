@@ -117,7 +117,13 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("guard jsonSpeakerToLoop")
             return cell
         }
-        for (_, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+        
+        for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
+            let currentEvent = key as! NSNumber
+            if(currentEvent == indexPath.row){
+                print(indexPath.row)
+                print(event["DateEvent"].toString())
+                print(sectionDay[indexPath.section])
                 thenamelabel.text = event["nameEvent"].toString()
                 thedatelabel.text = event["HourEvent"].toString()
                 guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
@@ -129,6 +135,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 //print(speaker["descriptionSpeaker"].toString())
                 let myImage =  UIImage(data: profileImageData)
                 theimage.image = myImage
+            }
         }
         
         return cell

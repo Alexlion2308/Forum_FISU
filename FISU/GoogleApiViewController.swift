@@ -21,7 +21,6 @@ class GoogleApiViewController: UIViewController {
         super.viewDidLoad()
         placesClient = GMSPlacesClient()
     }
-    // TODO: Add a button to Main.storyboard to invoke onLaunchClicked.
     
     @IBAction func mapButton(sender: AnyObject) {
         onLaunchClicked(sender)
