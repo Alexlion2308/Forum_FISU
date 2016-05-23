@@ -16,31 +16,37 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
     let reuseIdentifier: String = "speakersCollectionCell"
     var jsonSpeaker: JSON?
     var numberOfSpeakers: Int = 0
+    var eventSpeaker: Bool = false
+    var jsonSpeakers: JSON?
     
     func downloadAndUpdate() {
-        jsonSpeaker = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
-        if let obj = jsonSpeaker { // Je récupere le json de la page
-            self.jsonSpeaker = JSON(obj)
-            guard let laCollection = self.collectionView else{
-                print("guard laCollection")
+        if(eventSpeaker == true){
+            guard let speakersForEvent = jsonSpeakers else{
                 return
             }
-            guard let jsonSpeakerToLoop = self.jsonSpeaker else{
-            print("guard jsonSpeakerToLoop")
-                return
+            self.numberOfSpeakers = speakersForEvent.count
+        }else{
+            jsonSpeaker = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeSpeaker.php")
+            if let obj = jsonSpeaker { // Je récupere le json de la page
+                self.jsonSpeaker = JSON(obj)
+                guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+                    print("guard jsonSpeakerToLoop")
+                    return
+                }
+                self.numberOfSpeakers = jsonSpeakerToLoop.count
             }
-            laCollection.reloadData()
-            var currentNumber: NSNumber = 0
-            for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-                currentNumber = key as! NSNumber
-            }
-            self.numberOfSpeakers = Int(currentNumber) + 1
         }
     }
     
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.downloadAndUpdate()
+        guard let laCollection = self.collectionView else{
+            print("guard laCollection")
+            return
+        }
+        laCollection.reloadData()
     }
     
     override func viewDidLoad() {
@@ -75,7 +81,7 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
             return cell
         }
         guard let jsonSpeakerToLoop = self.jsonSpeaker else{
-            print("guard jsonSpeakerToLoop")
+            print("guard jsonSpeakerToLoop collection")
             return cell
         }
         for (key, speaker) in jsonSpeakerToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
@@ -93,8 +99,6 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
                 theProfilePicture.image = myImage
             }
         }
-        
-        
         return cell;
     }
     
@@ -109,7 +113,11 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
             }
             let detailVC = segue.destinationViewController as! SpeakerProfileViewController
             detailVC.speakerSelected = SpeakerIndex.row + 1
-            detailVC.jsonSpeaker = self.jsonSpeaker
+            guard let jsonSpeakerToLoop = self.jsonSpeaker else{
+                print("guard jsonSpeakerToLoop collection")
+                return
+            }
+            detailVC.jsonSpeaker = jsonSpeakerToLoop[SpeakerIndex.row]
         }
     }
     

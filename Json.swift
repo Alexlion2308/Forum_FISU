@@ -7,7 +7,7 @@
 //
 import Foundation
 /// init
-public class JSON {
+public class JSON { // Classe qu'on utilisera souvent pour parser le JSON qu'on récupere de la base de donnée
     private let _value:AnyObject
     /// unwraps the JSON object
     public class func unwrap(obj:AnyObject) -> AnyObject {

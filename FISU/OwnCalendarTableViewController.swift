@@ -16,7 +16,9 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     var events: JSON?
     var numberOfEvents: Int = 0
     var coreData: Bool = false
-    var ownEvents: [Event]?
+    //var ownEvents: [Event]?
+    var ownEvents : NSFetchedResultsController = NSFetchedResultsController()
+
     
     func getAndCountOwnEvents() {
         let email = User.getActualUserMail()
@@ -49,8 +51,8 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         if Reachability.isConnectedToNetwork() == true {
             self.getAndCountOwnEvents()
             print("Internet connection OK")
-            User.getEventsOfActualUser()
-            self.getAndCountOwnEvents()
+            //User.getEventsOfActualUser("Event", key: "hour")
+            //self.getAndCountOwnEvents()
             self.OwnCalendarEventTableView.reloadData()
             if(!(User.userExists())){
                 var home = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
@@ -68,10 +70,14 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
                 print("on est dans le else")
                 //On charge les events du core data
                 self.coreData = true
-                guard let ownEvents = User.getEventsOfActualUser() else{
-                    return
+                ownEvents = User.getEventsOfActualUser("Event", key: "hour")
+                //ownEvents.delegate = self
+                do {
+                    try ownEvents.performFetch()
+                } catch {
+                    print("An error occured")
                 }
-                self.numberOfEvents = ownEvents.count
+                //self.numberOfEvents = ownEvents.count
             }
         }
     }
@@ -84,14 +90,21 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     
     // MARK: - Table view data source
     
+    
+    
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print(events.count) //TRACE
-        return numberOfEvents
+        if let sections = ownEvents.sections {
+            let currentSection = sections[section]
+            return currentSection.numberOfObjects
+        }
+        return 0
     }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ownCalendarCell", forIndexPath: indexPath) as! OwnCalendarTableViewCell
@@ -107,8 +120,7 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
             print("guard jsonSpeakerToLoop")
             return cell
         }
-        print(self.coreData)
-        if(self.coreData == false){
+        if(true){
             for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                 let currentKey = key as! NSNumber
                 if(currentKey == indexPath.row){
@@ -118,13 +130,12 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
             }
         }
         else{
-            guard let ownEvent =  self.ownEvents else{
+            let event = ownEvents.objectAtIndexPath(indexPath) as! Event
+
+            guard let nomEvent = event.nom else {
                 return cell
             }
-            guard let nomEvent = ownEvent[indexPath.row].nom else {
-                return cell
-            }
-            guard let hourEvent = ownEvent[indexPath.row].hour else {
+            guard let hourEvent = event.hour else {
                 return cell
             }
             thenamelabel.text = nomEvent
