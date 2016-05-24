@@ -11,31 +11,21 @@ import CoreData
 import UIKit
 
 
-class User: NSManagedObject {
-    
-    
-    class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
-        let FetchRequest = NSFetchRequest ( entityName:c)
-        let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
-        FetchRequest.sortDescriptors = [ sortDescriptor]
-        return FetchRequest
-    }
-    
-    
+class User: NSManagedObject { // Toutes les fonctions liée à l'utilisateur
     
     class func checkLogin(name: String, surname: String, email: String) -> JSON?{
-        
+        // Fonction qui vérifie l'existance de l'utilisateur en base de donée
         let url = "https://fisuwebfinal-madonna.rhcloud.com/checkUserExist.php?emailUser="
         let finalUrl = url + email
         let result: JSON?
-        let jsonRes = JSON.fromURL(finalUrl)
-        result = JSON(jsonRes)
-        return result
+        let jsonRes = JSON.fromURL(finalUrl) // On envoie une requete GET avec l'email de l'user
+        result = JSON(jsonRes) // On récupere success ou failure
+        return result // On retourne ce qu'on a récupére
         
     }
     
     
-    class func userExists() -> Bool{
+    class func userExists() -> Bool{ // Verification de l'existance de l'user en coredata
         var user = [User]()
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
@@ -49,16 +39,16 @@ class User: NSManagedObject {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         if(user.count == 0){
-            return false
+            return false // User pas trouvé
         }
-        return true
+        return true // User trouvé
     }
     
-    class func createUsers(name: String, surname: String, email: String) -> User?{
+    class func createUsers(name: String, surname: String, email: String) -> User?{ // La création de l'user
         
-        var userToReturn: User?
+        var userToReturn: User? // La création se fait en deux temps 1: Base de donnée 2: Coredata
         var database: Bool = true
-        // TODO insert in the database
+        
         guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/InsererUser.php") else{
             print("guard my url")
             return userToReturn
@@ -66,7 +56,7 @@ class User: NSManagedObject {
         let request  = NSMutableURLRequest(URL: myUrl)
         request.HTTPMethod = "POST"
         
-        let postString = "emailUser=\(email)&surname=\(surname)&name=\(name)"
+        let postString = "emailUser=\(email)&surname=\(surname)&name=\(name)" // On insere d'abords en base de donnée à l'aide d'une requete php
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -91,15 +81,15 @@ class User: NSManagedObject {
             guard let reponse = responseString else{
                 return
             }
-            if(reponse != "success"){
-                database = false
+            if(reponse != "success"){ // On récupere success si l'user a été inséré en base
+                database = false // sinon on met database:Bool à false
             }
         }
         task.resume()
         // fin insert database
         
-        if(database){
-            let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        if(database){ // Si l'user a bien été inséré en base de donnée
+            let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext // On insere en coredata
             let UserDescription = NSEntityDescription.entityForName( "User", inManagedObjectContext : managedObjectContext)
             let request = NSFetchRequest()
             request.entity = UserDescription
@@ -108,7 +98,7 @@ class User: NSManagedObject {
             var user: User? = nil
             do{
                 var result = try managedObjectContext.executeFetchRequest(request)
-                // on vérifie que le user n'existe pas déja dans la base
+                // on vérifie que le user n'existe pas déja dans le coredata
                 
                 if result.count == 0 {
                     
@@ -121,7 +111,7 @@ class User: NSManagedObject {
                     //m
                     user = newUser
                     do{
-                        try managedObjectContext.save()   //newUser.managedObjectContext?.save()
+                        try managedObjectContext.save()
                         
                     } catch{
                         print("there was an error saving data")
@@ -129,7 +119,7 @@ class User: NSManagedObject {
                     }
                 }
                 else {
-                    // pour recuperer l user qui est deja dans la bd
+                    // pour recuperer l user qui est deja dans le coredata
                     let user = result[0] as! User
                     userToReturn = user
                 }
@@ -142,7 +132,7 @@ class User: NSManagedObject {
             }
             userToReturn = user
         }
-        return userToReturn
+        return userToReturn // on retourne l'utilisateur créee
     }
     
     class func getUserByUsername(username: String) -> User?{
@@ -164,13 +154,13 @@ class User: NSManagedObject {
         return user[0]
     }
     
-    class func getEventsFromUser(email: String) -> JSON?{
+    class func getEventsFromUser(email: String) -> JSON?{ // On récup les events d'un user en base de donnée
         let url = "https://fisuwebfinal-madonna.rhcloud.com/ListeOwnEvent.php?mail="
         let finalUrl = url + email
         let events: JSON?
         let jsonSpeaker = JSON.fromURL(finalUrl)
         events = JSON(jsonSpeaker)
-        return events
+        return events // On retourne un JSON avec tous les events
     }
     
     
@@ -273,7 +263,7 @@ class User: NSManagedObject {
         return success
     }
     
-    class func getActualUserMail() -> String{
+    class func getActualUserMail() -> String{ // On récupere le mail de l'uitilisateur connecté et dans le core data (utile quand pas d'internet)
         var user = [User]()
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
@@ -292,11 +282,11 @@ class User: NSManagedObject {
         guard let email = user[0].emailAdress else{
             return "No actual mail for user"
         }
-        return email
+        return email // On retourne un string contenant l'adresse mail de l'user
     }
     
     
-    class func getEventsOfActualUser(  c : String  , key : String) -> [Event]{
+    class func getEventsOfActualUser(  c : String  , key : String) -> [Event]{ // On récup les events d'un user en core data (si pas de connexion internet)
         
         var events = [Event]()
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext

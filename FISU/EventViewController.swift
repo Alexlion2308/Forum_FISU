@@ -10,8 +10,7 @@ import UIKit
 import CoreData
 
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    
+
     
     let section = ["DAY 1 : Monday, July 4", "DAY 2 : Tuesday, July 5", "DAY 3 : Wednesday, July 6", "DAY 4 : Thursday, July 7", "DAY 5 : Friday, July 8", "DAY 6 : Friday, July 9"]
     let sectionDay = ["2016-07-04", "2016-07-05", "2016-07-06", "2016-07-07", "2016-07-08", "2016-07-09"]
@@ -29,8 +28,19 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var jsonEvents:JSON?
     var eventDayOne:JSON?
     var nombreEvent:Int=0
+    var dateActuelle:String = "2016-05-24"
+    var heureActuelle:String = "07:00"
 
     func downloadAndUpdate() {
+        let lastWeekDate = NSCalendar.currentCalendar().dateByAddingUnit(.WeekOfYear, value: 0, toDate: NSDate(), options: NSCalendarOptions())!
+        let styler = NSDateFormatter()
+        styler.dateFormat = "yyyy-MM-dd"
+        let dateString = styler.stringFromDate(lastWeekDate)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let date24 = dateFormatter.stringFromDate(lastWeekDate)
+        self.dateActuelle = dateString
+        self.heureActuelle = date24
         jsonEventsDay1 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay1.php")
         jsonEventsDay2 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay2.php")
         jsonEventsDay3 = JSON.fromURL("https://fisuwebfinal-madonna.rhcloud.com/ListeEventDay3.php")
@@ -122,6 +132,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         guard let theimage = cell.ImageEvent else{
             return cell
         }
+        guard let theStamp = cell.imageStamp else{
+            return cell
+        }
         if(indexPath.section == 0){
             self.jsonEventsToLoop = self.jsonEventsDay1
         }
@@ -158,6 +171,28 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 //print(speaker["descriptionSpeaker"].toString())
                 let myImage =  UIImage(data: profileImageData)
                 theimage.image = myImage
+                theStamp.transform = CGAffineTransformMakeRotation((25.0 * CGFloat(M_PI)) / 180.0)
+                //theStamp.hidden = true
+                if(event["DateEvent"].toString() > self.dateActuelle){
+                    theStamp.hidden = true
+                }
+                else{
+                    theStamp.hidden = false
+                }
+                if(event["DateEvent"].toString() < self.dateActuelle){
+                    theStamp.hidden = false
+                }
+                else{
+                    theStamp.hidden = true
+                }
+                if(event["DateEvent"].toString() == self.dateActuelle){
+                    if(event["HourEvent"].toString()[0...4] > self.heureActuelle){
+                        theStamp.hidden = true
+                    }
+                    else{
+                        theStamp.hidden = false
+                    }
+                }
             }
         }
         
@@ -198,4 +233,21 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     
+}
+
+extension String {
+    
+    subscript (i: Int) -> Character {
+        return self[self.startIndex.advancedBy(i)]
+    }
+    
+    subscript (i: Int) -> String {
+        return String(self[i] as Character)
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let start = startIndex.advancedBy(r.startIndex)
+        let end = start.advancedBy(r.endIndex - r.startIndex)
+        return self[Range(start ..< end)]
+    }
 }
