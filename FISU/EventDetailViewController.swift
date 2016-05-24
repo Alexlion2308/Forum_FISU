@@ -77,7 +77,9 @@ class EventDetailViewController: UIViewController {
     
     @IBOutlet weak var LabelEventName: UILabel!
     
-    @IBOutlet weak var SpeakerName: UIButton!
+    @IBOutlet weak var Speaker1Button: UIButton!
+    
+    @IBOutlet weak var Speaker2Button: UIButton!
     
     @IBOutlet weak var LabelHour: UILabel!
     
@@ -140,7 +142,7 @@ class EventDetailViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "ListSpeakerDetailSegue") {
+        if (segue.identifier == "SpeakerDetailSegue") {
             let detailVC = segue.destinationViewController as! SpeakersCollectionViewController
             detailVC.jsonSpeakers = jsonSpeakersToPass
             detailVC.eventSpeaker = true
