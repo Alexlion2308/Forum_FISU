@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="height" constant="30" id="lwB-Bo-J2D"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-4h-ljl">
                                 <rect key="frame" x="194" y="276" width="212" height="30"/>
@@ -428,6 +428,7 @@
                             <constraint firstItem="aYV-iZ-BHl" firstAttribute="leading" secondItem="Pm5-7K-mPu" secondAttribute="leading" id="Bz5-Ym-HT4"/>
                             <constraint firstItem="Bfs-2f-SXG" firstAttribute="trailing" secondItem="fr7-A3-dK8" secondAttribute="trailingMargin" id="CMn-jS-R0h"/>
                             <constraint firstItem="tSU-9E-6Dm" firstAttribute="leading" secondItem="fr7-A3-dK8" secondAttribute="leadingMargin" id="DSW-tY-mvU"/>
+                            <constraint firstItem="ROU-bP-aoO" firstAttribute="trailing" secondItem="fr7-A3-dK8" secondAttribute="trailingMargin" id="Hl3-g7-2Fo"/>
                             <constraint firstItem="tSU-9E-6Dm" firstAttribute="trailing" secondItem="fr7-A3-dK8" secondAttribute="trailingMargin" id="QdK-Tx-P2j"/>
                             <constraint firstItem="Bfs-2f-SXG" firstAttribute="top" secondItem="Mf8-NQ-bYf" secondAttribute="bottom" constant="123" id="QoW-ca-SUe"/>
                             <constraint firstItem="Pm5-7K-mPu" firstAttribute="leading" secondItem="fr7-A3-dK8" secondAttribute="leadingMargin" id="SC8-KM-Pyr"/>
