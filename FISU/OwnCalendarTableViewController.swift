@@ -17,14 +17,11 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     var numberOfEvents: Int = 0
     var coreData: Bool = false
     var ownEvents: [Event]?
-    //var ownEvents : NSFetchedResultsController = NSFetchedResultsController()
     
     
     func getAndCountOwnEvents() {
         let email = User.getActualUserMail()
-        print(email)
         self.events = User.getEventsFromUser(email)
-        print(self.events)
         guard let jsonEventsToLoop = self.events else{
             print("guard jsonSpeakerToLoop get and count")
             return
@@ -43,7 +40,6 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         super.viewWillAppear(animated)
         if Reachability.isConnectedToNetwork() == true {
             self.getAndCountOwnEvents()
-            print("Internet connection OK")
             if(!(User.userExists())){
                 let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
                 self.presentViewController(home, animated: true, completion: nil)

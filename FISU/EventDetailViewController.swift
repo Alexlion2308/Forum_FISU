@@ -109,9 +109,11 @@ class EventDetailViewController: UIViewController {
             return
         }
         guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
+            print("pas de profil image")
             return
         }
         guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
+            print("pas de profil image data")
             return
         }
         
