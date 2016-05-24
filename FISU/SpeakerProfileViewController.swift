@@ -28,7 +28,6 @@ class SpeakerProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.jsonSpeaker)
         guard let speaker = self.jsonSpeaker else{
             print("guard jsonSpeakerToLoop")
             return
