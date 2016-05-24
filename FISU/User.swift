@@ -31,7 +31,7 @@ class User: NSManagedObject {
         let jsonRes = JSON.fromURL(finalUrl)
         result = JSON(jsonRes)
         return result
-
+        
     }
     
     
@@ -176,45 +176,16 @@ class User: NSManagedObject {
     
     class func AddEventToUser(emailUser: String, numEvent: String, hour: String, nom: String) -> Bool?{
         var success = true
-        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/InsererLien.php") else{
-            print("guard my url")
+        
+        let url = "https://fisuwebfinal-madonna.rhcloud.com/InsererLien.php?"
+        let finalUrl = url + "emailUser=\(emailUser)&numEvent=\(numEvent)"
+        let result: JSON?
+        let jsonRes = JSON.fromURL(finalUrl)
+        result = JSON(jsonRes)
+        guard let resultat = result else{
             return false
         }
-        let request  = NSMutableURLRequest(URL: myUrl)
-        request.HTTPMethod = "POST"
-        
-        let postString = "emailUser=\(emailUser)&numEvent=\(numEvent)"
-        
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error in
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            if error != nil{
-                print("error=\(error)")
-                success = false
-                return
-            }
-            guard let dataReceived = data else{
-                print("guard datareceived")
-                success = false
-                return
-            }
-            let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
-            print("response http request: \(responseString)")
-            guard let reponse = responseString else{
-                return
-            }
-            if(reponse != "success"){
-                success = false
-            }
-        }
-        task.resume()
-        
-        if(success){
+        if(resultat[0]["results"].toString() == "success"){
             print("On rentre dans le core data")
             let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
             
@@ -239,7 +210,7 @@ class User: NSManagedObject {
                     let event: Event = Event(entity: entityEvent, insertIntoManagedObjectContext: managedObjectContext)
                     event.setValue(numEvent, forKey: "num")
                     event.setValue(hour, forKey: "hour")
-                    event.setValue(nom, forKey: "nom")                    
+                    event.setValue(nom, forKey: "nom")
                     do{
                         try managedObjectContext.save()
                         print("saved")
@@ -261,46 +232,15 @@ class User: NSManagedObject {
         
         var success = true
         
-        
-        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/EnleverLien.php") else{
-            print("guard my url")
+        let url = "https://fisuwebfinal-madonna.rhcloud.com/EnleverLien.php?"
+        let finalUrl = url + "emailUser=\(emailUser)&numEvent=\(numEvent)"
+        let result: JSON?
+        let jsonRes = JSON.fromURL(finalUrl)
+        result = JSON(jsonRes)
+        guard let resultat = result else{
             return false
         }
-        let request  = NSMutableURLRequest(URL: myUrl)
-        request.HTTPMethod = "POST"
-        
-        let postString = "emailUser=\(emailUser)&numEvent=\(numEvent)"
-        
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error in
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 { // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            if error != nil{
-                print("error=\(error)")
-                success = false
-                return
-            }
-            guard let dataReceived = data else{
-                print("guard datareceived")
-                success = false
-                return
-            }
-            let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding)
-            print("response http request: \(responseString)")
-            guard let reponse = responseString else{
-                return
-            }
-            if(reponse != "success"){
-                success = false
-            }
-        }
-        task.resume()
-        
-        if(success){
+        if(resultat[0]["results"].toString() == "success"){
             let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
             
             let fetchRequestEvent = NSFetchRequest(entityName: "Event")
@@ -312,7 +252,7 @@ class User: NSManagedObject {
             {
                 let fetchResultsEvent =
                     try managedObjectContext.executeFetchRequest(fetchRequestEvent) as! [Event]
-                // Vérification pour éviter les doublons, insertions si ok
+                // Vérification pour éviter lde supprimer quelque chose qui existe pas
                 if (fetchResultsEvent.count != 0)
                 {
                     //let event: Event = Event(entity: entityEvent)

@@ -56,33 +56,42 @@ class EmergencysViewController: UIViewController {
     
     func policeImageTapped(img: AnyObject)
     {
-        print("police")
-        callNumber("0651278982")
+        let alert = UIAlertController(title: "Emergency only", message: "Warning you are about to call the police.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "PROCEED", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.callNumber("17")
+        }))
+        presentViewController(alert, animated: true, completion: nil)
     }
     func ambulanceImageTapped(img: AnyObject)
     {
-        print("amb")
-        callNumber("0651278982")
+        let alert = UIAlertController(title: "Emergency only", message: "Warning you are about to call an ambulance.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "PROCEED", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.callNumber("15")
+        }))
+        presentViewController(alert, animated: true, completion: nil)
     }
     func fireImageTapped(img: AnyObject)
     {
-        print("fire")
-        callNumber("0651278982")
+        let alert = UIAlertController(title: "Emergency only", message: "Warning you are about to call the firefighters.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "PROCEED", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.callNumber("18")
+        }))
+        presentViewController(alert, animated: true, completion: nil)
     }
     func orgaImageTapped(img: AnyObject)
     {
-        print("orga")
         callNumber("0651278982")
     }
     func doctorImageTapped(img: AnyObject)
     {
-        print("doctor")
         callNumber("0651278982")
     }
     func poisonImageTapped(img: AnyObject)
     {
-        print("poison")
-        callNumber("0651278982")
+        callNumber("0491752525")
     }
 
     override func didReceiveMemoryWarning() {

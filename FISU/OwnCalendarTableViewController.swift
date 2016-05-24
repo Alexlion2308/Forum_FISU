@@ -58,12 +58,10 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Reachability.isConnectedToNetwork() == false {
-            print("Internet connection FAILED")
             let alert = UIAlertController(title: "No Internet Connection", message: "You will have only a list of events you registred for.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             }))
             presentViewController(alert, animated: true, completion: nil)
-            print("fin internet check")
         }
     }
     override func didReceiveMemoryWarning() {
