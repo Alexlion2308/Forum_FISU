@@ -56,20 +56,17 @@ class ViewController: UIViewController{
                 
                 return false
             }
-            print(User.checkLogin("reda", surname: "reda", email: "maachi.reda@gmail.com"){ responseExist in
-                // here you get the "returned" value from the asynchronous task
-                print(responseExist)
-                if(responseExist == "degage"){
-                    let wrongPass = UIAlertController()
-                    wrongPass.title = "Email already token"
-                    wrongPass.message = "Please correct your e-mail and register"
-                    wrongPass.addAction(UIAlertAction(title: "Understand", style: UIAlertActionStyle.Default, handler: nil))
-                }
-            })
-            /*else if(User.checkLogin(firstName, surname: lastName, email: emailAdress)){
-             presentViewController(wrongPass, animated: true, completion: nil)
-             return false
-             }*/
+            guard let resultat = User.checkLogin(firstName, surname: lastName, email: emailAdress) else{
+                return false
+            }
+            if(resultat[0]["results"].toString() == "failure"){
+                let wrongPass = UIAlertController()
+                wrongPass.title = "Email already token"
+                wrongPass.message = "Please correct your e-mail and register"
+                wrongPass.addAction(UIAlertAction(title: "Understand", style: UIAlertActionStyle.Default, handler: nil))
+                presentViewController(wrongPass, animated: true, completion: nil)
+                return false
+            }
             if(!(User.userExists())){
                 User.createUsers(firstName, surname: lastName, email: emailAdress)
             }

@@ -23,65 +23,15 @@ class User: NSManagedObject {
     
     
     
-    class func checkLogin(name: String, surname: String, email: String) -> Void{ //
-        /*
-        let urlPath: String = "https://fisuwebfinal-madonna.rhcloud.com/checkUserExist.php?emailUser=\(email)"
-        let url: NSURL = NSURL(string: urlPath)!
-        let request1: NSURLRequest = NSURLRequest(URL: url)
-        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+    class func checkLogin(name: String, surname: String, email: String) -> JSON?{
         
-        
-        do{
-            
-            let dataVal = try NSURLConnection.sendSynchronousRequest(request1, returningResponse: response)
-            
-            print(response)
-            do {
-                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(dataVal, options: []) as? NSDictionary {
-                    print("Synchronous\(jsonResult)")
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
-            
-            
-        }catch let error as NSError
-        {
-            print(error.localizedDescription)
-        }*/
-        var exist: Bool?
-        guard let myUrl = NSURL(string: "https://fisuwebfinal-madonna.rhcloud.com/checkUserExist.php") else{
-            print("guard my url")
-            return
-        }
-        let request  = NSMutableURLRequest(URL: myUrl)
-        request.HTTPMethod = "POST"
-        
-        let postString = "emailUser=\(email)"
-        
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        /*let task = NSURLConnection.sendSynchronousRequest(request){
-            data, response, error in
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            if error != nil{
-                print("error=\(error)")
-                return
-            }
-            guard let dataReceived = data else{
-                print("guard datareceived")
-                return
-            }
-            guard let responseString = NSString(data: dataReceived, encoding: NSUTF8StringEncoding) else{
-                return
-            }
-            print(responseString)
-        }
-        task.resume()*/
+        let url = "https://fisuwebfinal-madonna.rhcloud.com/checkUserExist.php?emailUser="
+        let finalUrl = url + email
+        let result: JSON?
+        let jsonRes = JSON.fromURL(finalUrl)
+        result = JSON(jsonRes)
+        return result
+
     }
     
     

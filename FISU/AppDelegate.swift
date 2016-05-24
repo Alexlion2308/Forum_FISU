@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         print("==========")
-        print(User.checkLogin("reda", surname: "reda", email: "maachi.reda@gmail.com"))
+        //let result = User.checkLogin("reda", surname: "reda", email: "maachi.reda@gmail.com")
         print("==========")
         
         if Reachability.isConnectedToNetwork() == false { // On vérifie la connexion à internet de l'utilisateur
