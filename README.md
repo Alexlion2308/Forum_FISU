@@ -8,7 +8,7 @@ Nous souhaitons exprimer nos remerciements à toutes les personnes qui ont contr
 
 ## Installation
 
-Pour installer cette application (et pouvoir la modifier) téléchargez le ZIP ou cloner ce répertoire puis cliquez sur le fichier "FISU.xcodeproj". Sinon téléchargez l'application directemnent dans l'AppStore
+Pour installer cette application téléchargez le ZIP ou cloner ce répertoire puis cliquez sur le fichier "FISU.xcodeproj". Sinon téléchargez l'application directemnent dans l'AppStore
 
 ## API Reference
 
