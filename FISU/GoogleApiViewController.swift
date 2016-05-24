@@ -12,7 +12,6 @@ class GoogleApiViewController: UIViewController {
     var placePicker: GMSPlacePicker?
 
     @IBOutlet weak var phonePlace: UITextView!
-    @IBOutlet weak var priceRange: UITextView!
     @IBOutlet weak var rating: UITextView!
     @IBOutlet weak var horairePlace: UITextView!
     @IBOutlet weak var titlePlace: UITextView!
@@ -78,7 +77,6 @@ class GoogleApiViewController: UIViewController {
                     })
                     self.horairePlace.text = place.formattedAddress
                     self.rating.text = "Rating: " + String(place.rating) + "/5"
-                    self.priceRange.text = "Price range: " + String(place.priceLevel.rawValue) + "/4"
                 } else {
                     print("No place details for \(laPlace.placeID)")
                 }
