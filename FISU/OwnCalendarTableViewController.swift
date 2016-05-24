@@ -16,8 +16,8 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     var events: JSON?
     var numberOfEvents: Int = 0
     var coreData: Bool = false
-    //var ownEvents: [Event]?
-    var ownEvents : NSFetchedResultsController = NSFetchedResultsController()
+    var ownEvents: [Event]?
+    //var ownEvents : NSFetchedResultsController = NSFetchedResultsController()
     
     
     func getAndCountOwnEvents() {
@@ -52,6 +52,7 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         }
         else{
             self.coreData = true
+            ownEvents = User.getEventsOfActualUser("Event", key: "hour")
         }
     }
     override func viewDidAppear(animated: Bool) {
@@ -62,12 +63,7 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             }))
             presentViewController(alert, animated: true, completion: nil)
-            ownEvents = User.getEventsOfActualUser("Event", key: "hour")
-            do {
-                try ownEvents.performFetch()
-            } catch {
-                print("An error occured")
-            }
+            print("fin internet check")
         }
     }
     override func didReceiveMemoryWarning() {
@@ -87,10 +83,10 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberToReturn: Int=0
         if(coreData){
-            if let sections = ownEvents.sections {
-                let currentSection = sections[section]
-                numberToReturn = currentSection.numberOfObjects
+            guard let mesEvents = ownEvents else{
+                return 0
             }
+            numberToReturn = mesEvents.count
         }
         else{
             guard let jsonEventsToLoop = self.events else{
@@ -113,11 +109,12 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
         guard let thedatelabel = cell.TimeLabelOwnEvent else{
             return cell
         }
-        guard let jsonEventsToLoop = self.events else{
-            print("guard jsonSpeakerToLoop table view")
-            return cell
-        }
+        print("Coredata: \(coreData)")
         if(coreData == false){
+            guard let jsonEventsToLoop = self.events else{
+                print("guard jsonSpeakerToLoop table view")
+                return cell
+            }
             for (key, event) in jsonEventsToLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
                 let currentKey = key as! NSNumber
                 if(currentKey == indexPath.row){
@@ -127,7 +124,11 @@ class OwnCalendarTableViewController: UIViewController, UITableViewDelegate, UIT
             }
         }
         else{
-            let event = ownEvents.objectAtIndexPath(indexPath) as! Event
+            guard let mesEvents = ownEvents else{
+                return cell
+            }
+            print(ownEvents)
+            let event = mesEvents[indexPath.row]
             
             guard let nomEvent = event.nom else {
                 return cell

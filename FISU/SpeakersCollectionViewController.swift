@@ -40,6 +40,7 @@ class SpeakersCollectionViewController: UICollectionViewController, UISearchBarD
     
     
     override func viewWillAppear(animated: Bool) {
+        
         super.viewWillAppear(animated)
         self.downloadAndUpdate()
         guard let laCollection = self.collectionView else{

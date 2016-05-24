@@ -10,7 +10,7 @@ import UIKit
 
 
 class ViewController: UIViewController{
-
+    
     @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
@@ -31,21 +31,6 @@ class ViewController: UIViewController{
         //displayWalkthroughs()
     }
     
-/*    func displayWalkthroughs()
-    {
-        // check if walkthroughs have been shown
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let displayedWalkthrough = userDefaults.boolForKey("DisplayedWalkthrough")
-        
-        // if we haven't shown the walkthroughs, let's show them
-        if !displayedWalkthrough {
-            // instantiate neew PageVC via storyboard
-            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
-                self.presentViewController(pageViewController, animated: true, completion: nil)
-            }
-        }
-    }
-*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,19 +53,21 @@ class ViewController: UIViewController{
                 noUsernameAlert.message = "Please fill all the fields in order to create a new user"
                 noUsernameAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 presentViewController(noUsernameAlert, animated: true, completion: nil)
-
+                
                 return false
             }
-            else if(User.checkLogin(firstName, surname: lastName, email: emailAdress)){
+            guard let resultat = User.checkLogin(firstName, surname: lastName, email: emailAdress) else{
+                return false
+            }
+            if(resultat[0]["results"].toString() == "failure"){
                 let wrongPass = UIAlertController()
                 wrongPass.title = "Email already token"
                 wrongPass.message = "Please correct your e-mail and register"
                 wrongPass.addAction(UIAlertAction(title: "Understand", style: UIAlertActionStyle.Default, handler: nil))
                 presentViewController(wrongPass, animated: true, completion: nil)
-                
                 return false
             }
-            else if(!(User.userExists())){
+            if(!(User.userExists())){
                 User.createUsers(firstName, surname: lastName, email: emailAdress)
             }
         }
@@ -92,21 +79,21 @@ class ViewController: UIViewController{
     }
     
     
-/*    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "ownCalendarSegue") {
-            let detailVC = segue.destinationViewController as! OwnCalendarTableViewController
-            guard let theUser = usernameTextField else{
-                return
-            }
-            guard let finaleUsername = theUser.text else{
-                return
-            }
-            detailVC.username = finaleUsername
-            print("ok")
-        }
-    }*/
-
+    /*    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+     if (segue.identifier == "ownCalendarSegue") {
+     let detailVC = segue.destinationViewController as! OwnCalendarTableViewController
+     guard let theUser = usernameTextField else{
+     return
+     }
+     guard let finaleUsername = theUser.text else{
+     return
+     }
+     detailVC.username = finaleUsername
+     print("ok")
+     }
+     }*/
     
-        
+    
+    
 }
 

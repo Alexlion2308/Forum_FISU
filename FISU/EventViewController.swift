@@ -169,7 +169,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (segue.identifier == "EventDetailSegue") {
             if let indexPath = self.EventTableView.indexPathForSelectedRow {
                 if(indexPath.section == 0){
-                    self.jsonEvents     = self.jsonEventsDay1
+                    self.jsonEvents = self.jsonEventsDay1
                 }
                 if(indexPath.section == 1){
                     self.jsonEvents = self.jsonEventsDay2
