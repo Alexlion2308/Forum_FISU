@@ -135,23 +135,21 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         guard let theStamp = cell.imageStamp else{
             return cell
         }
-        if(indexPath.section == 0){
+        switch indexPath.section{
+        case 0:
             self.jsonEventsToLoop = self.jsonEventsDay1
-        }
-        if(indexPath.section == 1){
+        case 1:
             self.jsonEventsToLoop = self.jsonEventsDay2
-        }
-        if(indexPath.section == 2){
+        case 2:
             self.jsonEventsToLoop = self.jsonEventsDay3
-        }
-        if(indexPath.section == 3){
+        case 3:
             self.jsonEventsToLoop = self.jsonEventsDay4
-        }
-        if(indexPath.section == 4){
+        case 4:
             self.jsonEventsToLoop = self.jsonEventsDay5
-        }
-        if(indexPath.section == 5){
+        case 5:
             self.jsonEventsToLoop = self.jsonEventsDay6
+        default:
+            self.jsonEventsToLoop = self.jsonEventsDay1
         }
         guard let toLoop = jsonEventsToLoop else{
             return cell

@@ -135,11 +135,24 @@ class EventDetailViewController: UIViewController {
         self.EventDetailImage.image = myImage
         // Passing parametre to other views
         self.jsonPlacesToPass = event["PlaceList"]
-        self.Speaker1Button.setTitle(event["SpeakersList"][0]["NomSpeaker"].toString()[0] + ". " + event["SpeakersList"][0]["PrenomSpeaker"].toString(), forState: .Normal)
-        self.Speaker2Button.setTitle(event["SpeakersList"][1]["NomSpeaker"].toString()[0] + ". " + event["SpeakersList"][1]["PrenomSpeaker"].toString(), forState: .Normal)
-        self.jsonSpeakersToPass1 = event["SpeakersList"][0]
-        self.jsonSpeakersToPass2 = event["SpeakersList"][1]
-
+        if(event["SpeakersList"].count == 1){
+            self.Speaker2Button.hidden = true
+            self.Speaker1Button.hidden = false
+            self.Speaker1Button.setTitle(event["SpeakersList"][0]["nameSpeaker"].toString()[0] + ". " + event["SpeakersList"][0]["surnameSpeaker"].toString(), forState: .Normal)
+            self.jsonSpeakersToPass1 = event["SpeakersList"][0]
+        }
+        if(event["SpeakersList"].count >= 2){
+            self.Speaker1Button.hidden = false
+            self.Speaker2Button.hidden = false
+            self.Speaker1Button.setTitle(event["SpeakersList"][0]["nameSpeaker"].toString()[0] + ". " + event["SpeakersList"][0]["surnameSpeaker"].toString(), forState: .Normal)
+            self.Speaker2Button.setTitle(event["SpeakersList"][1]["nameSpeaker"].toString()[0] + ". " + event["SpeakersList"][1]["surnameSpeaker"].toString(), forState: .Normal)
+            self.jsonSpeakersToPass1 = event["SpeakersList"][0]
+            self.jsonSpeakersToPass2 = event["SpeakersList"][1]
+        }
+        if(event["SpeakersList"].count == 0){
+            self.Speaker1Button.hidden = true
+            self.Speaker2Button.hidden = true
+        }
     }
     
     
@@ -154,14 +167,14 @@ class EventDetailViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "SpeakerDetailSegue1") {
-            let detailVC = segue.destinationViewController as! SpeakersCollectionViewController
-            detailVC.jsonSpeakers = jsonSpeakersToPass1
-            detailVC.eventSpeaker = true
+            let detailVC = segue.destinationViewController as! SpeakerProfileViewController
+            detailVC.jsonSpeaker = jsonSpeakersToPass1
+            detailVC.speakerSelected = 1
         }
         if (segue.identifier == "SpeakerDetailSegue2") {
-            let detailVC = segue.destinationViewController as! SpeakersCollectionViewController
-            detailVC.jsonSpeakers = jsonSpeakersToPass2
-            detailVC.eventSpeaker = true
+            let detailVC = segue.destinationViewController as! SpeakerProfileViewController
+            detailVC.jsonSpeaker = jsonSpeakersToPass2
+            detailVC.speakerSelected = 1
         }
         if (segue.identifier == "PlaceDetailSegue") {
             let detailVC = segue.destinationViewController as! PlaceViewController
