@@ -393,7 +393,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Speaker1"/>
                                 <connections>
-                                    <segue destination="Lzk-Fv-uTn" kind="show" identifier="SpeakerDetailSegue" id="HK6-Zl-fdJ"/>
+                                    <segue destination="Lzk-Fv-uTn" kind="show" identifier="SpeakerDetailSegue1" id="HK6-Zl-fdJ"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="tSU-9E-6Dm">
@@ -422,6 +422,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bez-WP-Zd3">
                                 <rect key="frame" x="180" y="358" width="136" height="34"/>
                                 <state key="normal" title="Speaker2"/>
+                                <connections>
+                                    <segue destination="Lzk-Fv-uTn" kind="show" identifier="SpeakerDetailSegue2" id="TaU-Ie-Wdd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spH-Cq-9ey">
                                 <rect key="frame" x="262" y="357" width="75" height="34"/>
@@ -1216,8 +1219,8 @@
         <image name="stamp" width="920" height="304"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OaA-AO-sXa"/>
         <segue reference="fkH-hh-6DA"/>
-        <segue reference="HK6-Zl-fdJ"/>
+        <segue reference="OaA-AO-sXa"/>
+        <segue reference="TaU-Ie-Wdd"/>
     </inferredMetricsTieBreakers>
 </document>
