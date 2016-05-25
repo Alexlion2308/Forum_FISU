@@ -11,9 +11,9 @@ import UIKit
 class PageViewController: UIPageViewController {
 
     
-    var pageHeaders = ["Welcome to FISU", "FISU is", "This application is", "Thanks"]
-    var pageImages = ["app1", "app2", "app3", "app4"]
-    var pageDescriptions = ["Welcome to FISU desc", "FISU is desc", "This application is desc", "Thanks desc"]
+    var pageHeaders = ["Welcome to 13th FISU Forum", "Events screen", "Speakers screen", "Places of interest", "Have a good trip in Montpellier"]
+    var pageImages = ["app1", "app2", "app3", "app4", "app5"]
+    var pageDescriptions = ["This event takes place in the beautifull city of Montpellier. This application will help you enjoy the FISU Forum. Register once and enjoy the app", "Allows you to see past & upcoming events. You can also add an event to your own calendar to book a place ", "Allows you to see all the speakers. Access their details by clicking them. Receive a notification when someone or something has changed.", "Find all the interisting places, to see & to visit, near you. Get the phone number & some other informations simply by clicking the place.", ""]
     // make the status bar white (light content)
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
