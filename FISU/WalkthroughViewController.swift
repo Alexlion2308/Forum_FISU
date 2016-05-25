@@ -40,8 +40,8 @@ class WalkthroughViewController: UIViewController {
         pageControl.currentPage = index
         
         // customize the next and start button
-        startButton.hidden = (index == 3) ? false : true
-        nextButton.hidden = (index == 3) ? true : false
+        startButton.hidden = (index == 4) ? false : true
+        nextButton.hidden = (index == 4) ? true : false
         startButton.layer.cornerRadius = 5.0
         startButton.layer.masksToBounds = true
     }

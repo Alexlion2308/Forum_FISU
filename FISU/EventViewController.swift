@@ -156,13 +156,10 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         guard let toLoop = jsonEventsToLoop else{
             return cell
         }
-        for (key, event) in toLoop { // cle is NSNumber, event is another JSON object (event c'est chaque event)
-            let currentEvent = key as! NSNumber
-            
-            if(currentEvent == indexPath.row + nombreEvent && event["DateEvent"].toString() == sectionDay[indexPath.section]){
-                thenamelabel.text = event["nameEvent"].toString()
-                thedatelabel.text = event["HourEvent"].toString()
-                guard let profileImageUrl = NSURL(string:event["ImageEvent"].toString()) else{
+        
+                thenamelabel.text = toLoop[indexPath.row]["nameEvent"].toString()
+                thedatelabel.text = toLoop[indexPath.row]["HourEvent"].toString()
+                guard let profileImageUrl = NSURL(string:toLoop[indexPath.row]["ImageEvent"].toString()) else{
                     return cell
                 }
                 guard let profileImageData = NSData(contentsOfURL: profileImageUrl) else{
@@ -173,29 +170,26 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 theimage.image = myImage
                 theStamp.transform = CGAffineTransformMakeRotation((25.0 * CGFloat(M_PI)) / 180.0)
                 //theStamp.hidden = true
-                if(event["DateEvent"].toString() > self.dateActuelle){
+                if(toLoop[indexPath.row]["DateEvent"].toString() > self.dateActuelle){
                     theStamp.hidden = true
                 }
                 else{
                     theStamp.hidden = false
                 }
-                if(event["DateEvent"].toString() < self.dateActuelle){
+                if(toLoop[indexPath.row]["DateEvent"].toString() < self.dateActuelle){
                     theStamp.hidden = false
                 }
                 else{
                     theStamp.hidden = true
                 }
-                if(event["DateEvent"].toString() == self.dateActuelle){
-                    if(event["HourEvent"].toString()[0...4] > self.heureActuelle){
+                if(toLoop[indexPath.row]["DateEvent"].toString() == self.dateActuelle){
+                    if(toLoop[indexPath.row]["HourEvent"].toString()[0...4] > self.heureActuelle){
                         theStamp.hidden = true
                     }
                     else{
                         theStamp.hidden = false
                     }
                 }
-            }
-        }
-        
         return cell
     }
     

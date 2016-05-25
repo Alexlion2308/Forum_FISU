@@ -1011,7 +1011,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app1" translatesAutoresizingMaskIntoConstraints="NO" id="ZD2-KX-pnX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app1" translatesAutoresizingMaskIntoConstraints="NO" id="ZD2-KX-pnX">
                                 <rect key="frame" x="102" y="-105" width="396" height="810"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZD2-KX-pnX" secondAttribute="height" multiplier="62:127" id="3rh-WL-nsF"/>
@@ -1229,7 +1229,7 @@
         <image name="FISU FORUM 2" width="858" height="1500"/>
         <image name="alarm" width="32" height="32"/>
         <image name="ambulance" width="128" height="128"/>
-        <image name="app1" width="432" height="881"/>
+        <image name="app1" width="2000" height="2000"/>
         <image name="doctor-stethoscope" width="128" height="128"/>
         <image name="firefighter-silhouette" width="128" height="128"/>
         <image name="griffon" width="200" height="200"/>
