@@ -17,7 +17,8 @@ class EventDetailViewController: UIViewController {
     var jsonEvents: JSON?
     var event: JSON?
     var jsonPlacesToPass: JSON?
-    var jsonSpeakersToPass: JSON?
+    var jsonSpeakersToPass1: JSON?
+    var jsonSpeakersToPass2: JSON?
     
     override func viewWillAppear(animated: Bool) {
         if(self.delete == true){
@@ -134,7 +135,11 @@ class EventDetailViewController: UIViewController {
         self.EventDetailImage.image = myImage
         // Passing parametre to other views
         self.jsonPlacesToPass = event["PlaceList"]
-        self.jsonSpeakersToPass = event["SpeakersList"]
+        self.Speaker1Button.setTitle(event["SpeakersList"][0]["NomSpeaker"].toString()[0] + ". " + event["SpeakersList"][0]["PrenomSpeaker"].toString(), forState: .Normal)
+        self.Speaker2Button.setTitle(event["SpeakersList"][1]["NomSpeaker"].toString()[0] + ". " + event["SpeakersList"][1]["PrenomSpeaker"].toString(), forState: .Normal)
+        self.jsonSpeakersToPass1 = event["SpeakersList"][0]
+        self.jsonSpeakersToPass2 = event["SpeakersList"][1]
+
     }
     
     
@@ -142,16 +147,20 @@ class EventDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
     
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "SpeakerDetailSegue") {
+        if (segue.identifier == "SpeakerDetailSegue1") {
             let detailVC = segue.destinationViewController as! SpeakersCollectionViewController
-            detailVC.jsonSpeakers = jsonSpeakersToPass
+            detailVC.jsonSpeakers = jsonSpeakersToPass1
+            detailVC.eventSpeaker = true
+        }
+        if (segue.identifier == "SpeakerDetailSegue2") {
+            let detailVC = segue.destinationViewController as! SpeakersCollectionViewController
+            detailVC.jsonSpeakers = jsonSpeakersToPass2
             detailVC.eventSpeaker = true
         }
         if (segue.identifier == "PlaceDetailSegue") {
