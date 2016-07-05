@@ -126,6 +126,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="68.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stamp" translatesAutoresizingMaskIntoConstraints="NO" id="RU5-hL-fFx">
+                                                    <rect key="frame" x="493" y="29" width="80" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="2h0-fs-zxe"/>
+                                                        <constraint firstAttribute="width" constant="80" id="HHy-e3-Eqv"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVo-wd-lfW">
                                                     <rect key="frame" x="59" y="29" width="129" height="21"/>
                                                     <constraints>
@@ -162,12 +169,15 @@
                                                 <constraint firstItem="v6a-vf-7Q8" firstAttribute="leading" secondItem="bP4-YB-Xmc" secondAttribute="trailing" constant="8" symbolic="YES" id="Pbb-Yz-5HJ"/>
                                                 <constraint firstItem="bP4-YB-Xmc" firstAttribute="leading" secondItem="hfd-nd-ToM" secondAttribute="leading" id="XuV-KR-XAa"/>
                                                 <constraint firstItem="mVo-wd-lfW" firstAttribute="top" secondItem="v6a-vf-7Q8" secondAttribute="bottom" constant="8" symbolic="YES" id="aMG-9J-GCW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="RU5-hL-fFx" secondAttribute="trailing" constant="19" id="p07-bz-Gj8"/>
+                                                <constraint firstItem="RU5-hL-fFx" firstAttribute="top" secondItem="hfd-nd-ToM" secondAttribute="topMargin" constant="21" id="vLs-D4-Lr7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ImageEvent" destination="bP4-YB-Xmc" id="0SW-aA-zty"/>
                                             <outlet property="LabelEvent" destination="v6a-vf-7Q8" id="hdg-Tr-gWO"/>
                                             <outlet property="LabelEventTime" destination="mVo-wd-lfW" id="XDX-vK-5ZJ"/>
+                                            <outlet property="imageStamp" destination="RU5-hL-fFx" id="A7I-9c-btE"/>
                                             <segue destination="GY7-Jz-aYa" kind="show" identifier="EventDetailSegue" id="NhJ-in-rEF"/>
                                         </connections>
                                     </tableViewCell>
@@ -1210,10 +1220,11 @@
         <image name="policeman" width="128" height="128"/>
         <image name="profilePicture1" width="123" height="161"/>
         <image name="speakers" width="24" height="24"/>
+        <image name="stamp" width="920" height="304"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fkH-hh-6DA"/>
-        <segue reference="OaA-AO-sXa"/>
         <segue reference="Xeu-gz-uiJ"/>
+        <segue reference="NhJ-in-rEF"/>
+        <segue reference="fkH-hh-6DA"/>
     </inferredMetricsTieBreakers>
 </document>

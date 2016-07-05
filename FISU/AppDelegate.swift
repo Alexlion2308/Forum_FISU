@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
         if Reachability.isConnectedToNetwork() == false { // On vérifie la connexion à internet de l'utilisateur
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             guard let window = self.window else{

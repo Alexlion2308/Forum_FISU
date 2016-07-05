@@ -20,7 +20,7 @@ class EventTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBOutlet weak var imageStamp: UIImageView!
     @IBOutlet weak var LabelEvent: UILabel!
     @IBOutlet weak var LabelEventTime: UILabel!
     @IBOutlet weak var ImageEvent: UIImageView!
