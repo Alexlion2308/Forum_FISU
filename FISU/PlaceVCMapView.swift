@@ -11,7 +11,6 @@ import MapKit
 
 extension PlaceViewController: MKMapViewDelegate {
     
-    // 1
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? Artwork {
             let identifier = "pin"

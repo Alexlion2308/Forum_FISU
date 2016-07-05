@@ -120,7 +120,12 @@ class EventDetailViewController: UIViewController {
         self.LabelEventName.text = event["nameEvent"].toString()
         self.LabelEventCategory.text = event["Categorie"].toString()
         self.LabelHour.text = event["HourEvent"].toString()
-        self.TextEventDesc.text = event["DescEvent"].toString()
+        if(event["DescEvent"].toString() == "null"){
+            self.TextEventDesc.text = event["DescEvent"].toString()
+        }
+        else{
+           self.TextEventDesc.text = "Pas de decription pour cet event." 
+        }
         self.EventPlace.setTitle(event["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
         self.EventDetailImage.image = myImage
         // Passing parametre to other views

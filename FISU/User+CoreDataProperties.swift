@@ -12,7 +12,7 @@
 import Foundation
 import CoreData
 
-extension User {
+extension User { // La classe génerée par le coredata
 
     @NSManaged var name: String?
     @NSManaged var surname: String?
