@@ -282,7 +282,7 @@ class User: NSManagedObject { // Toutes les fonctions liée à l'utilisateur
         guard let email = user[0].emailAdress else{
             return "No actual mail for user"
         }
-        return email
+        return email // On retourne un string contenant l'adresse mail de l'user
     }
     
     

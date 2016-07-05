@@ -121,10 +121,10 @@ class EventDetailViewController: UIViewController {
         self.LabelEventCategory.text = event["Categorie"].toString()
         self.LabelHour.text = event["HourEvent"].toString()
         if(event["DescEvent"].toString() == "null"){
-            self.TextEventDesc.text = event["DescEvent"].toString()
+            self.TextEventDesc.text = "Pas de decription disponible pour cet event."
         }
         else{
-           self.TextEventDesc.text = "Pas de decription pour cet event." 
+            self.TextEventDesc.text = event["DescEvent"].toString()
         }
         self.EventPlace.setTitle(event["PlaceList"][0]["NomPlace"].toString(), forState: .Normal)
         self.EventDetailImage.image = myImage
