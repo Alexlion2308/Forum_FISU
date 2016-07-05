@@ -1183,11 +1183,11 @@
             </objects>
             <point key="canvasLocation" x="1073" y="1499"/>
         </scene>
-        <!--emergency-->
+        <!--Emergencies-->
         <scene sceneID="3d4-lK-fky">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qw8-Q2-Htu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="emergency" image="alarm" selectedImage="alarm" id="4tO-3r-TKh"/>
+                    <tabBarItem key="tabBarItem" title="Emergencies" image="alarm" selectedImage="alarm" id="4tO-3r-TKh"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G4E-qh-Wr4">
